@@ -371,6 +371,132 @@ export const FESTIVAL_CULTURE: Record<string, FestivalCulture> = {
     originalNames: [n("Basler Fasnacht", "Swiss German", "gsw")],
     symbolism: [s("The Morgestraich lanterns", "Light and satire in the darkened city"), s("Piccolos and drums", "The marching music of the cliques")],
   },
+
+  // Second world batch, added 22 November 2026 (festivals-world-2.ts).
+  "smigus-dyngus": {
+    originalNames: [n("Śmigus-dyngus", "Polish", "pl"), n("Lany Poniedziałek", "Polish", "pl")],
+    symbolism: [s("Water", "Cleansing and new life in spring"), s("Pisanki", "Decorated eggs: rebirth and the Resurrection")],
+  },
+  "kupala-night": {
+    originalNames: [n("Івана Купала", "Ukrainian", "uk", "Ivana Kupala")],
+    symbolism: [s("Bonfire", "Purification and the power of the midsummer sun"), s("Flower wreaths on the water", "Love and fortune, read from the wreath's journey")],
+  },
+  masopust: {
+    originalNames: [n("Masopust", "Czech", "cs")],
+    symbolism: [s("The bear and the horse masks", "Strength and fertility leading the procession"), s("Burying the double bass", "The end of dancing until Easter")],
+  },
+  busojaras: {
+    originalNames: [n("Busójárás", "Hungarian", "hu")],
+    symbolism: [s("Carved willow masks", "Frightening winter away"), s("The burning coffin", "Winter carried off and burned")],
+  },
+  "baba-marta": {
+    originalNames: [n("Баба Марта", "Bulgarian", "bg", "Baba Marta"), n("Мартеница", "Bulgarian", "bg", "Martenitsa")],
+    symbolism: [s("Red thread", "Health and life"), s("White thread", "Purity and long life")],
+  },
+  "sankt-hans": {
+    originalNames: [n("Sankt Hans aften", "Danish", "da")],
+    symbolism: [s("The bonfire", "Light at the shortest night of the year"), s("The straw witch", "Sent off to the Brocken, taking bad luck with her")],
+  },
+  "taiwan-lantern-festival": {
+    originalNames: [n("元宵節", "Mandarin", "zh-Hant-TW", "Yuánxiāo jié")],
+    symbolism: [s("Sky lanterns", "Wishes carried up to the heavens"), s("Tangyuan", "Round dumplings for family togetherness")],
+  },
+  "paro-tsechu": {
+    originalNames: [n("ཚེས་བཅུ", "Dzongkha", "dz", "Tshechu")],
+    symbolism: [s("The thongdrel", "A giant thangka of Guru Rinpoche whose sight brings liberation"), s("Cham masks", "Deities and protectors who drive away evil")],
+  },
+  "lamu-cultural-festival": {
+    originalNames: [n("Tamasha la Utamaduni la Lamu", "Swahili", "sw")],
+    symbolism: [s("The dhow", "The Swahili coast's seafaring heritage"), s("Carved doors", "The craftsmanship of Lamu's old town")],
+  },
+  "sauti-za-busara": {
+    originalNames: [n("Sauti za Busara", "Swahili", "sw")],
+    symbolism: [s("The name, 'sounds of wisdom'", "Music as a carrier of knowledge"), s("The Old Fort", "A colonial fortress turned into a stage for African music")],
+  },
+  "saint-louis-jazz": {
+    originalNames: [n("Festival international de jazz de Saint-Louis", "French", "fr")],
+    symbolism: [s("The Faidherbe Bridge", "The city's link between island and mainland"), s("Jam sessions", "Musicians of many nations playing together")],
+  },
+  "fiestas-patrias-chile": {
+    originalNames: [n("Fiestas Patrias", "Spanish", "es"), n("Dieciocho", "Spanish", "es")],
+    symbolism: [s("The cueca handkerchief", "Courtship in the national dance"), s("Volantines (kites)", "Spring skies and childhood")],
+  },
+  "oruro-carnival": {
+    originalNames: [n("Carnaval de Oruro", "Spanish", "es")],
+    symbolism: [s("La Diablada", "Devils defeated by the Archangel Michael"), s("The Virgen del Socavón", "Patroness of the miners")],
+  },
+  "dia-de-los-difuntos-ecuador": {
+    originalNames: [n("Día de los Difuntos", "Spanish", "es"), n("Aya Markay Killa", "Kichwa", "qu")],
+    symbolism: [s("Colada morada", "Purple maize drink shared in memory of the dead"), s("Guaguas de pan", "Bread babies, the cycle of life")],
+  },
+  "goroka-show": {
+    originalNames: [],
+    namesNote: "Known by its English name; the groups taking part speak many of Papua New Guinea's more than 800 languages.",
+    symbolism: [s("Bird-of-paradise plumes", "Status and beauty in highland dress"), s("The Asaro Mudmen", "A legend of warriors covered in clay to frighten their enemies")],
+  },
+
+  // Third world batch, added 22 November 2026 (festivals-world-3.ts).
+  krampuslauf: {
+    originalNames: [n("Krampuslauf", "German", "de")],
+    symbolism: [s("The Krampus mask", "Winter's wild spirits, tamed by Saint Nicholas"), s("Bells", "Noise to drive away the darkness")],
+  },
+  janu: {
+    originalNames: [n("Jāņi", "Latvian", "lv"), n("Līgo", "Latvian", "lv")],
+    symbolism: [s("Oak wreaths", "Strength, worn by men"), s("Caraway cheese", "Its round yellow shape is the sun")],
+  },
+  uzgavenes: {
+    originalNames: [n("Užgavėnės", "Lithuanian", "lt")],
+    symbolism: [s("Lašininis and Kanapinis", "Fat winter and lean spring in a mock battle"), s("Morė", "The straw effigy burned to end winter")],
+  },
+  thjodhatid: {
+    originalNames: [n("Þjóðhátíð í Vestmannaeyjum", "Icelandic", "is")],
+    symbolism: [s("The bonfire", "Lit on the first night of the festival"), s("Brekkusöngur", "Thousands singing together on the hillside")],
+  },
+  martisor: {
+    originalNames: [n("Mărțișor", "Romanian", "ro")],
+    symbolism: [s("Red and white string", "Winter and spring, life and purity"), s("The charm", "Good luck for the year")],
+  },
+  nauryz: {
+    originalNames: [n("Наурыз", "Kazakh", "kk", "Nauryz")],
+    symbolism: [s("Nauryz kozhe", "Seven ingredients for seven blessings"), s("The yurt", "Home and hospitality on the steppe")],
+  },
+  "jerash-festival": {
+    originalNames: [n("مهرجان جرش للثقافة والفنون", "Arabic", "ar", "Mahrajān Jarash lil-Thaqāfa wal-Funūn")],
+    symbolism: [s("The Roman theatres", "Ancient stages brought back to life"), s("Dabke", "The line dance of community")],
+  },
+  "boun-bang-fai": {
+    originalNames: [n("ບຸນບັ້ງໄຟ", "Lao", "lo", "Boun Bang Fai")],
+    symbolism: [s("Bamboo rockets", "Messages to the rain god Phaya Thaen"), s("The naga", "The serpent of water and fertility")],
+  },
+  "kwita-izina": {
+    originalNames: [n("Kwita Izina", "Kinyarwanda", "rw")],
+    symbolism: [s("Naming", "Welcoming a newborn into the community"), s("The mountain gorilla", "Rwanda's conservation success")],
+  },
+  "festival-on-the-niger": {
+    originalNames: [n("Festival sur le Niger", "French", "fr")],
+    symbolism: [s("The river Niger", "The source of life and culture in Mali"), s("Sogo bo puppets", "Animals and spirits of Bambara theatre")],
+  },
+  "accompong-maroon-festival": {
+    originalNames: [],
+    namesNote: "Known by its English name; Maroon traditions keep words and songs from Akan and other African languages.",
+    symbolism: [s("The abeng", "A cow-horn trumpet once used to send signals"), s("The Kindah tree", "Maroon unity and kinship")],
+  },
+  "haitian-kanaval": {
+    originalNames: [n("Kanaval", "Haitian Creole", "ht")],
+    symbolism: [s("Papier-mâché masks", "Jacmel's artistry and satire"), s("Rara vaksin trumpets", "Bamboo music of the streets")],
+  },
+  "diablos-danzantes-de-yare": {
+    originalNames: [n("Diablos Danzantes de Yare", "Spanish", "es")],
+    symbolism: [s("Devil masks", "Evil that submits to the sacred"), s("Kneeling devils", "The triumph of good")],
+  },
+  "desfile-de-llamadas": {
+    originalNames: [n("Desfile de Llamadas", "Spanish", "es")],
+    symbolism: [s("Candombe drums", "Afro-Uruguayan heritage, played in three voices"), s("The mama vieja", "An elder figure of the comparsa")],
+  },
+  "teuila-festival": {
+    originalNames: [n("Teuila", "Samoan", "sm")],
+    symbolism: [s("The teuila flower", "Red ginger, Samoa's national flower"), s("The fire knife", "Skill and courage of Samoan warriors")],
+  },
 };
 
 /** A plain description of how the festival's date is set, from its date rule unless overridden. */

@@ -105,6 +105,20 @@ export const foods: Food[] = [
   f("ambok", "Ambok", "KH", ["bon-om-touk"], "snack", "vegan", [], ["young rice, roasted and pounded flat", "coconut", "banana"], "Flattened young rice mixed with coconut and banana, eaten at midnight to salute the moon at Bon Om Touk.", "Ambok"),
   f("maple-taffy", "Maple taffy", "CA", ["quebec-winter-carnival"], "sweet", "vegan", [], ["maple syrup", "fresh snow"], "Hot maple syrup poured on snow and rolled onto a stick as it sets: tire d'érable.", "Maple_taffy"),
   f("basler-mehlsuppe", "Basler Mehlsuppe", "CH", ["basel-fasnacht"], "main", "vegetarian", ["gluten", "dairy"], ["browned flour", "butter", "stock", "onion", "grated cheese"], "Basel's browned-flour soup, eaten in the small hours after the Morgestraich.", "Mehlsuppe"),
+  // Second world batch foods, added 22 November 2026 (all vegetarian).
+  f("mazurek", "Mazurek", "PL", ["smigus-dyngus"], "sweet", "vegetarian", ["gluten", "dairy", "egg", "nuts"], ["shortcrust pastry", "caramel or chocolate", "nuts", "dried fruit"], "A flat Easter cake decorated with nuts and dried fruit, made for the Polish Easter table.", "Mazurek_(cake)"),
+  f("varenyky", "Varenyky", "UA", ["kupala-night"], "main", "vegetarian", ["gluten", "dairy"], ["flour", "potato", "onion", "sour cream", "cherries for a sweet version"], "Ukraine's filled dumplings, made with potato, cheese or summer cherries.", "Varenyky"),
+  f("kurtoskalacs", "Kürtőskalács", "HU", ["busojaras"], "sweet", "vegetarian", ["gluten", "dairy", "egg"], ["sweet yeast dough", "sugar", "cinnamon", "walnuts"], "Chimney cake: sweet dough wound on a spit, roasted over embers and rolled in sugar.", "Kürtőskalács"),
+  f("banitsa", "Banitsa", "BG", ["baba-marta"], "main", "vegetarian", ["gluten", "dairy", "egg"], ["filo pastry", "white brine cheese", "eggs", "yoghurt"], "Bulgaria's layered filo pastry with cheese, baked for holidays and often hiding lucky charms at New Year.", "Banitsa"),
+  f("tangyuan", "Tangyuan", "TW", ["taiwan-lantern-festival"], "sweet", "vegan", [], ["glutinous rice flour", "black sesame paste", "ginger syrup"], "Sweet glutinous rice balls in syrup, eaten at the Lantern Festival for family togetherness.", "Tangyuan_(food)"),
+  f("mandazi", "Mandazi", "KE", ["lamu-cultural-festival"], "snack", "vegetarian", ["gluten"], ["flour", "coconut milk", "cardamom", "sugar"], "Lightly sweet Swahili fried bread flavoured with coconut and cardamom.", "Mandazi"),
+  f("colada-morada", "Colada morada", "EC", ["dia-de-los-difuntos-ecuador"], "drink", "vegan", [], ["purple corn flour", "blackberries", "naranjilla", "pineapple", "cinnamon", "cloves"], "A thick spiced purple fruit drink made for the Day of the Dead.", "Colada_morada"),
+  // Third world batch foods, added 22 November 2026 (all vegetarian).
+  f("vanillekipferl", "Vanillekipferl", "AT", ["krampuslauf"], "sweet", "vegetarian", ["gluten", "dairy", "nuts"], ["flour", "butter", "ground almonds or walnuts", "vanilla sugar"], "Crescent biscuits dusted with vanilla sugar, baked in Austrian homes through Advent.", "Vanillekipferl"),
+  f("janu-siers", "Jāņu siers", "LV", ["janu"], "snack", "vegetarian", ["dairy", "egg"], ["curd cheese", "milk", "eggs", "butter", "caraway seeds"], "A round caraway cheese, its shape and colour like the sun, eaten at midsummer.", "Jāņu_siers"),
+  f("cozonac", "Cozonac", "RO", ["martisor"], "sweet", "vegetarian", ["gluten", "dairy", "egg", "nuts"], ["sweet yeast dough", "walnuts", "cocoa", "raisins"], "A swirled sweet bread filled with walnuts and cocoa, baked for spring and winter holidays.", "Cozonac"),
+  f("khao-niao", "Sticky rice (khao niao)", "LA", ["boun-bang-fai"], "main", "vegan", [], ["glutinous rice", "water"], "Steamed glutinous rice, the heart of every Lao meal, eaten by hand from a woven basket.", "Glutinous_rice"),
+  f("roast-breadfruit", "Roast breadfruit", "JM", ["accompong-maroon-festival"], "main", "vegan", [], ["breadfruit", "coconut oil"], "Breadfruit roasted whole over a fire, a staple of Jamaican and Maroon cooking.", "Breadfruit"),
 ];
 
 export const foodBySlug = new Map(foods.map((food) => [food.slug, food]));

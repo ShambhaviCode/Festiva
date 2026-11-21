@@ -117,6 +117,10 @@ describe("intelligence (grounded, no AI provider)", () => {
     expect(a.answer).toMatch(/could not find/);
     expect(a.sources).toHaveLength(0);
   });
+  test("generic title words alone do not match, but full festival names do", () => {
+    expect(groundedAnswer("any plans for tomorrow night or the weekend show", now).facts).toHaveLength(0);
+    expect(groundedAnswer("Tell me about Kupala Night", now).facts.map((f) => f.href)).toContain("/discover/kupala-night");
+  });
   test("food answers come from the Taste dataset", () => {
     const a = groundedAnswer("What do people eat at Hanukkah?", now);
     expect(a.facts.map((f) => f.href)).toEqual(expect.arrayContaining(["/taste/latkes", "/taste/sufganiyot"]));

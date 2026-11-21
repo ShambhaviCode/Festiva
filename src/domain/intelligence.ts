@@ -62,6 +62,13 @@ const STOP = new Set(
   "the a an is are was were be of for in on at to do does did what which how who whom why when where there here this that these those it its they them their our your my me i you we he she and or but if so not no yes can could should would will shall may might must have has had get give need want like about tell show some any all more most much many also just than then too very with from into during over under by as up out people please thing things".split(" "),
 );
 
+/**
+ * Words that appear in many festival titles ("Kupala Night", "King's Day",
+ * "Goroka Show") but say nothing about which one is meant. On their own they
+ * must not pull in an entry; full names still match through `search`.
+ */
+const GENERIC_TITLE_WORDS = new Set("night nights day days eve week festival festivals fest show last first great".split(" "));
+
 /** Find the festival the question is about, tolerating extra words. */
 export function findFestival(query: string): Festival | undefined {
   const q = ` ${normalise(query)} `;
@@ -90,7 +97,7 @@ export function retrieveDocs(query: string, limit = 5): SearchDoc[] {
   // Fall back to single words only when they name an entry (a title or alias match),
   // so unrelated questions are not answered with loosely related text.
   const index = buildIndex();
-  for (const token of tokens.filter((t) => t.length >= 4)) {
+  for (const token of tokens.filter((t) => t.length >= 4 && !GENERIC_TITLE_WORDS.has(t))) {
     for (const d of index) {
       if (!seen.has(d.id) && scoreDoc(d, [token]) >= 4) seen.set(d.id, d);
     }

@@ -675,6 +675,156 @@ export const FESTIVAL_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "source": "https://commons.wikimedia.org/wiki/File:Five_Gugge_at_Fasnacht_Basel_2024_on_Mittlere_Br%C3%BCcke_03.jpg",
     "title": "Five Gugge at Fasnacht Basel 2024 on Mittlere Brücke 03.jpg"
+  },
+  "kupala-night": {
+    "src": "/photos/festivals/kupala-night.jpg",
+    "width": 1000,
+    "height": 566,
+    "artist": "Simon Kozhin",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B2%D0%B0%D0%BD_%D0%9A%D1%83%D0%BF%D0%B0%D0%BB%D0%B0.%D0%93%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0_%D0%B2%D0%B5%D0%BD%D0%BA%D0%B0%D1%85.2008.%D0%94%D0%BE%D1%81%D0%BA%D0%B0,%D0%BC%D0%B0%D1%81%D0%BB%D0%BE150%D1%8585_%D1%81%D0%BC.jpeg",
+    "title": "Иван Купала.Гадание на венках.2008.Доска,масло150х85 см.jpeg"
+  },
+  "busojaras": {
+    "src": "/photos/festivals/busojaras.jpg",
+    "width": 1000,
+    "height": 663,
+    "artist": "User:Themightyquill",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Busojaras-Buso_and_Son.jpg",
+    "title": "Busojaras-Buso and Son.jpg"
+  },
+  "taiwan-lantern-festival": {
+    "src": "/photos/festivals/taiwan-lantern-festival.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "-Zest",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lantern_Festival_in_Taiwan_at_night_5.jpg",
+    "title": "Lantern Festival in Taiwan at night 5.jpg"
+  },
+  "lamu-cultural-festival": {
+    "src": "/photos/festivals/lamu-cultural-festival.jpg",
+    "width": 960,
+    "height": 544,
+    "artist": "Almaddy2022",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lamu_Old_Town.jpg",
+    "title": "Lamu Old Town.jpg"
+  },
+  "fiestas-patrias-chile": {
+    "src": "/photos/festivals/fiestas-patrias-chile.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Osmar Valdebenito",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cueca_en_La_Moneda.jpg",
+    "title": "Cueca en La Moneda.jpg"
+  },
+  "oruro-carnival": {
+    "src": "/photos/festivals/oruro-carnival.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Elemaki",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carnaval_de_Oruro_dia_I_(60).JPG",
+    "title": "Carnaval de Oruro dia I (60).JPG"
+  },
+  "krampuslauf": {
+    "src": "/photos/festivals/krampuslauf.jpg",
+    "width": 1000,
+    "height": 847,
+    "artist": "Naturpuur",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hl._Nikolaus_in_Begleitung_des_Krampus_und_Engeln.jpg",
+    "title": "Hl. Nikolaus in Begleitung des Krampus und Engeln.jpg"
+  },
+  "janu": {
+    "src": "/photos/festivals/janu.jpg",
+    "width": 1000,
+    "height": 664,
+    "artist": "Heinrihsons",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:P%C5%ABdeles_iedeg%C5%A1ana.jpg",
+    "title": "Pūdeles iedegšana.jpg"
+  },
+  "thjodhatid": {
+    "src": "/photos/festivals/thjodhatid.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Drumstick21",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%C3%9Ej%C3%B3%C3%B0h%C3%A1t%C3%AD%C3%B0_2022.jpg",
+    "title": "Þjóðhátíð 2022.jpg"
+  },
+  "jerash-festival": {
+    "src": "/photos/festivals/jerash-festival.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Addustour, Jordan Press &amp; Publication Co.",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jerash_Festival_2018_15.jpg",
+    "title": "Jerash Festival 2018 15.jpg"
+  },
+  "boun-bang-fai": {
+    "src": "/photos/festivals/boun-bang-fai.jpg",
+    "width": 1000,
+    "height": 638,
+    "artist": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2013_Yasothon_Rocket_Festival_05.jpg",
+    "title": "2013 Yasothon Rocket Festival 05.jpg"
+  },
+  "kwita-izina": {
+    "src": "/photos/festivals/kwita-izina.jpg",
+    "width": 1000,
+    "height": 668,
+    "artist": "Thesmiler de",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kwita_Izina.JPG",
+    "title": "Kwita Izina.JPG"
+  },
+  "festival-on-the-niger": {
+    "src": "/photos/festivals/festival-on-the-niger.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Lyfengine",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Roundabout_in_Segou_1.jpg",
+    "title": "Roundabout in Segou 1.jpg"
+  },
+  "accompong-maroon-festival": {
+    "src": "/photos/festivals/accompong-maroon-festival.jpg",
+    "width": 1000,
+    "height": 1002,
+    "artist": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Accompong,_Jamaica,_early_20th_century_(imp-cswc-GB-237-CSWC47-LS12-015).jpg",
+    "title": "Accompong, Jamaica, early 20th century (imp-cswc-GB-237-CSWC47-LS12-015).jpg"
+  },
+  "diablos-danzantes-de-yare": {
+    "src": "/photos/festivals/diablos-danzantes-de-yare.jpg",
+    "width": 1000,
+    "height": 784,
+    "artist": "Wilfredor",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Dancing_Devils_of_Yare_Mask_from_Venezuela.jpg",
+    "title": "Dancing Devils of Yare Mask from Venezuela.jpg"
   }
 };
 
@@ -1068,6 +1218,116 @@ export const DISH_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "source": "https://commons.wikimedia.org/wiki/File:MontLone_yeibaw.JPG",
     "title": "MontLone yeibaw.JPG"
+  },
+  "mazurek": {
+    "src": "/photos/dishes/mazurek.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Madzia Bryll",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:91365_Mazurek.jpg",
+    "title": "91365 Mazurek.jpg"
+  },
+  "varenyky": {
+    "src": "/photos/dishes/varenyky.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "DemieK07",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Varenyky_with_Potatoes_-_2026_-03.jpg",
+    "title": "Varenyky with Potatoes - 2026 -03.jpg"
+  },
+  "kurtoskalacs": {
+    "src": "/photos/dishes/kurtoskalacs.jpg",
+    "width": 1000,
+    "height": 1248,
+    "artist": "Cyril5555",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:K%C3%BCrt%C5%91skal%C3%A1cs2011.jpg",
+    "title": "Kürtőskalács2011.jpg"
+  },
+  "banitsa": {
+    "src": "/photos/dishes/banitsa.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Sheku80",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BA%D1%83%D1%81%D0%BD%D0%B0_%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B0_%D0%B1%D0%B0%D0%BD%D0%B8%D1%86%D0%B0.JPG",
+    "title": "Вкусна домашна баница.JPG"
+  },
+  "tangyuan": {
+    "src": "/photos/dishes/tangyuan.jpg",
+    "width": 880,
+    "height": 587,
+    "artist": "cherrylet",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pumpkin_tangyuan_(%E6%B1%A4%E5%9C%86)_with_red_bean_baste_and_black_sesame_fillings.jpg",
+    "title": "Pumpkin tangyuan (汤圆) with red bean baste and black sesame fillings.jpg"
+  },
+  "mandazi": {
+    "src": "/photos/dishes/mandazi.jpg",
+    "width": 576,
+    "height": 384,
+    "artist": "The original uploader was ChildofMidnight at English Wikipedia.",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bowl_of_mandazi.jpg",
+    "title": "Bowl of mandazi.jpg"
+  },
+  "vanillekipferl": {
+    "src": "/photos/dishes/vanillekipferl.jpg",
+    "width": 1000,
+    "height": 664,
+    "artist": "Schlurcher",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vanillekipferl-Nahaufnahme.jpg",
+    "title": "Vanillekipferl-Nahaufnahme.jpg"
+  },
+  "janu-siers": {
+    "src": "/photos/dishes/janu-siers.jpg",
+    "width": 1000,
+    "height": 1000,
+    "artist": "Xil",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Caraway_cheese.jpg",
+    "title": "Caraway cheese.jpg"
+  },
+  "cozonac": {
+    "src": "/photos/dishes/cozonac.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Vvssmmaann",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cozonac-cu-nuca-103.jpg",
+    "title": "Cozonac-cu-nuca-103.jpg"
+  },
+  "khao-niao": {
+    "src": "/photos/dishes/khao-niao.jpg",
+    "width": 1000,
+    "height": 667,
+    "artist": "국립국어원",
+    "license": "CC BY-SA 2.0 kr",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/kr/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Chapssal_(glutinous_rice).jpg",
+    "title": "Chapssal (glutinous rice).jpg"
+  },
+  "roast-breadfruit": {
+    "src": "/photos/dishes/roast-breadfruit.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Hans Hillewaert",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Artocarpus_altilis_(fruit).jpg",
+    "title": "Artocarpus altilis (fruit).jpg"
   }
 };
 
@@ -1544,6 +1804,146 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "source": "https://commons.wikimedia.org/wiki/File:Binche_JPG01.jpg",
     "title": "Binche JPG01.jpg"
+  },
+  "prague": {
+    "src": "/photos/places/prague.jpg",
+    "width": 1000,
+    "height": 595,
+    "artist": "Moyan Brenn from Italy",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prague_(6365119737).jpg",
+    "title": "Prague (6365119737).jpg"
+  },
+  "copenhagen": {
+    "src": "/photos/places/copenhagen.jpg",
+    "width": 1000,
+    "height": 660,
+    "artist": "Moahim",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2018_-_Christiansborg_from_the_Marble_Bridge.jpg",
+    "title": "2018 - Christiansborg from the Marble Bridge.jpg"
+  },
+  "paro": {
+    "src": "/photos/places/paro.jpg",
+    "width": 833,
+    "height": 1250,
+    "artist": "Christopher Michel",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paro,_Paro,_Bhutan_(8026008882).jpg",
+    "title": "Paro, Paro, Bhutan (8026008882).jpg"
+  },
+  "stone-town": {
+    "src": "/photos/places/stone-town.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "No machine-readable author provided. Mbz1 assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Zanzibar_sultan_palace.jpg",
+    "title": "Zanzibar sultan palace.jpg"
+  },
+  "saint-louis-senegal": {
+    "src": "/photos/places/saint-louis-senegal.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Jim Williams",
+    "license": "CC BY-SA 3.0 igo",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Island_of_Saint-Louis-113799.jpg",
+    "title": "Island of Saint-Louis-113799.jpg"
+  },
+  "santiago-chile": {
+    "src": "/photos/places/santiago-chile.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Miguel hernandez",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palacio_de_La_Moneda_-_miguelreflex.jpg",
+    "title": "Palacio de La Moneda - miguelreflex.jpg"
+  },
+  "oruro": {
+    "src": "/photos/places/oruro.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Parallelepiped09",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santuario_de_Nuestra_Se%C3%B1ora_del_Socav%C3%B3n,_Oruro.jpg",
+    "title": "Santuario de Nuestra Señora del Socavón, Oruro.jpg"
+  },
+  "vilnius": {
+    "src": "/photos/places/vilnius.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "BigHead",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vilnius_old_town_by_Augustas_Didzgalvis.jpg",
+    "title": "Vilnius old town by Augustas Didzgalvis.jpg"
+  },
+  "heimaey": {
+    "src": "/photos/places/heimaey.jpg",
+    "width": 846,
+    "height": 638,
+    "artist": "Aerial_view_of_the_Westmen_Isles,_2009-02-01.jpg: Bruce McAdam Camera location62",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Heimaey,_2009-02-01.jpg",
+    "title": "Aerial view of Heimaey, 2009-02-01.jpg"
+  },
+  "almaty": {
+    "src": "/photos/places/almaty.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Dauren Nabijan",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Almaty_K%C3%B6k_T%C3%B6be.jpg",
+    "title": "Almaty Kök Töbe.jpg"
+  },
+  "jerash": {
+    "src": "/photos/places/jerash.jpg",
+    "width": 1000,
+    "height": 676,
+    "artist": "Petar Milošević",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oval_Plaza_(Forum_Romanum,_Gerasa_-_Jerash,_Jordan)_-_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D9%86%D8%AF%D9%88%D8%A9,_%D8%AC%D8%B1%D8%B4.jpg",
+    "title": "Oval Plaza (Forum Romanum, Gerasa - Jerash, Jordan) - ساحة الندوة, جرش.jpg"
+  },
+  "segou": {
+    "src": "/photos/places/segou.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Lyfengine",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Roundabout_in_Segou_1.jpg",
+    "title": "Roundabout in Segou 1.jpg"
+  },
+  "jacmel": {
+    "src": "/photos/places/jacmel.jpg",
+    "width": 1000,
+    "height": 695,
+    "artist": "User:Doron",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:JacmelView.jpg",
+    "title": "JacmelView.jpg"
+  },
+  "montevideo": {
+    "src": "/photos/places/montevideo.jpg",
+    "width": 1000,
+    "height": 665,
+    "artist": "Eduardo Ruggieri",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PALACIO_LEGISLATIVO_01.JPG",
+    "title": "PALACIO LEGISLATIVO 01.JPG"
   }
 };
 

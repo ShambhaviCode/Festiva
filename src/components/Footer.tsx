@@ -23,7 +23,7 @@ export function Footer() {
         </div>
         <nav aria-label="Footer">
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
-            {[...NAV, { href: "/matchmaker", label: "Matchmaker" }, { href: "/plans", label: "My plans" }, { href: "/saved", label: "Saved" }, { href: "/about", label: "About" }, { href: "/privacy", label: "Privacy" }, { href: "/account", label: "Account" }].map((item) => (
+            {[...NAV, { href: "/matchmaker", label: "Matchmaker" }, { href: "/plans", label: "My plans" }, { href: "/saved", label: "Saved" }, { href: "/privacy", label: "Privacy" }].map((item) => (
               <li key={item.href}>
                 <Link className="link" href={item.href}>
                   {item.label}

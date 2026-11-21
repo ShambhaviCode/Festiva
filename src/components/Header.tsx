@@ -12,8 +12,6 @@ const EXTRA = [
   { href: "/matchmaker", label: "Matchmaker" },
   { href: "/plans", label: "My plans" },
   { href: "/saved", label: "Saved" },
-  { href: "/account", label: "Account" },
-  { href: "/about", label: "About" },
 ];
 
 function HeaderInner({ pathname }: { pathname: string }) {

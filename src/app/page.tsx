@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Globe } from "@/components/Globe";
 import { ViewTransition } from "react";
-import { Motif } from "@/components/Motif";
+import { ArtImage } from "@/components/art/Art";
 import { UpcomingList } from "@/components/Upcoming";
 import { festivalBySlug, festivals } from "@/data/festivals";
 import { BUDGET_LABELS } from "@/domain/budget";
@@ -133,9 +133,11 @@ export default function HomePage() {
           >
             <ViewTransition name={`art-festival-${feature.slug}`}>
               <div className="arch aspect-[4/5] w-full">
-                <Motif
+                <ArtImage
+                  art={{ kind: "rosette" }}
                   seed={feature.slug}
                   palette={feature.palette}
+                  sizes="(max-width: 1024px) 90vw, 40vw"
                   className="h-full w-full transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.04]"
                 />
               </div>
@@ -166,9 +168,11 @@ export default function HomePage() {
                       className="group grid grid-cols-[3rem_1fr] items-center gap-5 py-4 sm:grid-cols-[3rem_1fr_auto]"
                     >
                       <span className="arch block h-14 w-12">
-                        <Motif
+                        <ArtImage
+                          art={{ kind: "rosette" }}
                           seed={slug}
                           palette={f.palette}
+                          sizes="48px"
                           className="h-full w-full"
                         />
                       </span>
@@ -350,9 +354,6 @@ export default function HomePage() {
               as one.
             </p>
             <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
-              <Link href="/about" className="link link-accent">
-                About FESTIVA
-              </Link>
               {site.founder.links.map((link) => (
                 <a
                   key={link.url}

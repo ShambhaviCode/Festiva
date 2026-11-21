@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ViewTransition, type ReactNode } from "react";
+import { FESTIVAL_PHOTOS } from "@/data/photos";
 import { ArtImage, frameClass, type Art } from "./art/Art";
 
 export function PageIntro({
@@ -75,9 +76,26 @@ export function DetailHero({
             seed={seed}
             palette={palette}
             className="h-full w-full"
+            sizes="(max-width: 1024px) 90vw, 30vw"
           />
         </div>
       </ViewTransition>
+      {art.kind === "rosette" && FESTIVAL_PHOTOS[seed] && (
+        <p className="note -mt-6 text-xs lg:col-start-2">
+          Photo:{" "}
+          <a href={FESTIVAL_PHOTOS[seed].source} className="link" rel="noopener noreferrer" target="_blank">
+            {FESTIVAL_PHOTOS[seed].artist}
+          </a>
+          , {FESTIVAL_PHOTOS[seed].licenseUrl ? (
+            <a href={FESTIVAL_PHOTOS[seed].licenseUrl!} className="link" rel="noopener noreferrer license" target="_blank">
+              {FESTIVAL_PHOTOS[seed].license}
+            </a>
+          ) : (
+            FESTIVAL_PHOTOS[seed].license
+          )}
+          , via Wikimedia Commons
+        </p>
+      )}
     </section>
   );
 }

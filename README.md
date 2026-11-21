@@ -1,133 +1,73 @@
 <div align="center">
 
-# 🪔 FESTIVA 🎉
+# FESTIVA
 
-### Discover the world. Celebrate every culture. 🌍✨
+**Global festival discovery and AI-assisted celebration planning.**
 
-*Every celebration has a story.*
-
-[![Live demo](https://img.shields.io/badge/🚀_Live_demo-festiva--eta.vercel.app-f0a030?style=for-the-badge)](https://festiva-eta.vercel.app)
+[Live demo](https://festiva-eta.vercel.app) · [Architecture](docs/ARCHITECTURE.md) · [Sponsor evidence](docs/evidence/integration-evidence-2026-11-21-live.md)
 
 ![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React_19-20232a?style=flat-square&logo=react&logoColor=61dafb)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_4-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)
-![Supabase ready](https://img.shields.io/badge/Supabase-ready-3ecf8e?style=flat-square&logo=supabase&logoColor=white)
-![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-dcc898?style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript_strict-3178c6?style=flat-square&logo=typescript&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase_RLS-3ecf8e?style=flat-square&logo=supabase&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-555555?style=flat-square)
 
-<img src="public/photos/festivals/diwali.jpg" width="24%" alt="Diwali lamps" /> <img src="public/photos/festivals/holi.jpg" width="24%" alt="Holi colours" /> <img src="public/photos/festivals/lunar-new-year.jpg" width="24%" alt="Lunar New Year lanterns" /> <img src="public/photos/festivals/rio-carnival.jpg" width="24%" alt="Carnival in Rio" />
+<img src="public/photos/festivals/diwali.jpg" width="24%" alt="" /> <img src="public/photos/festivals/holi.jpg" width="24%" alt="" /> <img src="public/photos/festivals/lunar-new-year.jpg" width="24%" alt="" /> <img src="public/photos/festivals/rio-carnival.jpg" width="24%" alt="" />
 
 </div>
 
----
+## Overview
 
-## ✨ What is FESTIVA?
+FESTIVA covers 46 festivals across 40 countries: history, traditions, food, dress, music and destinations, with a sourced next date for every movable festival. A deterministic **Matchmaker** turns six answers into a complete celebration plan, and **Gift Circle** lets a group organise a gift exchange across languages, by voice or text.
 
-FESTIVA is a global guide to **festivals, traditions, food, attire, music and destinations** 🎊, with a **Matchmaker** that turns them into a personalised celebration plan 🗓️ and a **Gift Circle** that helps families and friends organise gift exchanges across languages 🎁.
+## Sponsor integrations, verified live
 
-🌏 **46 festivals** from **40 countries**, each with its history, meaning, traditions, etiquette and the next date, with a source for every movable date.
-
----
-
-## 🧭 What you can do
-
-| | Module | What it does |
+| | Integration | Verified |
 |---|---|---|
-| 🌍 | **Discover** | Search and filter festivals on a WebGL globe of festival lights |
-| 🗺️ | **Journeys** | Countries and cities where celebrations come alive |
-| 🍬 | **Taste** | Festival dishes and sweets, with diet and allergen notes |
-| 👘 | **Wear** | Traditional dress, textiles and how to wear them |
-| 🛍️ | **Shop** | Gift ideas by tier, from everyday to elite |
-| 💌 | **Wishes** | Design a greeting card and share it |
-| 🎮 | **Play** | Five cultural games |
-| 🎶 | **Sound** | Music from sixteen genres around the world |
-| 🤖 | **Intelligence** | Ask FESTIVA's cultural assistant |
-| 💫 | **Matchmaker** | Six questions → a full plan: schedule, food, gifts, attire, music and a budget that adds up |
-| 🎁 | **Gift Circle** | Invite people, capture wishes by voice or text in any language, draw Secret Santa, and track contributions |
+| **Sarvam AI** | Speech-to-text (`saaras:v4`), translation (`sarvam-translate:v1`), structured preference extraction (`sarvam-105b`, JSON schema). Every AI-derived field carries an HMAC-signed provenance receipt, verified on the server. | Live |
+| **Flagsmith** | Official server SDK with local evaluation. Ten flags enforced in both UI and API, validated remote config, and a multivariate onboarding experiment. No redeploy needed for any change. | Live |
+| **NudgeBee** | Five alert rules over real telemetry, delivered to NudgeBee's Event Webhook. Runbooks are approval-gated, reversible and audited. Runs on a self-hosted Community install (Helm on k3s). | Live |
 
----
+Request IDs and results: [evidence report](docs/evidence/integration-evidence-2026-11-21-live.md).
 
-## 🤝 Sponsor integrations, live and verified ✅
+## Engineering
 
-| Sponsor | How FESTIVA uses it | Status |
-|---|---|---|
-| 🗣️ **Sarvam AI** | Speech-to-text for voice wishes (`saaras:v4`), translation across Indian languages (`sarvam-translate:v1`), structured preferences and cultural suggestions (`sarvam-105b`) | ✅ **Live** |
-| 🚩 **Flagsmith** | Ten server-enforced feature flags, remote configuration and an onboarding A/B experiment, all changeable with no redeploy | ✅ **Live** |
-| 🐝 **NudgeBee** | Real alerts (latency, storage, voice failures, error rate) sent to NudgeBee's Event Webhook, plus approval-gated runbooks with an audit trail | ✅ **Live** (self-hosted Community edition) |
+- **Architecture:** Next.js 16 App Router with Cache Components and partial prerendering (264 static pages). Pure domain logic sits in `src/domain`, curated data in `src/data`, and integrations are isolated in `src/lib/integrations`.
+- **Correctness:** budget arithmetic in integer minor units; no model ever computes a total. Zod 4 validates every input and environment variable.
+- **Security:** strict CSP and security headers, server-only secrets, spoof-resistant rate limiting, signed admin sessions, and Row Level Security on all 30 Supabase tables.
+- **Resilience:** every external service has an honest fallback, so the app runs fully with zero configuration.
+- **Frontend:** React 19, Tailwind CSS 4, a WebGL globe (Three.js and GLSL) with 2D fallback, view transitions, and accessibility tested with axe-core.
 
-📄 Evidence report with real request IDs: [docs/evidence/integration-evidence-2026-11-21-live.md](docs/evidence/integration-evidence-2026-11-21-live.md)
-🔍 Full details: [docs/SPONSORS.md](docs/SPONSORS.md)
-
----
-
-## 🛠️ Built with
-
-⚡ **Next.js 16** (App Router, Cache Components) · ⚛️ **React 19** · 🟦 **TypeScript** (strict) · 🎨 **Tailwind CSS 4** · 🌀 **Framer Motion** · 🌐 **Three.js + GLSL** · 🛡️ **Zod 4** · 🐘 **Supabase** (PostgreSQL, Auth, Row Level Security) · 🧪 **Jest + Playwright + axe-core**
-
-🔒 Security headers and a Content-Security-Policy, server-only secrets, rate limiting, and every integration with an honest fallback.
-
----
-
-## 🚀 Run it locally
+## Quick start
 
 ```bash
 npm ci
-npm run dev        # 👉 http://localhost:3000
+npm run dev            # http://localhost:3000
 ```
 
-Production mode:
+No environment variables are required. To enable the integrations, copy [`.env.example`](.env.example) to `.env.local`.
+
+## Quality
 
 ```bash
-npm run build
-npm run start
+npm run lint && npm run typecheck   # ESLint, strict TypeScript
+npm test                            # 288 unit tests
+npm run db:verify                   # migrations and RLS on embedded Postgres
+npm run test:e2e                    # Playwright end-to-end and accessibility
 ```
 
-🧩 **No environment variables are needed.** FESTIVA runs in demo mode out of the box. To switch on the sponsor services, copy [`.env.example`](.env.example) to `.env.local` and fill in your own keys. 🔐 Never commit `.env.local`.
+## Documentation
 
----
+[Architecture](docs/ARCHITECTURE.md) · [Deployment](docs/DEPLOYMENT.md) · [Sponsors](docs/SPONSORS.md) · [Testing](docs/TESTING.md) · [Demo script](docs/DEMO_3_MINUTES.md) · [Known limitations](docs/KNOWN_LIMITATIONS.md)
 
-## ✅ Quality checks
+## Credits
 
-```bash
-npm run lint         # 🧹 ESLint
-npm run typecheck    # 🟦 TypeScript
-npm test             # 🧪 unit tests
-npm run db:verify    # 🐘 database migrations and RLS on PGlite
-npm run test:e2e     # 🎭 end-to-end tests in a real browser
-```
-
----
-
-## 📚 Documentation
-
-| 📄 Doc | What's inside |
-|---|---|
-| [Architecture](docs/ARCHITECTURE.md) | How the app is put together |
-| [Deployment](docs/DEPLOYMENT.md) | Vercel + Supabase step by step |
-| [Windows setup](docs/WINDOWS_SETUP.md) | From an empty PC to FESTIVA running |
-| [3-minute demo](docs/DEMO_3_MINUTES.md) | What to show judges |
-| [Sponsors](docs/SPONSORS.md) | Sarvam AI, Flagsmith and NudgeBee in detail |
-| [Testing](docs/TESTING.md) | What is tested and the results |
-| [Known limitations](docs/KNOWN_LIMITATIONS.md) | What is honestly not done yet |
-
----
-
-## 🙏 Credits
-
-📸 Festival, food, attire and place photographs are from **Wikimedia Commons** under free licences (CC BY, CC BY-SA, CC0 or public domain). Each photo's author and licence is credited on its page and listed in [`src/data/photos.ts`](src/data/photos.ts).
-🔤 Fonts: Bodoni Moda and Instrument Sans (self-hosted).
-🎨 All other artwork is generated by FESTIVA's own code.
+Photographs: Wikimedia Commons under free licences, each credited on its page and in [`src/data/photos.ts`](src/data/photos.ts). All other artwork is generated in code.
 
 ---
 
 <div align="center">
 
-### 👩‍💻 Made with 💛 by **Shambhavi M K**
-
-[GitHub](https://github.com/ShambhaviCode) · [LinkedIn](https://www.linkedin.com/in/shambhavi-m-k-1b6677378/) · [X](https://x.com/heyshambhavi)
-
-📄 MIT License · 🪔 Happy celebrating! 🎆
+Built by **Shambhavi M K** · [GitHub](https://github.com/ShambhaviCode) · MIT License
 
 </div>

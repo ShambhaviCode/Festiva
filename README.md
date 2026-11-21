@@ -18,7 +18,7 @@
 
 ## Overview
 
-FESTIVA covers 109 festivals across 85 countries: history, traditions, food, dress, music and destinations, with a sourced next date for every movable festival. A deterministic **Matchmaker** turns six answers into a complete celebration plan, and **Gift Circle** lets a group organise a gift exchange across languages, by voice or text.
+FESTIVA covers 134 festivals across 128 countries: history, traditions, food, dress, music and destinations, with a sourced next date for every movable festival. A deterministic **Matchmaker** turns six answers into a complete celebration plan, and **Gift Circle** lets a group organise a gift exchange across languages, by voice or text.
 
 ## What it does for users
 
@@ -43,7 +43,7 @@ FESTIVA covers 109 festivals across 85 countries: history, traditions, food, dre
     <td><img src="docs/screenshots/app/gift-circle.jpg" alt="Gift Circle" /><br /><sub><b>Gift Circle:</b> multilingual group gifting powered by Sarvam AI</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/app/discover.jpg" alt="Discover festivals" /><br /><sub><b>Discover:</b> 109 festivals with search and filters</sub></td>
+    <td><img src="docs/screenshots/app/discover.jpg" alt="Discover festivals" /><br /><sub><b>Discover:</b> 134 festivals with search and filters</sub></td>
     <td><img src="docs/screenshots/app/taste.jpg" alt="Festival food" /><br /><sub><b>Taste:</b> festival dishes with diet and allergen notes</sub></td>
   </tr>
   <tr>
@@ -63,7 +63,7 @@ FESTIVA covers 109 festivals across 85 countries: history, traditions, food, dre
 
 ## Engineering
 
-- **Architecture:** Next.js 16 App Router with Cache Components and partial prerendering (430 static pages). Pure domain logic sits in `src/domain`, curated data in `src/data`, and integrations are isolated in `src/lib/integrations`.
+- **Architecture:** Next.js 16 App Router with Cache Components and partial prerendering (523 static pages). Pure domain logic sits in `src/domain`, curated data in `src/data`, and integrations are isolated in `src/lib/integrations`.
 - **Correctness:** budget arithmetic in integer minor units; no model ever computes a total. Zod 4 validates every input and environment variable.
 - **Security:** strict CSP and security headers, server-only secrets, spoof-resistant rate limiting, signed admin sessions, and Row Level Security on all 30 Supabase tables.
 - **Resilience:** every external service has an honest fallback, so the app runs fully with zero configuration.
@@ -82,7 +82,7 @@ npm run dev            # http://localhost:3000
 
 ```bash
 npm run lint && npm run typecheck   # ESLint, strict TypeScript
-npm test                            # 370 unit tests
+npm test                            # 402 unit tests
 npm run db:verify                   # migrations and RLS on embedded Postgres
 npm run test:e2e                    # Playwright end-to-end and accessibility
 ```

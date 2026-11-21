@@ -497,6 +497,111 @@ export const FESTIVAL_CULTURE: Record<string, FestivalCulture> = {
     originalNames: [n("Teuila", "Samoan", "sm")],
     symbolism: [s("The teuila flower", "Red ginger, Samoa's national flower"), s("The fire knife", "Skill and courage of Samoan warriors")],
   },
+
+  // Fourth world batch, added 22 November 2026 (festivals-world-4.ts).
+  "feast-of-saint-blaise": {
+    originalNames: [n("Festa svetoga Vlaha", "Croatian", "hr")],
+    symbolism: [s("The saint's relics", "Protection for the city"), s("White doves", "Peace and freedom")],
+  },
+  "guca-trumpet-festival": {
+    originalNames: [n("Драгачевски сабор трубача", "Serbian", "sr", "Dragačevski sabor trubača")],
+    symbolism: [s("The Golden Trumpet", "The prize for the best band"), s("The kolo", "The circle dance of community")],
+  },
+  kurentovanje: {
+    originalNames: [n("Kurentovanje", "Slovene", "sl")],
+    symbolism: [s("The kurent's bells", "Driving winter away"), s("The red tongue and horns", "A spirit of spring and fertility")],
+  },
+  jaanipaev: {
+    originalNames: [n("Jaanipäev", "Estonian", "et"), n("Jaaniõhtu", "Estonian", "et")],
+    symbolism: [s("The bonfire", "Light and protection"), s("The fern blossom", "A legendary flower of luck, found only on this night")],
+  },
+  "dita-e-veres": {
+    originalNames: [n("Dita e Verës", "Albanian", "sq")],
+    symbolism: [s("Verore bracelets", "Red and white thread for health"), s("Ballokume", "The festival's sweet")],
+  },
+  rtveli: {
+    originalNames: [n("რთველი", "Georgian", "ka", "Rtveli")],
+    symbolism: [s("The qvevri", "Clay vessels buried in the earth, Georgia's ancient way of making wine"), s("The vine cross", "Saint Nino's cross, bound with her hair, in legend")],
+  },
+  vardavar: {
+    originalNames: [n("Վարդավառ", "Armenian", "hy", "Vardavar")],
+    symbolism: [s("Water", "Purification, from the goddess Astghik"), s("Roses", "Vard, the rose, in the festival's name")],
+  },
+  "silk-and-spices-festival": {
+    originalNames: [n("Ipak va ziravorlar festivali", "Uzbek", "uz")],
+    symbolism: [s("Ikat silk", "Bukhara's weaving heritage"), s("Spices", "The trade of the Silk Road")],
+  },
+  "baalbeck-festival": {
+    originalNames: [n("مهرجانات بعلبك الدولية", "Arabic", "ar", "Mahrajānāt Baʿlabak ad-Duwaliyya")],
+    symbolism: [s("The Temple of Bacchus", "A stage that has hosted legends"), s("The cedar", "Lebanon's emblem")],
+  },
+  "sahara-festival-douz": {
+    originalNames: [n("مهرجان الصحراء الدولي بدوز", "Arabic", "ar", "Mahrajān aṣ-Ṣaḥrāʾ ad-Duwalī bi-Dūz")],
+    symbolism: [s("The camel", "Life and travel in the desert"), s("Bedouin poetry", "The oral culture of the nomads")],
+  },
+  kuomboka: {
+    originalNames: [n("Kuomboka", "Silozi", "loz")],
+    symbolism: [s("The Nalikwanda", "The royal barge, crowned with a black-and-white elephant"), s("The maoma drums", "The voice of the king")],
+  },
+  ngondo: {
+    originalNames: [n("Ngondo", "Duala", "dua")],
+    symbolism: [s("The sacred dive", "A message from the water spirits"), s("The pirogue", "The Sawa peoples' bond with the river and sea")],
+  },
+  "sumpango-kites": {
+    originalNames: [n("Barriletes Gigantes", "Spanish", "es")],
+    symbolism: [s("Giant kites", "Messages carried between the living and the dead"), s("Kite strings", "A link to the ancestors")],
+  },
+  "las-tablas-carnival": {
+    originalNames: [n("Carnaval de Las Tablas", "Spanish", "es")],
+    symbolism: [s("Calle Arriba and Calle Abajo", "A friendly rivalry"), s("The pollera", "Panama's national dress")],
+  },
+  "hibiscus-festival": {
+    originalNames: [],
+    namesNote: "Known by its English name; Fiji's festivals bring together iTaukei Fijian, Indo-Fijian and other communities.",
+    symbolism: [s("The hibiscus", "Fiji's flower of welcome"), s("The meke", "Dance that tells stories of Fijian history")],
+  },
+
+  // Fifth world batch, added 22 November 2026 (festivals-world-5.ts).
+  "vychodna-folklore-festival": {
+    originalNames: [n("Folklórny festival Východná", "Slovak", "sk")],
+    symbolism: [s("The fujara", "A shepherd's overtone flute, UNESCO-listed"), s("Regional costume", "The identity of each village")],
+  },
+  mnarja: {
+    originalNames: [n("L-Imnarja", "Maltese", "mt")],
+    symbolism: [s("Luminaria", "The lights once lit for the feast, which gave it its name"), s("Għana", "Maltese folk song")],
+  },
+  schueberfouer: {
+    originalNames: [n("Schueberfouer", "Luxembourgish", "lb")],
+    symbolism: [s("The Hämmelsmarsch", "A parade of sheep and musicians that opens the fair"), s("John the Blind", "The count who founded the fair in 1340")],
+  },
+  "ohrid-summer-festival": {
+    originalNames: [n("Охридско лето", "Macedonian", "mk", "Ohridsko leto")],
+    symbolism: [s("Saint Sophia", "A medieval church turned concert hall"), s("Lake Ohrid", "One of the oldest lakes in the world")],
+  },
+  "sarajevo-film-festival": {
+    originalNames: [n("Sarajevo Film Festival", "Bosnian", "bs")],
+    symbolism: [s("The Heart of Sarajevo", "The festival's award"), s("Cinema under siege", "Culture as resistance")],
+  },
+  "mimosa-festival": {
+    originalNames: [n("Praznik mimoze", "Montenegrin", "cnr")],
+    symbolism: [s("Mimosa blossom", "The first sign of spring on the bay"), s("Brass bands", "The festive sound of the coast")],
+  },
+  "moldova-wine-day": {
+    originalNames: [n("Ziua Națională a Vinului", "Romanian", "ro")],
+    symbolism: [s("The grape", "Moldova's heritage and livelihood"), s("The hora", "A circle dance of togetherness")],
+  },
+  "la-vega-carnival": {
+    originalNames: [n("Carnaval Vegano", "Spanish", "es")],
+    symbolism: [s("The diablo cojuelo", "A mischievous limping devil"), s("The vejiga", "An inflated bladder swung at the crowd")],
+  },
+  "dia-del-boyero": {
+    originalNames: [n("Día del Boyero", "Spanish", "es")],
+    symbolism: [s("The painted oxcart", "Costa Rica's national symbol of work"), s("The blessing", "Thanks for the animals and the harvest")],
+  },
+  "san-juan-ara": {
+    originalNames: [n("San Juan Ára", "Guaraní", "gn"), n("Fiesta de San Juan", "Spanish", "es")],
+    symbolism: [s("Fire games", "Courage and luck for the year"), s("Chipa", "The bread of Paraguayan fairs")],
+  },
 };
 
 /** A plain description of how the festival's date is set, from its date rule unless overridden. */

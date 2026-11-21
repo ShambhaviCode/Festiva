@@ -825,6 +825,126 @@ export const FESTIVAL_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "source": "https://commons.wikimedia.org/wiki/File:Dancing_Devils_of_Yare_Mask_from_Venezuela.jpg",
     "title": "Dancing Devils of Yare Mask from Venezuela.jpg"
+  },
+  "guca-trumpet-festival": {
+    "src": "/photos/festivals/guca-trumpet-festival.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "svickova",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Gucastatue.JPG",
+    "title": "Gucastatue.JPG"
+  },
+  "kurentovanje": {
+    "src": "/photos/festivals/kurentovanje.jpg",
+    "width": 1000,
+    "height": 667,
+    "artist": "Aleš Kravos",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ale%C5%A1_Kravos_Kurentovanje_Ptuj_2019.jpg",
+    "title": "Aleš Kravos Kurentovanje Ptuj 2019.jpg"
+  },
+  "jaanipaev": {
+    "src": "/photos/festivals/jaanipaev.jpg",
+    "width": 748,
+    "height": 1250,
+    "artist": "KrK",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jaanituli.jpg",
+    "title": "Jaanituli.jpg"
+  },
+  "rtveli": {
+    "src": "/photos/festivals/rtveli.jpg",
+    "width": 1000,
+    "height": 775,
+    "artist": "Grigory Gagarin",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Vendanges_en_Kakhetie_(B).jpg",
+    "title": "Vendanges en Kakhetie (B).jpg"
+  },
+  "silk-and-spices-festival": {
+    "src": "/photos/festivals/silk-and-spices-festival.jpg",
+    "width": 1000,
+    "height": 479,
+    "artist": "Euyasik",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kalon-Ensemble_Buchara.jpg",
+    "title": "Kalon-Ensemble Buchara.jpg"
+  },
+  "sahara-festival-douz": {
+    "src": "/photos/festivals/sahara-festival-douz.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "McKay Savage from London, UK",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tunisia_10-12_-_064_-_Douz_and_the_Festival_of_the_Sahara_(6609290791).jpg",
+    "title": "Tunisia 10-12 - 064 - Douz and the Festival of the Sahara (6609290791).jpg"
+  },
+  "ngondo": {
+    "src": "/photos/festivals/ngondo.jpg",
+    "width": 1000,
+    "height": 663,
+    "artist": "Mbiele Happi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:GedNgondoMessager.JPG",
+    "title": "GedNgondoMessager.JPG"
+  },
+  "sumpango-kites": {
+    "src": "/photos/festivals/sumpango-kites.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Jasonjdgr",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Festival_Sumpango_%2707_041.jpg",
+    "title": "Festival Sumpango '07 041.jpg"
+  },
+  "vychodna-folklore-festival": {
+    "src": "/photos/festivals/vychodna-folklore-festival.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Achernar.sk",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Vychodna.JPG",
+    "title": "Vychodna.JPG"
+  },
+  "schueberfouer": {
+    "src": "/photos/festivals/schueberfouer.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Procrastineur49",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Schueberfouer_2025_2.jpg",
+    "title": "Schueberfouer 2025 2.jpg"
+  },
+  "sarajevo-film-festival": {
+    "src": "/photos/festivals/sarajevo-film-festival.jpg",
+    "width": 1000,
+    "height": 792,
+    "artist": "Adnasaida",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Open_Air_Drone-4_(1)_2_(cropped).jpg",
+    "title": "Open Air Drone-4 (1) 2 (cropped).jpg"
+  },
+  "moldova-wine-day": {
+    "src": "/photos/festivals/moldova-wine-day.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "USAID Digital Development",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Moldova_Competitiveness_Project,_USAID_Moldova_(48121804303).jpg",
+    "title": "Moldova Competitiveness Project, USAID Moldova (48121804303).jpg"
   }
 };
 
@@ -1328,6 +1448,26 @@ export const DISH_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Artocarpus_altilis_(fruit).jpg",
     "title": "Artocarpus altilis (fruit).jpg"
+  },
+  "ballokume": {
+    "src": "/photos/dishes/ballokume.jpg",
+    "width": 703,
+    "height": 1250,
+    "artist": "Esmeralda Ko",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ballokume_dhe_lule.jpg",
+    "title": "Ballokume dhe lule.jpg"
+  },
+  "chipa": {
+    "src": "/photos/dishes/chipa.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Horacio Cambeiro",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chipa_paraguaya_en_el_Circuito_Comercial_de_Encarnaci%C3%B3n_(Paraguay).jpg",
+    "title": "Chipa paraguaya en el Circuito Comercial de Encarnación (Paraguay).jpg"
   }
 };
 
@@ -1944,6 +2084,186 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "source": "https://commons.wikimedia.org/wiki/File:PALACIO_LEGISLATIVO_01.JPG",
     "title": "PALACIO LEGISLATIVO 01.JPG"
+  },
+  "dubrovnik": {
+    "src": "/photos/places/dubrovnik.jpg",
+    "width": 1000,
+    "height": 620,
+    "artist": "Zysko serhii",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_walls_of_the_fortress_and_View_of_the_old_city._panorama.jpg",
+    "title": "The walls of the fortress and View of the old city. panorama.jpg"
+  },
+  "guca": {
+    "src": "/photos/places/guca.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Ванилица",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wiki_%C5%A0umadija_VII_Gu%C4%8Da_480.jpg",
+    "title": "Wiki Šumadija VII Guča 480.jpg"
+  },
+  "ptuj": {
+    "src": "/photos/places/ptuj.jpg",
+    "width": 1000,
+    "height": 801,
+    "artist": "Ptuj-mestnaHisa1.JPG: Sl-Ziga uploaded and derivative work: MrPanyGoff",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Ptuj_Town_Hall.jpg",
+    "title": "Ptuj Town Hall.jpg"
+  },
+  "tallinn": {
+    "src": "/photos/places/tallinn.jpg",
+    "width": 1000,
+    "height": 667,
+    "artist": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Raekoja_plats_at_night.jpg",
+    "title": "Raekoja plats at night.jpg"
+  },
+  "yerevan": {
+    "src": "/photos/places/yerevan.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Սէրուժ Ուրիշեան (Serouj Ourishian)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Ararat_and_the_Yerevan_skyline_(June_2018).jpg",
+    "title": "Mount Ararat and the Yerevan skyline (June 2018).jpg"
+  },
+  "bukhara": {
+    "src": "/photos/places/bukhara.jpg",
+    "width": 1000,
+    "height": 479,
+    "artist": "Euyasik",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kalon-Ensemble_Buchara.jpg",
+    "title": "Kalon-Ensemble Buchara.jpg"
+  },
+  "baalbek": {
+    "src": "/photos/places/baalbek.jpg",
+    "width": 1000,
+    "height": 748,
+    "artist": "Lodo from Moscow, Russia",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Bacchus,_Baalbek,_Lebanon_(49890013476).jpg",
+    "title": "Temple of Bacchus, Baalbek, Lebanon (49890013476).jpg"
+  },
+  "douz": {
+    "src": "/photos/places/douz.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "McKay Savage from London, UK",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tunisia_10-12_-_064_-_Douz_and_the_Festival_of_the_Sahara_(6609290791).jpg",
+    "title": "Tunisia 10-12 - 064 - Douz and the Festival of the Sahara (6609290791).jpg"
+  },
+  "mongu": {
+    "src": "/photos/places/mongu.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Makeche at English Wikipedia",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Litungawinterpalace.jpg",
+    "title": "Litungawinterpalace.jpg"
+  },
+  "douala": {
+    "src": "/photos/places/douala.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Olivier Charly1",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Quarter_Bali_%C3%A0_Douala_Cameroun.jpg",
+    "title": "Quarter Bali à Douala Cameroun.jpg"
+  },
+  "sumpango": {
+    "src": "/photos/places/sumpango.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Jasonjdgr",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Festival_Sumpango_%2707_041.jpg",
+    "title": "Festival Sumpango '07 041.jpg"
+  },
+  "suva": {
+    "src": "/photos/places/suva.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Maksym Kozlenko",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Suva,_Fiji_77.jpg",
+    "title": "Suva, Fiji 77.jpg"
+  },
+  "vychodna": {
+    "src": "/photos/places/vychodna.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Achernar.sk",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Vychodna.JPG",
+    "title": "Vychodna.JPG"
+  },
+  "luxembourg-city": {
+    "src": "/photos/places/luxembourg-city.jpg",
+    "width": 1000,
+    "height": 528,
+    "artist": "Benh LIEU SONG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Luxembourg_City_Night_Wikimedia_Commons.jpg",
+    "title": "Luxembourg City Night Wikimedia Commons.jpg"
+  },
+  "ohrid": {
+    "src": "/photos/places/ohrid.jpg",
+    "width": 1000,
+    "height": 670,
+    "artist": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:03760-Ohrid_(16064511578).jpg",
+    "title": "03760-Ohrid (16064511578).jpg"
+  },
+  "sarajevo": {
+    "src": "/photos/places/sarajevo.jpg",
+    "width": 1000,
+    "height": 598,
+    "artist": "Julian Nyča",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sarajevo_City_Panorama.JPG",
+    "title": "Sarajevo City Panorama.JPG"
+  },
+  "chisinau": {
+    "src": "/photos/places/chisinau.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Rodion Gavriloi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Consiliul_Municipal_Chi%C8%99in%C4%83u_(cropped).jpg",
+    "title": "Consiliul Municipal Chișinău (cropped).jpg"
+  },
+  "escazu": {
+    "src": "/photos/places/escazu.jpg",
+    "width": 1000,
+    "height": 664,
+    "artist": "Armando Maynez from Mexico, Mexico",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Escaz%C3%BA_at_night_2009.jpg",
+    "title": "Escazú at night 2009.jpg"
   }
 };
 

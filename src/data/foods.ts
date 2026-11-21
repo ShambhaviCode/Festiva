@@ -119,6 +119,12 @@ export const foods: Food[] = [
   f("cozonac", "Cozonac", "RO", ["martisor"], "sweet", "vegetarian", ["gluten", "dairy", "egg", "nuts"], ["sweet yeast dough", "walnuts", "cocoa", "raisins"], "A swirled sweet bread filled with walnuts and cocoa, baked for spring and winter holidays.", "Cozonac"),
   f("khao-niao", "Sticky rice (khao niao)", "LA", ["boun-bang-fai"], "main", "vegan", [], ["glutinous rice", "water"], "Steamed glutinous rice, the heart of every Lao meal, eaten by hand from a woven basket.", "Glutinous_rice"),
   f("roast-breadfruit", "Roast breadfruit", "JM", ["accompong-maroon-festival"], "main", "vegan", [], ["breadfruit", "coconut oil"], "Breadfruit roasted whole over a fire, a staple of Jamaican and Maroon cooking.", "Breadfruit"),
+  // Fourth world batch foods, added 22 November 2026 (all vegetarian).
+  f("ballokume", "Ballokume", "AL", ["dita-e-veres"], "sweet", "vegetarian", ["dairy", "egg"], ["cornmeal", "butter", "sugar", "eggs"], "Crumbly cornmeal biscuits from Elbasan, baked for Summer Day.", "Ballokume"),
+  f("churchkhela", "Churchkhela", "GE", ["rtveli"], "sweet", "vegan", ["nuts"], ["walnuts or hazelnuts", "thickened grape juice", "flour"], "Strings of nuts dipped in thickened grape must and dried, made at harvest time.", "Churchkhela"),
+  // Fifth world batch foods, added 22 November 2026 (all vegetarian).
+  f("ftira", "Ftira", "MT", ["mnarja"], "main", "vegan", ["gluten"], ["sourdough", "olive oil", "tomatoes", "capers", "olives"], "Malta's ring-shaped sourdough bread, often filled with tomato, capers and olives.", "Ftira"),
+  f("chipa", "Chipa", "PY", ["san-juan-ara"], "snack", "vegetarian", ["dairy", "egg"], ["cassava starch", "cheese", "eggs", "anise"], "Small baked rings of cassava starch and cheese, sold at every Paraguayan fair.", "Chipa"),
 ];
 
 export const foodBySlug = new Map(foods.map((food) => [food.slug, food]));

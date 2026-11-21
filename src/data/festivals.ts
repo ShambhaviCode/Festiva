@@ -3,6 +3,8 @@ import { indiaFestivals } from "./festivals-india";
 import { worldFestivals } from "./festivals-world";
 import { worldFestivals2 } from "./festivals-world-2";
 import { worldFestivals3 } from "./festivals-world-3";
+import { worldFestivals4 } from "./festivals-world-4";
+import { worldFestivals5 } from "./festivals-world-5";
 
 /**
  * Curated festival dataset.
@@ -55,7 +57,7 @@ const coreFestivals: Festival[] = [
     tagline: "The festival of lights",
     summary:
       "Five days of lamps, sweets and family visits marking the victory of light over darkness, celebrated by Hindus, Jains, Sikhs and some Buddhists.",
-    countries: ["IN", "NP", "LK", "SG"],
+    countries: ["IN", "NP", "LK", "SG", "MU", "GY", "SR"],
     region: "south-asia",
     observedBy: "Hindu, Jain, Sikh and Newar Buddhist communities worldwide",
     category: "light",
@@ -381,7 +383,7 @@ const coreFestivals: Festival[] = [
     name: "Eid al-Fitr",
     tagline: "The festival of breaking the fast",
     summary: "The celebration that ends Ramadan: morning prayers, charity, new clothes, visits and a table of sweets.",
-    countries: ["ID", "EG", "TR", "PK", "AE", "BD"],
+    countries: ["ID", "EG", "TR", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO"],
     region: "middle-east",
     observedBy: "Muslim communities worldwide",
     category: "faith",
@@ -424,7 +426,7 @@ const coreFestivals: Festival[] = [
     name: "Eid al-Adha",
     tagline: "The festival of sacrifice",
     summary: "The second great festival of Islam, at the close of the Hajj pilgrimage, centred on prayer, sacrifice and sharing food.",
-    countries: ["TR", "EG", "ID", "PK", "AE", "BD"],
+    countries: ["TR", "EG", "ID", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO"],
     region: "middle-east",
     observedBy: "Muslim communities worldwide",
     category: "faith",
@@ -736,7 +738,7 @@ const coreFestivals: Festival[] = [
     name: "Nowruz",
     tagline: "A new day at the spring equinox",
     summary: "The Persian New Year, celebrated for more than three thousand years at the exact moment spring begins.",
-    countries: ["IR"],
+    countries: ["IR", "AZ", "AF", "TJ", "KG", "IQ"],
     region: "middle-east",
     observedBy: "Iranian, Afghan, Kurdish, Azerbaijani and Central Asian communities, among others",
     category: "new-year",
@@ -1771,7 +1773,7 @@ const coreFestivals: Festival[] = [
   },
 ];
 
-export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...worldFestivals, ...worldFestivals2, ...worldFestivals3];
+export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...worldFestivals, ...worldFestivals2, ...worldFestivals3, ...worldFestivals4, ...worldFestivals5];
 
 export const festivalBySlug = new Map(festivals.map((f) => [f.slug, f]));
 

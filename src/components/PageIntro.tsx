@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ViewTransition, type ReactNode } from "react";
-import { FESTIVAL_PHOTOS } from "@/data/photos";
+import { photoFor } from "@/data/photos";
 import { ArtImage, frameClass, type Art } from "./art/Art";
 
 export function PageIntro({
@@ -80,23 +80,31 @@ export function DetailHero({
           />
         </div>
       </ViewTransition>
-      {art.kind === "rosette" && FESTIVAL_PHOTOS[seed] && (
-        <p className="note -mt-6 text-xs lg:col-start-2">
-          Photo:{" "}
-          <a href={FESTIVAL_PHOTOS[seed].source} className="link" rel="noopener noreferrer" target="_blank">
-            {FESTIVAL_PHOTOS[seed].artist}
-          </a>
-          , {FESTIVAL_PHOTOS[seed].licenseUrl ? (
-            <a href={FESTIVAL_PHOTOS[seed].licenseUrl!} className="link" rel="noopener noreferrer license" target="_blank">
-              {FESTIVAL_PHOTOS[seed].license}
-            </a>
-          ) : (
-            FESTIVAL_PHOTOS[seed].license
-          )}
-          , via Wikimedia Commons
-        </p>
-      )}
+      <PhotoCredit kind={art.kind} seed={seed} />
     </section>
+  );
+}
+
+/** Credit line for a freely licensed photograph, as its licence requires. */
+function PhotoCredit({ kind, seed }: { kind: Art["kind"]; seed: string }) {
+  const photo = photoFor(kind, seed);
+  if (!photo) return null;
+  return (
+    <p className="note -mt-6 text-xs lg:col-start-2">
+      Photo:{" "}
+      <a href={photo.source} className="link" rel="noopener noreferrer" target="_blank">
+        {photo.artist}
+      </a>
+      ,{" "}
+      {photo.licenseUrl ? (
+        <a href={photo.licenseUrl} className="link" rel="noopener noreferrer license" target="_blank">
+          {photo.license}
+        </a>
+      ) : (
+        photo.license
+      )}
+      , via Wikimedia Commons
+    </p>
   );
 }
 
@@ -162,6 +170,7 @@ export function LinkRows({
                   art={item.thumb.art}
                   seed={item.thumb.seed}
                   palette={item.thumb.palette}
+                  sizes="64px"
                 />
               </span>
             )}

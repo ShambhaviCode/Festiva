@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FESTIVAL_PHOTOS } from "@/data/photos";
+import { photoFor } from "@/data/photos";
 import { seeded } from "@/domain/random";
 import type { Food, GiftTier } from "@/domain/types";
 import { Motif } from "../Motif";
@@ -46,13 +46,12 @@ export function frameClass(kind: Art["kind"]): string {
 }
 
 export function ArtImage({ art, seed, palette, className = "h-full w-full", sizes = "(max-width: 768px) 90vw, 40vw" }: { art: Art; seed: string; palette: Palette; className?: string; sizes?: string }) {
+  // A freely licensed photograph when one has been sourced; otherwise the generated artwork.
+  const photo = photoFor(art.kind, seed);
+  if (photo) return <Image src={photo.src} alt="" aria-hidden="true" width={photo.width} height={photo.height} sizes={sizes} className={`${className} object-cover`} style={{ backgroundColor: palette[0] }} />;
   switch (art.kind) {
-    case "rosette": {
-      // A freely licensed photograph when one has been sourced; otherwise the generated rosette.
-      const photo = FESTIVAL_PHOTOS[seed];
-      if (photo) return <Image src={photo.src} alt="" aria-hidden="true" width={photo.width} height={photo.height} sizes={sizes} className={`${className} object-cover`} style={{ backgroundColor: palette[0] }} />;
+    case "rosette":
       return <Motif seed={seed} palette={palette} className={className} />;
-    }
     case "plate":
       return <Plate seed={seed} palette={palette} course={art.course} hint={art.hint} className={className} />;
     case "textile":

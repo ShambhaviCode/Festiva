@@ -8,7 +8,7 @@ How to connect Sarvam AI, Flagsmith and NudgeBee with **your own** accounts and 
 | --- | --- | --- |
 | Sarvam AI | Implemented: speech to text, translation, structuring, signed receipts | **Yes**, 20 November 2026: LIVE SERVICE, PASS ([report](evidence/integration-evidence-2026-11-20-live.md)) |
 | Flagsmith | Implemented: official SDK, ten server-enforced flags, remote configuration, A/B experiment | **Yes**, 20 November 2026: LIVE SERVICE, PASS ([report](evidence/integration-evidence-2026-11-20-live.md)) |
-| NudgeBee | Implemented: Event Webhook delivery, GraphQL read-back, alert rules, approval-gated runbooks | **No.** NudgeBee Cloud sign-up is closed (onboarding by request), so there is no workspace yet |
+| NudgeBee | Implemented: Event Webhook delivery, GraphQL read-back, alert rules, approval-gated runbooks | **Yes**, 21 November 2026: LIVE SERVICE, PASS on a self-hosted NudgeBee Community install ([report](evidence/integration-evidence-2026-11-21-live.md)) |
 
 What *has* been proven is that FESTIVA's provider code sends the documented request shapes and handles every response correctly against **local test doubles**: canned imitations of each API in `tests/stubs/provider-stubs.mjs`. Those results are always labelled **LOCAL TEST DOUBLE** and must never be presented as live. A sample is in [evidence/SAMPLE-local-test-doubles.md](evidence/SAMPLE-local-test-doubles.md).
 

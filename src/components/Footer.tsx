@@ -23,7 +23,7 @@ export function Footer() {
         </div>
         <nav aria-label="Footer">
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
-            {[...NAV, { href: "/matchmaker", label: "Matchmaker" }, { href: "/plans", label: "My plans" }, { href: "/saved", label: "Saved" }, { href: "/privacy", label: "Privacy" }].map((item) => (
+            {[...NAV, { href: "/matchmaker", label: "Matchmaker" }, { href: "/plans", label: "My plans" }, { href: "/saved", label: "Saved" }].map((item) => (
               <li key={item.href}>
                 <Link className="link" href={item.href}>
                   {item.label}
@@ -33,11 +33,6 @@ export function Footer() {
           </ul>
         </nav>
         <Preferences />
-      </div>
-      <div className="rule border-t">
-        <p className="shell note py-6">
-          Festival dates can vary by region and community. Brands shown are catalogue examples, not partnerships. FESTIVA shows no prices, and nothing here is travel, dietary or religious advice.
-        </p>
       </div>
     </footer>
   );

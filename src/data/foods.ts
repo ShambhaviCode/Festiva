@@ -97,6 +97,14 @@ export const foods: Food[] = [
   f("mathri", "Mathri", "IN", ["karva-chauth"], "snack", "vegetarian", ["gluten", "dairy"], ["wheat flour", "ghee", "carom seeds"], "Flaky savoury crackers, part of the sargi platter and the evening puja on Karva Chauth.", "Mathri"),
   f("thekua", "Thekua", "IN", ["chhath-puja"], "sweet", "vegetarian", ["gluten", "dairy"], ["wheat flour", "jaggery", "ghee", "coconut", "fennel"], "Crunchy jaggery cookies pressed with patterns and offered to the sun at Chhath.", "Thekua"),
   f("kada-prasad", "Kada prasad", "IN", ["guru-nanak-jayanti", "vaisakhi"], "sweet", "vegetarian", ["gluten", "dairy"], ["wheat flour", "ghee", "sugar", "water"], "A warm wheat-flour halwa offered to everyone at the gurdwara as a blessing.", "Karah_Parshad"),
+  // World festival foods added 22 November 2026 (all vegetarian).
+  f("tompouce", "Tompouce", "NL", ["kings-day"], "sweet", "vegetarian", ["gluten", "dairy", "egg"], ["puff pastry", "custard cream", "icing (orange for King's Day)"], "A rectangular custard pastry whose icing turns orange for King's Day.", "Tompouce"),
+  f("blini", "Blini", "RU", ["maslenitsa"], "main", "vegetarian", ["gluten", "dairy", "egg"], ["flour", "milk", "eggs", "butter", "yeast"], "Thin pancakes eaten every day of Maslenitsa, their round golden shape a symbol of the returning sun.", "Blini"),
+  f("tsoureki", "Tsoureki", "GR", ["orthodox-easter-greece"], "sweet", "vegetarian", ["gluten", "dairy", "egg"], ["flour", "butter", "eggs", "mahlepi", "mastic"], "A braided sweet Easter bread scented with mahlepi and mastic, often baked with a red egg.", "Tsoureki"),
+  f("mont-lone-yay-paw", "Mont lone yay paw", "MM", ["thingyan"], "sweet", "vegan", [], ["glutinous rice flour", "jaggery", "grated coconut"], "Rice-flour balls filled with jaggery, made and shared at Thingyan; one may hide a chilli as a prank.", "Mont_lone_yay_baw"),
+  f("ambok", "Ambok", "KH", ["bon-om-touk"], "snack", "vegan", [], ["young rice, roasted and pounded flat", "coconut", "banana"], "Flattened young rice mixed with coconut and banana, eaten at midnight to salute the moon at Bon Om Touk.", "Ambok"),
+  f("maple-taffy", "Maple taffy", "CA", ["quebec-winter-carnival"], "sweet", "vegan", [], ["maple syrup", "fresh snow"], "Hot maple syrup poured on snow and rolled onto a stick as it sets: tire d'érable.", "Maple_taffy"),
+  f("basler-mehlsuppe", "Basler Mehlsuppe", "CH", ["basel-fasnacht"], "main", "vegetarian", ["gluten", "dairy"], ["browned flour", "butter", "stock", "onion", "grated cheese"], "Basel's browned-flour soup, eaten in the small hours after the Morgestraich.", "Mehlsuppe"),
 ];
 
 export const foodBySlug = new Map(foods.map((food) => [food.slug, food]));

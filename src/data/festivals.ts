@@ -1,5 +1,6 @@
 import type { Festival, Provenance, SourceRef, TableOccurrence } from "@/domain/types";
 import { indiaFestivals } from "./festivals-india";
+import { worldFestivals } from "./festivals-world";
 
 /**
  * Curated festival dataset.
@@ -1768,7 +1769,7 @@ const coreFestivals: Festival[] = [
   },
 ];
 
-export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals];
+export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...worldFestivals];
 
 export const festivalBySlug = new Map(festivals.map((f) => [f.slug, f]));
 

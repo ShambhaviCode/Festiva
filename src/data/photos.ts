@@ -595,6 +595,86 @@ export const FESTIVAL_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "source": "https://commons.wikimedia.org/wiki/File:Akal_Takht_illuminated,_in_Harmandir_Sahib_complex,_Amritsar.jpg",
     "title": "Akal Takht illuminated, in Harmandir Sahib complex, Amritsar.jpg"
+  },
+  "fete-de-la-musique": {
+    "src": "/photos/festivals/fete-de-la-musique.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "G.Mannaerts",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Brest_Fete_de_la_Musique_2015_6.JPG",
+    "title": "Brest Fete de la Musique 2015 6.JPG"
+  },
+  "kings-day": {
+    "src": "/photos/festivals/kings-day.jpg",
+    "width": 720,
+    "height": 540,
+    "artist": "Carmelrmd",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Amsterdam%27s_Canals.jpg",
+    "title": "Amsterdam's Canals.jpg"
+  },
+  "maslenitsa": {
+    "src": "/photos/festivals/maslenitsa.jpg",
+    "width": 1000,
+    "height": 726,
+    "artist": "Boris Kustodiev",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Maslenitsa_kustodiev.jpg",
+    "title": "Maslenitsa kustodiev.jpg"
+  },
+  "thingyan": {
+    "src": "/photos/festivals/thingyan.jpg",
+    "width": 640,
+    "height": 480,
+    "artist": "Pagan era painter(s)",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Bagan_era_painting_of_Thingyan.jpg",
+    "title": "Bagan era painting of Thingyan.jpg"
+  },
+  "bon-om-touk": {
+    "src": "/photos/festivals/bon-om-touk.jpg",
+    "width": 627,
+    "height": 343,
+    "artist": "Chetra Skyline",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cambodia_Water_Festival_1914.jpg",
+    "title": "Cambodia Water Festival 1914.jpg"
+  },
+  "osun-osogbo": {
+    "src": "/photos/festivals/osun-osogbo.jpg",
+    "width": 1000,
+    "height": 906,
+    "artist": "ABORISADEADETONA",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Osun_groove_Osogbo.jpg",
+    "title": "Osun groove Osogbo.jpg"
+  },
+  "carnival-of-binche": {
+    "src": "/photos/festivals/carnival-of-binche.jpg",
+    "width": 1000,
+    "height": 716,
+    "artist": "Marie-Claire",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Binche_-_Les_Gilles.jpg",
+    "title": "Binche - Les Gilles.jpg"
+  },
+  "basel-fasnacht": {
+    "src": "/photos/festivals/basel-fasnacht.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Sparrow (2019)",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Five_Gugge_at_Fasnacht_Basel_2024_on_Mittlere_Br%C3%BCcke_03.jpg",
+    "title": "Five Gugge at Fasnacht Basel 2024 on Mittlere Brücke 03.jpg"
   }
 };
 
@@ -958,6 +1038,36 @@ export const DISH_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Thekua_-_Chhath_Festival_-_Kolkata_2013-11-09_4316.JPG",
     "title": "Thekua - Chhath Festival - Kolkata 2013-11-09 4316.JPG"
+  },
+  "blini": {
+    "src": "/photos/dishes/blini.jpg",
+    "width": 1000,
+    "height": 1000,
+    "artist": "Maksim L.",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:50_%D0%B1%D0%BB%D1%96%D0%BD%D0%BA%D0%BE%D1%9E_%D0%BD%D0%B0_%D1%82%D0%B0%D0%BB%D0%B5%D1%80%D1%86%D1%8B_240_%D0%BC%D0%BC.jpg",
+    "title": "50 блінкоў на талерцы 240 мм.jpg"
+  },
+  "tsoureki": {
+    "src": "/photos/dishes/tsoureki.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Jason Hollinger",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Christopsomo_-_Greek_Christmas_Bread_-_Flickr_-_pellaea.jpg",
+    "title": "Christopsomo - Greek Christmas Bread - Flickr - pellaea.jpg"
+  },
+  "mont-lone-yay-paw": {
+    "src": "/photos/dishes/mont-lone-yay-paw.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Wagaung at en.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:MontLone_yeibaw.JPG",
+    "title": "MontLone yeibaw.JPG"
   }
 };
 
@@ -1364,6 +1474,76 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Capital_Cultural_Hall.jpg",
     "title": "Capital Cultural Hall.jpg"
+  },
+  "paris": {
+    "src": "/photos/places/paris.jpg",
+    "width": 1000,
+    "height": 625,
+    "artist": "Yann Caradec from Paris, France",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_ao%C3%BBt_2014_(2).jpg",
+    "title": "La Tour Eiffel vue de la Tour Saint-Jacques, Paris août 2014 (2).jpg"
+  },
+  "barranquilla": {
+    "src": "/photos/places/barranquilla.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Jdvillalobos",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Antigua_Aduana_de_Barranquilla.jpg",
+    "title": "Antigua Aduana de Barranquilla.jpg"
+  },
+  "porto": {
+    "src": "/photos/places/porto.jpg",
+    "width": 1000,
+    "height": 617,
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Puente_Don_Luis_I,_Oporto,_Portugal,_2012-05-09,_DD_13.JPG",
+    "title": "Puente Don Luis I, Oporto, Portugal, 2012-05-09, DD 13.JPG"
+  },
+  "mendoza": {
+    "src": "/photos/places/mendoza.jpg",
+    "width": 720,
+    "height": 405,
+    "artist": "CavernSaga",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Mendoza.png",
+    "title": "Aerial view of Mendoza.png"
+  },
+  "fes": {
+    "src": "/photos/places/fes.jpg",
+    "width": 1000,
+    "height": 614,
+    "artist": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but pl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bab_Bou_Jeloud_Frame_Minaret_Fes_Nov25_A7CR_09127-8_HDR3.jpg",
+    "title": "Bab Bou Jeloud Frame Minaret Fes Nov25 A7CR 09127-8 HDR3.jpg"
+  },
+  "santiago-de-cuba": {
+    "src": "/photos/places/santiago-de-cuba.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Alex Cano",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santiago_de_cuba_al_atardecer.jpg",
+    "title": "Santiago de cuba al atardecer.jpg"
+  },
+  "binche": {
+    "src": "/photos/places/binche.jpg",
+    "width": 1000,
+    "height": 638,
+    "artist": "Unknown",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Binche_JPG01.jpg",
+    "title": "Binche JPG01.jpg"
   }
 };
 

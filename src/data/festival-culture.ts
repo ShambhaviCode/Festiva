@@ -309,6 +309,68 @@ export const FESTIVAL_CULTURE: Record<string, FestivalCulture> = {
     symbolism: [s("Hornbill feathers", "Valour and honour in Naga traditions"), s("The morung", "The communal house where young people learned their tribe's lore")],
     calendarSystem: "Gregorian calendar; 1 to 10 December, from Nagaland's Statehood Day",
   },
+
+  // World festivals added 22 November 2026 (festivals-world.ts).
+  "fete-de-la-musique": {
+    originalNames: [n("Fête de la Musique", "French", "fr")],
+    symbolism: [s("The summer solstice", "The longest day, given over to music"), s("Free concerts", "Music as something everyone can make and share")],
+  },
+  "kings-day": {
+    originalNames: [n("Koningsdag", "Dutch", "nl")],
+    symbolism: [s("The colour orange", "The royal House of Orange-Nassau"), s("The vrijmarkt", "A free market where anyone may sell, a sign of the day's informality")],
+  },
+  "barranquilla-carnival": {
+    originalNames: [n("Carnaval de Barranquilla", "Spanish", "es")],
+    symbolism: [s("The Marimonda mask", "A big-eared, long-nosed figure mocking the powerful"), s("Joselito Carnaval", "His mock burial ends the carnival")],
+  },
+  maslenitsa: {
+    originalNames: [n("Масленица", "Russian", "ru", "Maslenitsa")],
+    symbolism: [s("Blini", "Round and golden like the returning sun"), s("The straw effigy", "Burned to say goodbye to winter")],
+  },
+  "orthodox-easter-greece": {
+    originalNames: [n("Πάσχα", "Greek", "el", "Páscha")],
+    symbolism: [s("Red eggs", "The blood of Christ and new life"), s("The Holy Light", "Passed from candle to candle at midnight: the Resurrection")],
+  },
+  thingyan: {
+    originalNames: [n("သင်္ကြန်", "Burmese", "my", "Thingyan")],
+    symbolism: [s("Water", "Washing away the misdeeds and misfortunes of the old year"), s("Padauk flowers", "Golden blossoms that bloom only at this season")],
+  },
+  "bon-om-touk": {
+    originalNames: [n("បុណ្យអុំទូក", "Khmer", "km", "Bon Om Tuk")],
+    symbolism: [s("The racing boats", "The river's bounty and the naval strength of the Khmer kings"), s("Ambok and the full moon", "Thanks for the rice harvest")],
+  },
+  "sao-joao-porto": {
+    originalNames: [n("São João do Porto", "Portuguese", "pt")],
+    symbolism: [s("Plastic hammers", "Playful blows that replaced the old leeks and garlic flowers"), s("Manjericos (basil pots)", "Love and friendship, given with a short poem")],
+  },
+  vendimia: {
+    originalNames: [n("Fiesta Nacional de la Vendimia", "Spanish", "es")],
+    symbolism: [s("The first bunch of grapes", "Offered at the Bendición de los Frutos"), s("The Vendimia Queen", "Representing the departments of Mendoza")],
+  },
+  "quebec-winter-carnival": {
+    originalNames: [n("Carnaval de Québec", "French", "fr")],
+    symbolism: [s("Bonhomme Carnaval", "The snowman mascot and king of the carnival"), s("The ceinture fléchée", "The arrow-patterned sash of French-Canadian voyageurs")],
+  },
+  "osun-osogbo": {
+    originalNames: [n("Ọdún Ọ̀ṣun Òṣogbo", "Yoruba", "yo", "Odun Osun Osogbo")],
+    symbolism: [s("The Arugba's calabash", "Offerings carried to the goddess by a young woman of the royal family"), s("The river", "Osun's waters of fertility and healing")],
+  },
+  "fes-sacred-music": {
+    originalNames: [n("مهرجان فاس للموسيقى العالمية العريقة", "Arabic", "ar", "Mahrajān Fās lil-Mūsīqā al-ʿĀlamiyya al-ʿArīqa")],
+    symbolism: [s("Sufi chant (sama)", "Music as a path to the divine"), s("Bab Al Makina", "A royal courtyard turned into a stage for many faiths")],
+  },
+  "santiago-de-cuba-carnival": {
+    originalNames: [n("Carnaval de Santiago de Cuba", "Spanish", "es")],
+    symbolism: [s("The corneta china", "The Chinese trumpet that calls the conga"), s("Paper farolas", "Lanterns carried high through the night parades")],
+  },
+  "carnival-of-binche": {
+    originalNames: [n("Carnaval de Binche", "French", "fr")],
+    symbolism: [s("The Gille", "A masked dancer whose costume carries the lion of Belgium"), s("Oranges", "Thrown to the crowd as gifts of good fortune")],
+  },
+  "basel-fasnacht": {
+    originalNames: [n("Basler Fasnacht", "Swiss German", "gsw")],
+    symbolism: [s("The Morgestraich lanterns", "Light and satire in the darkened city"), s("Piccolos and drums", "The marching music of the cliques")],
+  },
 };
 
 /** A plain description of how the festival's date is set, from its date rule unless overridden. */

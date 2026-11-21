@@ -51,6 +51,22 @@ export const countries: Country[] = [
   c("FI", "Finland", "europe", "EUR", ["Finnish", "Swedish", "Sámi languages"], "Lakes, forests and the Sámi homeland of the far north."),
   c("BS", "The Bahamas", "latin-america", "BSD", ["English"], "An archipelago where Junkanoo drums mark Boxing Day and New Year."),
   c("TT", "Trinidad and Tobago", "latin-america", "TTD", ["English", "Trinidadian Creole"], "The birthplace of steelpan, calypso and soca, and one of the world's great carnivals."),
+  // Added 22 November 2026 with the world festivals batch.
+  c("FR", "France", "europe", "EUR", ["French"], "A country of village fêtes, national celebrations and the free street concerts of the Fête de la Musique."),
+  c("NL", "Netherlands", "europe", "EUR", ["Dutch"], "Canal cities that turn orange for King's Day and gather round Sinterklaas in December."),
+  c("CO", "Colombia", "latin-america", "COP", ["Spanish"], "Caribbean, Andean and Pacific cultures meet in some of Latin America's liveliest carnivals and fairs."),
+  c("RU", "Russia", "europe", "RUB", ["Russian"], "A vast country whose festival year runs from Maslenitsa pancakes to Orthodox Easter and the long New Year holidays."),
+  c("GR", "Greece", "europe", "EUR", ["Greek"], "Island and mountain communities whose year turns on Orthodox Easter and summer saints' day feasts."),
+  c("MM", "Myanmar", "southeast-asia", "MMK", ["Burmese"], "Golden pagodas, water-soaked Thingyan streets and festivals of lights at the full moon."),
+  c("KH", "Cambodia", "southeast-asia", "KHR", ["Khmer"], "The land of Angkor, where the river's reversal is celebrated with boat races and moonlit offerings."),
+  c("PT", "Portugal", "europe", "EUR", ["Portuguese"], "Atlantic towns of popular saints' festivals, fado and summer nights in the street."),
+  c("AR", "Argentina", "latin-america", "ARS", ["Spanish"], "From Buenos Aires tango to harvest fiestas in the wine country of Mendoza."),
+  c("CA", "Canada", "north-america", "CAD", ["English", "French"], "Two official languages, many Indigenous nations, and festivals that embrace the long winter."),
+  c("NG", "Nigeria", "africa", "NGN", ["English", "Yoruba", "Hausa", "Igbo"], "Africa's most populous nation, with royal durbars, masquerades and river festivals."),
+  c("MA", "Morocco", "africa", "MAD", ["Arabic", "Tamazight", "French"], "Medinas, mountains and desert, with music festivals and saints' moussems through the year."),
+  c("CU", "Cuba", "latin-america", "CUP", ["Spanish"], "The Caribbean island of son, rumba and conga, and carnivals rooted in Afro-Cuban tradition."),
+  c("BE", "Belgium", "europe", "EUR", ["Dutch", "French", "German"], "Small country, big carnivals: from the Gilles of Binche to the satire of Aalst."),
+  c("CH", "Switzerland", "europe", "CHF", ["German", "French", "Italian", "Romansh"], "Alpine traditions, lantern-lit Fasnacht and four national languages."),
 ];
 
 export const countryByCode = new Map(countries.map((country) => [country.code, country]));

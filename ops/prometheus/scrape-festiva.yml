@@ -1,0 +1,19 @@
+# Prometheus scrape configuration for FESTIVA.
+# FESTIVA exposes Prometheus text format at /api/ops/metrics, protected by a
+# bearer token (FESTIVA_METRICS_TOKEN). The metrics contain route templates,
+# status classes, provider outcome codes, durations and counts; no personal data.
+#
+# Add under `scrape_configs:` in prometheus.yml (or as a ServiceMonitor with the
+# same settings if you use the Prometheus Operator).
+scrape_configs:
+  - job_name: festiva
+    metrics_path: /api/ops/metrics
+    scheme: https                      # http for a cluster-internal Service
+    authorization:
+      type: Bearer
+      credentials_file: /etc/prometheus/secrets/festiva-metrics-token
+    static_configs:
+      - targets: ["festiva.example.com"]   # or festiva.festiva.svc:3000 inside Kubernetes
+        labels:
+          namespace: festiva                # lets NudgeBee attach alerts to the workload
+          deployment: festiva-web

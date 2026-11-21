@@ -1,0 +1,33 @@
+# Alertmanager → NudgeBee, following NudgeBee's documentation
+# (docs.nudgebee.com: Integrations > Webhooks > Prometheus Alertmanager Webhook,
+#  and Installation > Agent > Alert forwarding).
+#
+# Choose ONE of the two receivers below.
+#
+# A. Alertmanager runs in the same cluster as the NudgeBee agent:
+#    forward to the agent (URL from NudgeBee's alert-forwarding guide).
+# B. Alertmanager runs elsewhere: create a "Prometheus AlertManager Webhook"
+#    integration in NudgeBee (Admin > Integrations > Webhooks) and use the URL
+#    and token it shows. Keep the token in the Authorization header.
+#
+# Keep your existing root route and receivers; add the route below as the FIRST
+# child route, with continue: true, so your other receivers still get alerts.
+route:
+  routes:
+    - receiver: nudgebee
+      matchers: [ 'service="festiva"' ]
+      continue: true
+
+receivers:
+  - name: nudgebee
+    webhook_configs:
+      # A. In-cluster agent:
+      - url: 'http://nudgebee-agent-runner.nudgebee-agent.svc/api/alerts'
+        send_resolved: true
+      # B. External Alertmanager (replace A with this):
+      # - url: 'https://<your-nudgebee-domain>/api/webhooks/prometheus-alertmanager'
+      #   send_resolved: true
+      #   http_config:
+      #     authorization:
+      #       type: Bearer
+      #       credentials: '<token shown by NudgeBee>'

@@ -1,0 +1,100 @@
+{
+  "measuredAt": "2026-11-17T17:24:29.408Z",
+  "base": "http://localhost:3400",
+  "pages": [
+    {
+      "path": "/",
+      "viewport": "1366x900",
+      "fcpMs": 172,
+      "lcpMs": 172,
+      "cls": 0.0006,
+      "longTasks": 4,
+      "slowestInteractionMs": 80,
+      "transferKB": 780,
+      "jsKB": 428
+    },
+    {
+      "path": "/discover",
+      "viewport": "1366x900",
+      "fcpMs": 144,
+      "lcpMs": 144,
+      "cls": 0.0006,
+      "longTasks": 1,
+      "slowestInteractionMs": 16,
+      "transferKB": 661,
+      "jsKB": 283
+    },
+    {
+      "path": "/discover/diwali",
+      "viewport": "1366x900",
+      "fcpMs": 144,
+      "lcpMs": 144,
+      "cls": 0.0041,
+      "longTasks": 0,
+      "slowestInteractionMs": 16,
+      "transferKB": 681,
+      "jsKB": 281
+    },
+    {
+      "path": "/matchmaker",
+      "viewport": "1366x900",
+      "fcpMs": 156,
+      "lcpMs": 156,
+      "cls": 0.0006,
+      "longTasks": 1,
+      "slowestInteractionMs": 16,
+      "transferKB": 708,
+      "jsKB": 371
+    },
+    {
+      "path": "/wishes",
+      "viewport": "1366x900",
+      "fcpMs": 104,
+      "lcpMs": 104,
+      "cls": 0.0006,
+      "longTasks": 0,
+      "slowestInteractionMs": 16,
+      "transferKB": 599,
+      "jsKB": 278
+    },
+    {
+      "path": "/sound",
+      "viewport": "1366x900",
+      "fcpMs": 120,
+      "lcpMs": 120,
+      "cls": 0.0006,
+      "longTasks": 0,
+      "slowestInteractionMs": 16,
+      "transferKB": 599,
+      "jsKB": 278
+    },
+    {
+      "path": "/",
+      "viewport": "390x844",
+      "fcpMs": 120,
+      "lcpMs": 120,
+      "cls": 0,
+      "longTasks": 2,
+      "slowestInteractionMs": 24,
+      "transferKB": 638,
+      "jsKB": 333
+    }
+  ],
+  "globe": {
+    "mode": "webgl",
+    "framesPerSecond": 38
+  },
+  "leak": {
+    "cycles": 15,
+    "heapBeforeMB": 13.1,
+    "heapAfterMB": 13.6,
+    "growthMB": 0.4,
+    "canvasesOnHome": 1
+  },
+  "api": {
+    "route": "POST /api/intelligence (no AI provider)",
+    "samples": 20,
+    "medianMs": 4,
+    "p95Ms": 9
+  }
+}

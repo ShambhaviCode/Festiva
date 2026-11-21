@@ -1,0 +1,79 @@
+# Minimal FESTIVA deployment for a Kubernetes demonstration with the NudgeBee agent.
+# NOT applied during development (no cluster was available). See docs/NUDGEBEE_DEMO.md.
+#
+# One replica only: the file-based circle store and in-memory rate limits assume
+# a single instance. Use FESTIVA_CIRCLE_STORE=supabase before scaling out.
+apiVersion: v1
+kind: Namespace
+metadata: { name: festiva }
+---
+apiVersion: v1
+kind: Secret
+metadata: { name: festiva-secrets, namespace: festiva }
+type: Opaque
+stringData:
+  FESTIVA_ADMIN_TOKEN: "replace-with-24-plus-random-characters"
+  FESTIVA_METRICS_TOKEN: "replace-with-24-plus-random-characters"
+  # SARVAM_API_KEY: ""
+  # FLAGSMITH_ENVIRONMENT_KEY: "ser...."
+  # NUDGEBEE_EVENT_WEBHOOK_URL: "https://<your-nudgebee-domain>/api/webhooks/event"
+  # NUDGEBEE_EVENT_WEBHOOK_TOKEN: ""
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: { name: festiva-data, namespace: festiva }
+spec:
+  accessModes: [ReadWriteOnce]
+  resources: { requests: { storage: 1Gi } }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: festiva-web, namespace: festiva, labels: { app: festiva-web } }
+spec:
+  replicas: 1
+  strategy: { type: Recreate }
+  selector: { matchLabels: { app: festiva-web } }
+  template:
+    metadata: { labels: { app: festiva-web } }
+    spec:
+      securityContext: { runAsNonRoot: true, fsGroup: 1000 }
+      containers:
+        - name: web
+          image: festiva:local        # kind load docker-image festiva:local
+          imagePullPolicy: IfNotPresent
+          ports: [{ containerPort: 3000, name: http }]
+          envFrom: [{ secretRef: { name: festiva-secrets } }]
+          env:
+            - { name: FESTIVA_DATA_DIR, value: /data }
+            - { name: NEXT_PUBLIC_SITE_URL, value: "http://localhost:3000" }
+          volumeMounts: [{ name: data, mountPath: /data }]
+          readinessProbe: { httpGet: { path: /api/health, port: http }, periodSeconds: 10 }
+          livenessProbe: { httpGet: { path: /api/health, port: http }, periodSeconds: 20, failureThreshold: 3 }
+          resources:
+            requests: { cpu: 100m, memory: 256Mi }
+            limits: { cpu: "1", memory: 768Mi }
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: false, capabilities: { drop: [ALL] } }
+      volumes: [{ name: data, persistentVolumeClaim: { claimName: festiva-data } }]
+---
+apiVersion: v1
+kind: Service
+metadata: { name: festiva, namespace: festiva, labels: { app: festiva-web } }
+spec:
+  selector: { app: festiva-web }
+  ports: [{ name: http, port: 3000, targetPort: http }]
+---
+# Scrape FESTIVA's metrics (requires the Prometheus Operator, which the NudgeBee
+# agent installer adds if the cluster has no Prometheus).
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+# Set the label your Prometheus selects ServiceMonitors by (kubectl get prometheus -A -o yaml | grep -A3 serviceMonitorSelector).
+metadata: { name: festiva, namespace: festiva, labels: { release: nudgebee-agent } }
+spec:
+  selector: { matchLabels: { app: festiva-web } }
+  endpoints:
+    - port: http
+      path: /api/ops/metrics
+      interval: 30s
+      authorization: { type: Bearer, credentials: { name: festiva-secrets, key: FESTIVA_METRICS_TOKEN } }
+      relabelings:
+        - { targetLabel: deployment, replacement: festiva-web }

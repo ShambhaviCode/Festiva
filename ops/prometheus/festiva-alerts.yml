@@ -1,0 +1,70 @@
+# Prometheus alerting rules equivalent to FESTIVA's built-in rules
+# (src/lib/ops/alerts.ts). Use these when FESTIVA runs where Prometheus and
+# Alertmanager already run, for example alongside the NudgeBee agent in
+# Kubernetes. Alerts then reach NudgeBee through Alertmanager (see
+# ops/alertmanager/nudgebee-receiver.yml) instead of FESTIVA's own webhook call.
+#
+# `namespace` and `deployment` come from the scrape labels and are what
+# NudgeBee uses to attach an alert to the FESTIVA workload. `severity` sets
+# NudgeBee's priority.
+#
+# Validate with: promtool check rules ops/prometheus/festiva-alerts.yml
+groups:
+  - name: festiva
+    rules:
+      - alert: FestivaGiftCircleLatencyHigh
+        expr: |
+          histogram_quantile(0.95, sum by (le, namespace, deployment) (rate(festiva_http_request_duration_seconds_bucket{route=~"/api/circles.*"}[5m]))) > 1.5
+          and on (namespace, deployment)
+          sum by (namespace, deployment) (increase(festiva_http_request_duration_seconds_count{route=~"/api/circles.*"}[5m])) >= 5
+        for: 2m
+        labels: { severity: high, service: festiva }
+        annotations:
+          summary: FESTIVA Gift Circle API latency is high
+          description: p95 latency of /api/circles/* is above 1.5 s over 5 minutes.
+          runbook_url: https://github.com/ShambhaviCode/festiva/blob/main/docs/RUNBOOKS.md#gift-circle-api-latency-is-high
+
+      - alert: FestivaVoiceTranscriptionFailing
+        expr: |
+          sum by (namespace, deployment) (increase(festiva_provider_requests_total{provider="sarvam",capability="speech_to_text",outcome="failure"}[10m])) >= 3
+          and on (namespace, deployment)
+          (
+            sum by (namespace, deployment) (increase(festiva_provider_requests_total{provider="sarvam",capability="speech_to_text",outcome="failure"}[10m]))
+            / sum by (namespace, deployment) (increase(festiva_provider_requests_total{provider="sarvam",capability="speech_to_text"}[10m]))
+          ) >= 0.5
+        labels: { severity: high, service: festiva }
+        annotations:
+          summary: FESTIVA voice transcription (Sarvam) is failing
+          description: At least 3 failed transcriptions in 10 minutes, at least half of attempts. See the `code` label for the cause.
+          runbook_url: https://github.com/ShambhaviCode/festiva/blob/main/docs/RUNBOOKS.md#voice-transcription-is-failing
+
+      - alert: FestivaStorageUnhealthy
+        expr: festiva_storage_healthy == 0 or festiva_storage_probe_seconds > 1
+        for: 1m
+        labels: { severity: critical, service: festiva }
+        annotations:
+          summary: FESTIVA circle storage is unhealthy
+          description: The storage health probe failed or took longer than 1 s.
+          runbook_url: https://github.com/ShambhaviCode/festiva/blob/main/docs/RUNBOOKS.md#circle-storage-is-unhealthy
+
+      - alert: FestivaApiErrorRateHigh
+        expr: |
+          (
+            sum by (namespace, deployment) (rate(festiva_http_requests_total{status="5xx"}[5m]))
+            / sum by (namespace, deployment) (rate(festiva_http_requests_total[5m]))
+          ) >= 0.1
+          and on (namespace, deployment)
+          sum by (namespace, deployment) (increase(festiva_http_requests_total[5m])) >= 20
+        labels: { severity: high, service: festiva }
+        annotations:
+          summary: FESTIVA API error rate is high
+          description: At least 10% of API requests answered 5xx over 5 minutes.
+          runbook_url: https://github.com/ShambhaviCode/festiva/blob/main/docs/RUNBOOKS.md#api-error-rate-is-high
+
+      - alert: FestivaPreferenceProcessingFailing
+        expr: sum by (namespace, deployment) (increase(festiva_processing_steps_total{step="structure_preference",outcome="failure"}[10m])) >= 3
+        labels: { severity: medium, service: festiva }
+        annotations:
+          summary: FESTIVA preference processing is failing
+          description: At least 3 preference-structuring steps failed in 10 minutes. Each fell back to FESTIVA's rules.
+          runbook_url: https://github.com/ShambhaviCode/festiva/blob/main/docs/RUNBOOKS.md#preference-processing-is-failing

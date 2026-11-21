@@ -1,0 +1,15 @@
+# Files the Vercel CLI must never upload. Mirrors .gitignore.
+# Secrets: set them in Vercel's Environment Variables instead.
+.env*
+!.env.example
+# Local runtime data and generated reports
+.festiva-data/
+evidence/
+test-results/
+playwright-report/
+coverage/
+# Build output and dependencies are rebuilt by Vercel
+node_modules/
+.next/
+.swc/
+*.tsbuildinfo

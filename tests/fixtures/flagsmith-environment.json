@@ -1,0 +1,197 @@
+{
+  "api_key": "festiva-test-environment",
+  "name": "FESTIVA test environment (fixture, not live)",
+  "project": {
+    "name": "FESTIVA",
+    "organisation": {
+      "feature_analytics": false,
+      "name": "FESTIVA test",
+      "id": 1,
+      "persist_trait_data": true,
+      "stop_serving_flags": false
+    },
+    "id": 1,
+    "hide_disabled_flags": false,
+    "segments": []
+  },
+  "segment_overrides": [],
+  "id": 1,
+  "feature_states": [
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 1,
+      "django_id": 1,
+      "featurestate_uuid": "32cae728-9800-541f-a544-92436b4acd93",
+      "feature": {
+        "name": "gift_circle_enabled",
+        "type": "STANDARD",
+        "id": 1
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 2,
+      "django_id": 2,
+      "featurestate_uuid": "990c5a4b-255b-5f51-8d92-2bc32723916e",
+      "feature": {
+        "name": "sarvam_voice_enabled",
+        "type": "STANDARD",
+        "id": 2
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 3,
+      "django_id": 3,
+      "featurestate_uuid": "f9c3b649-c418-5b48-befe-305661b4aa39",
+      "feature": {
+        "name": "multilingual_onboarding_enabled",
+        "type": "STANDARD",
+        "id": 3
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 4,
+      "django_id": 4,
+      "featurestate_uuid": "d51362a2-5dbf-5ea1-b370-55561b20e0ba",
+      "feature": {
+        "name": "gift_recommendations_enabled",
+        "type": "STANDARD",
+        "id": 4
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 5,
+      "django_id": 5,
+      "featurestate_uuid": "37a2b879-641d-578f-9664-7378b0a4460a",
+      "feature": {
+        "name": "secret_santa_enabled",
+        "type": "STANDARD",
+        "id": 5
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 6,
+      "django_id": 6,
+      "featurestate_uuid": "f79896cb-5e1b-58d1-88e5-dda510e3b028",
+      "feature": {
+        "name": "cultural_context_enabled",
+        "type": "STANDARD",
+        "id": 6
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 7,
+      "django_id": 7,
+      "featurestate_uuid": "ef3d2ce9-25fc-5588-be8e-5e025dc0908b",
+      "feature": {
+        "name": "group_budget_insights_enabled",
+        "type": "STANDARD",
+        "id": 7
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 8,
+      "django_id": 8,
+      "featurestate_uuid": "ed1971eb-0e75-5a04-9c99-37290da618e9",
+      "feature": {
+        "name": "premium_gifting_experience_enabled",
+        "type": "STANDARD",
+        "id": 8
+      },
+      "feature_segment": null,
+      "enabled": false
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": null,
+      "id": 9,
+      "django_id": 9,
+      "featurestate_uuid": "23ccb1c9-c8bb-5fc7-9c12-f37af7acf43e",
+      "feature": {
+        "name": "matchmaker_experiment_enabled",
+        "type": "STANDARD",
+        "id": 9
+      },
+      "feature_segment": null,
+      "enabled": false
+    },
+    {
+      "multivariate_feature_state_values": [
+        {
+          "id": 1,
+          "percentage_allocation": 50,
+          "mv_fs_value_uuid": "74c8d227-95ac-5339-8c87-8735ee2bfa4c",
+          "multivariate_feature_option": {
+            "id": 1,
+            "value": "guided",
+            "key": "guided"
+          }
+        },
+        {
+          "id": 2,
+          "percentage_allocation": 50,
+          "mv_fs_value_uuid": "c71b2264-aa91-542c-9866-82b054acbfb2",
+          "multivariate_feature_option": {
+            "id": 2,
+            "value": "single_page",
+            "key": "single_page"
+          }
+        }
+      ],
+      "feature_state_value": "guided",
+      "id": 10,
+      "django_id": 10,
+      "featurestate_uuid": "7ce000d3-612d-56f7-b0f3-71eb3d60779b",
+      "feature": {
+        "name": "new_gift_circle_onboarding_enabled",
+        "type": "MULTIVARIATE",
+        "id": 10
+      },
+      "feature_segment": null,
+      "enabled": true
+    },
+    {
+      "multivariate_feature_state_values": [],
+      "feature_state_value": "{\"max_participants\": 12, \"max_recording_seconds\": 20, \"recommendation_count\": 3, \"invite_expiry_days\": 7}",
+      "id": 11,
+      "django_id": 11,
+      "featurestate_uuid": "26f19bef-13a9-566e-b268-c949e74e833d",
+      "feature": {
+        "name": "gift_circle_config",
+        "type": "STANDARD",
+        "id": 11
+      },
+      "feature_segment": null,
+      "enabled": true
+    }
+  ],
+  "identity_overrides": []
+}

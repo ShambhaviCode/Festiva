@@ -20,6 +20,38 @@
 
 FESTIVA covers 46 festivals across 40 countries: history, traditions, food, dress, music and destinations, with a sourced next date for every movable festival. A deterministic **Matchmaker** turns six answers into a complete celebration plan, and **Gift Circle** lets a group organise a gift exchange across languages, by voice or text.
 
+## What it does for users
+
+| Need | How FESTIVA solves it |
+|---|---|
+| **Understand a celebration** | Each festival page explains meaning, history, regional variations and etiquette, and gives the next date with its source and how certain it is. |
+| **Plan one, fast** | The Matchmaker asks six questions (occasion, place and people, budget, food, style and time, interests) and returns an editable plan: schedule, food, gifts, attire, décor, music and greetings, with a budget that always adds up. |
+| **Eat right** | Every dish lists vegetarian and vegan status and common allergens, and plans respect dietary needs. |
+| **Gift as a group** | Gift Circle collects everyone's wishes by voice or text in their own language, translates them, suggests gifts, draws Secret Santa and tracks who has contributed. |
+| **Travel and explore** | A world map of 35 places where festivals come alive, with landmarks, experiences and a short itinerary for each. |
+| **Share and keep** | Save plans, export them as text, JSON or PDF, share a link and revoke it later. Greeting cards download as images. |
+
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/app/home.jpg" alt="Home page with the festival globe" /><br /><sub><b>Home:</b> a WebGL globe of festival lights</sub></td>
+    <td width="50%"><img src="docs/screenshots/app/festival.jpg" alt="Diwali festival page" /><br /><sub><b>Festival page:</b> meaning, sourced next date and a one-click plan</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/app/matchmaker.jpg" alt="Matchmaker" /><br /><sub><b>Matchmaker:</b> six questions with a live plan preview</sub></td>
+    <td><img src="docs/screenshots/app/gift-circle.jpg" alt="Gift Circle" /><br /><sub><b>Gift Circle:</b> multilingual group gifting powered by Sarvam AI</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/app/discover.jpg" alt="Discover festivals" /><br /><sub><b>Discover:</b> 46 festivals with search and filters</sub></td>
+    <td><img src="docs/screenshots/app/taste.jpg" alt="Festival food" /><br /><sub><b>Taste:</b> festival dishes with diet and allergen notes</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/app/journeys.jpg" alt="Journeys map" /><br /><sub><b>Journeys:</b> an interactive map of festival destinations</sub></td>
+    <td align="center"><img src="docs/screenshots/app/mobile.jpg" width="45%" alt="Mobile view" /><br /><sub><b>Mobile:</b> fully responsive</sub></td>
+  </tr>
+</table>
+
 ## Sponsor integrations, verified live
 
 | | Integration | Verified |

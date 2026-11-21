@@ -348,10 +348,7 @@ export default function HomePage() {
           </h2>
           <div>
             <p className="lede max-w-2xl">
-              FESTIVA is founded by {site.founder.name}. It is built to be
-              useful and honest: uncertain dates are marked as uncertain,
-              sources are linked, and anything that is a suggestion is labelled
-              as one.
+              FESTIVA is founded by {site.founder.name}.
             </p>
             <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
               {site.founder.links.map((link) => (

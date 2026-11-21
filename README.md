@@ -12,7 +12,7 @@
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-555555?style=flat-square)
 
-<img src="public/photos/festivals/diwali.jpg" width="24%" alt="" /> <img src="public/photos/festivals/holi.jpg" width="24%" alt="" /> <img src="public/photos/festivals/lunar-new-year.jpg" width="24%" alt="" /> <img src="public/photos/festivals/rio-carnival.jpg" width="24%" alt="" />
+
 
 </div>
 
@@ -28,7 +28,6 @@ FESTIVA covers 46 festivals across 40 countries: history, traditions, food, dres
 | **Flagsmith** | Official server SDK with local evaluation. Ten flags enforced in both UI and API, validated remote config, and a multivariate onboarding experiment. No redeploy needed for any change. | Live |
 | **NudgeBee** | Five alert rules over real telemetry, delivered to NudgeBee's Event Webhook. Runbooks are approval-gated, reversible and audited. Runs on a self-hosted Community install (Helm on k3s). | Live |
 
-Request IDs and results: [evidence report](docs/evidence/integration-evidence-2026-11-21-live.md).
 
 ## Engineering
 
@@ -45,7 +44,7 @@ npm ci
 npm run dev            # http://localhost:3000
 ```
 
-No environment variables are required. To enable the integrations, copy [`.env.example`](.env.example) to `.env.local`.
+
 
 ## Quality
 
@@ -60,9 +59,7 @@ npm run test:e2e                    # Playwright end-to-end and accessibility
 
 [Architecture](docs/ARCHITECTURE.md) · [Deployment](docs/DEPLOYMENT.md) · [Sponsors](docs/SPONSORS.md) · [Testing](docs/TESTING.md) · [Demo script](docs/DEMO_3_MINUTES.md) · [Known limitations](docs/KNOWN_LIMITATIONS.md)
 
-## Credits
 
-Photographs: Wikimedia Commons under free licences, each credited on its page and in [`src/data/photos.ts`](src/data/photos.ts). All other artwork is generated in code.
 
 ---
 

@@ -1,4 +1,5 @@
 import type { Festival, Provenance, SourceRef, TableOccurrence } from "@/domain/types";
+import { indiaFestivals } from "./festivals-india";
 
 /**
  * Curated festival dataset.
@@ -43,7 +44,7 @@ const CHINA_HOLIDAYS: SourceRef = {
   url: "https://www.chinahighlights.com/festivals/china-public-holiday.htm",
 };
 
-export const festivals: Festival[] = [
+const coreFestivals: Festival[] = [
   {
     slug: "diwali",
     name: "Diwali",
@@ -1766,6 +1767,8 @@ export const festivals: Festival[] = [
     provenance: reference(wiki("Kandy_Esala_Perahera", "Kandy Esala Perahera"), { title: "Sri Dalada Maligawa: the Esala Perahera", url: "https://mail.daladamaligawa.org/in-honor-of-sacred-tooth-relic-esala.htm" }),
   },
 ];
+
+export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals];
 
 export const festivalBySlug = new Map(festivals.map((f) => [f.slug, f]));
 

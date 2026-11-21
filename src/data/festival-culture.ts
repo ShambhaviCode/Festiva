@@ -232,6 +232,83 @@ export const FESTIVAL_CULTURE: Record<string, FestivalCulture> = {
     symbolism: [s("The Maligawa tusker", "The elephant that carries the relic casket at the head of the procession"), s("Diya Kepeema (water cutting)", "The closing rite at the Mahaweli river")],
     calendarSystem: "Sinhala lunar month of Esala; dates set each year by the Temple of the Tooth",
   },
+
+  // Indian festivals added 22 November 2026 (festivals-india.ts).
+  "makar-sankranti": {
+    originalNames: [n("मकर संक्रान्ति", "Hindi", "hi", "Makar Saṅkrānti"), n("ઉત્તરાયણ", "Gujarati", "gu", "Uttarāyaṇ")],
+    symbolism: [s("Kites", "The sun's northward journey and the open skies of a new season"), s("Til-gul (sesame and jaggery)", "Warmth in winter and the wish to speak sweetly")],
+  },
+  lohri: {
+    originalNames: [n("ਲੋਹੜੀ", "Punjabi", "pa", "Lohṛī")],
+    symbolism: [s("The bonfire", "Warmth, the end of the coldest nights and the coming harvest"), s("Rewri, peanuts and popcorn", "Thanks offered to the fire for the season's crops")],
+    calendarSystem: "Solar calendar; the night before Makar Sankranti",
+  },
+  "vasant-panchami": {
+    originalNames: [n("वसंत पंचमी", "Hindi", "hi", "Vasant Pañcamī"), n("সরস্বতী পূজা", "Bengali", "bn", "Saraswatī Pūjā")],
+    symbolism: [s("The colour yellow", "Mustard fields in bloom and the arrival of spring"), s("Books and instruments before Saraswati", "Knowledge, music and the arts")],
+  },
+  "maha-shivaratri": {
+    originalNames: [n("महाशिवरात्रि", "Hindi", "hi", "Mahāśivarātri")],
+    symbolism: [s("Bel (bilva) leaves", "An offering especially dear to Shiva"), s("The night vigil", "Overcoming darkness and ignorance")],
+  },
+  "ugadi-gudi-padwa": {
+    originalNames: [n("ఉగాది", "Telugu", "te", "Ugādi"), n("ಯುಗಾದಿ", "Kannada", "kn", "Yugādi"), n("गुढीपाडवा", "Marathi", "mr", "Guḍhīpāḍavā")],
+    symbolism: [s("Ugadi pachadi", "Six tastes for the mix of joy, sorrow, anger, fear, disgust and surprise a year will bring"), s("The gudi", "Victory and prosperity, raised high outside the home")],
+  },
+  vaisakhi: {
+    originalNames: [n("ਵਿਸਾਖੀ", "Punjabi", "pa", "Visākhī"), n("बैसाखी", "Hindi", "hi", "Baisākhī")],
+    symbolism: [s("Nishan Sahib", "The Sikh flag, renewed with a fresh cloth at Vaisakhi"), s("Ripe wheat", "The harvest and the farmer's year")],
+  },
+  vishu: {
+    originalNames: [n("വിഷു", "Malayalam", "ml", "Viṣu")],
+    symbolism: [s("Vishukkani", "Golden konna flowers, rice, fruit and a lamp: prosperity seen first in the new year"), s("Vishukkaineetam", "Coins given by elders as a blessing for the year")],
+  },
+  bihu: {
+    originalNames: [n("ৰঙালী বিহু", "Assamese", "as", "Rôngali Bihu"), n("ব'হাগ বিহু", "Assamese", "as", "Bôhag Bihu")],
+    symbolism: [s("Gamosa", "The woven cloth of respect and Assamese identity"), s("Pepa", "The buffalo-horn pipe whose sound means spring and youth")],
+  },
+  "ram-navami": {
+    originalNames: [n("राम नवमी", "Hindi", "hi", "Rām Navamī")],
+    symbolism: [s("A cradle with baby Rama", "His birth at midday in Ayodhya"), s("Panakam", "A cooling drink for the hot season, offered to the deity")],
+  },
+  "rath-yatra": {
+    originalNames: [n("ରଥଯାତ୍ରା", "Odia", "or", "Rathajātrā")],
+    symbolism: [s("The three chariots", "The deities coming out among all people"), s("Chhera Pahanra", "The king sweeping the chariots: everyone is equal before God")],
+  },
+  "raksha-bandhan": {
+    originalNames: [n("रक्षा बंधन", "Hindi", "hi", "Rakṣā Bandhan")],
+    symbolism: [s("The rakhi thread", "A bond of affection and a promise of care"), s("Tilak and sweets", "Blessings and sweetness between siblings")],
+  },
+  janmashtami: {
+    originalNames: [n("कृष्ण जन्माष्टमी", "Hindi", "hi", "Kṛṣṇa Janmāṣṭamī"), n("दहीहंडी", "Marathi", "mr", "Dahīhaṇḍī")],
+    symbolism: [s("The pot of butter and curd", "Krishna's mischievous childhood as the butter thief"), s("Midnight", "The hour of his birth")],
+  },
+  navratri: {
+    originalNames: [n("नवरात्रि", "Hindi", "hi", "Navarātri"), n("નવરાત્રી", "Gujarati", "gu", "Navarātrī")],
+    symbolism: [s("The garbo", "A pierced clay pot with a lamp: life and the goddess's energy within"), s("Nine forms of Durga", "One form of the goddess honoured each night")],
+  },
+  dussehra: {
+    originalNames: [n("दशहरा", "Hindi", "hi", "Daśaharā"), n("विजयादशमी", "Sanskrit", "sa", "Vijayādaśamī"), n("ದಸರಾ", "Kannada", "kn", "Dasarā")],
+    symbolism: [s("Ravana's effigy", "Burned to mark the victory of good over evil"), s("Shami or apta leaves", "Exchanged as 'gold' for prosperity")],
+  },
+  "karva-chauth": {
+    originalNames: [n("करवा चौथ", "Hindi", "hi", "Karvā Cauth")],
+    symbolism: [s("The karva", "A clay pot used in the puja and exchanged between women"), s("The moon seen through a sieve", "The moment the fast ends")],
+  },
+  "chhath-puja": {
+    originalNames: [n("छठ पूजा", "Hindi", "hi", "Chhaṭh Pūjā")],
+    symbolism: [s("The soop", "A bamboo winnowing basket of fruit and thekua offered to the sun"), s("Standing in water at sunset and sunrise", "Gratitude to the sun as the source of life")],
+  },
+  "guru-nanak-jayanti": {
+    originalNames: [n("ਗੁਰਪੁਰਬ", "Punjabi", "pa", "Gurpurab"), n("ਪ੍ਰਕਾਸ਼ ਪੁਰਬ", "Punjabi", "pa", "Prakāsh Purab")],
+    symbolism: [s("Langar", "Equality and service: everyone eats together"), s("Ik Onkar", "The oneness of God, the first words of the Guru Granth Sahib")],
+  },
+  "hornbill-festival": {
+    originalNames: [],
+    namesNote: "Named in English after the great hornbill; each of Nagaland's tribes has its own language and festivals.",
+    symbolism: [s("Hornbill feathers", "Valour and honour in Naga traditions"), s("The morung", "The communal house where young people learned their tribe's lore")],
+    calendarSystem: "Gregorian calendar; 1 to 10 December, from Nagaland's Statehood Day",
+  },
 };
 
 /** A plain description of how the festival's date is set, from its date rule unless overridden. */

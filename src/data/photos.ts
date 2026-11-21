@@ -455,6 +455,146 @@ export const FESTIVAL_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:G%C3%B8ril_Nilsen_at_2025_M%C3%A1rkomeannu_4.jpg",
     "title": "Gøril Nilsen at 2025 Márkomeannu 4.jpg"
+  },
+  "makar-sankranti": {
+    "src": "/photos/festivals/makar-sankranti.jpg",
+    "width": 698,
+    "height": 439,
+    "artist": "Abhay12253",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Photo_of_makar_sankranti_devootees.jpg",
+    "title": "Photo of makar sankranti devootees.jpg"
+  },
+  "vasant-panchami": {
+    "src": "/photos/festivals/vasant-panchami.jpg",
+    "width": 909,
+    "height": 1250,
+    "artist": "Raja Ravi Varma",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Goddess_Saraswati.jpg",
+    "title": "Raja Ravi Varma, Goddess Saraswati.jpg"
+  },
+  "maha-shivaratri": {
+    "src": "/photos/festivals/maha-shivaratri.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Navneesh Ramessur",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:02_Mahashivratree_festival.JPG",
+    "title": "02 Mahashivratree festival.JPG"
+  },
+  "ugadi-gudi-padwa": {
+    "src": "/photos/festivals/ugadi-gudi-padwa.jpg",
+    "width": 1000,
+    "height": 670,
+    "artist": "Kalyan Kanuri",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Happy_Ugadi_puja_tray_Telugu_Hindu_New_Year_Vaisakhi.jpg",
+    "title": "A Happy Ugadi puja tray Telugu Hindu New Year Vaisakhi.jpg"
+  },
+  "vishu": {
+    "src": "/photos/festivals/vishu.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Vishnu Kunnathully",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vishu_Kani_foods.jpg",
+    "title": "Vishu Kani foods.jpg"
+  },
+  "bihu": {
+    "src": "/photos/festivals/bihu.jpg",
+    "width": 602,
+    "height": 355,
+    "artist": "Musta firoj ahmed",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bihu-Dance-assam.jpg",
+    "title": "Bihu-Dance-assam.jpg"
+  },
+  "rath-yatra": {
+    "src": "/photos/festivals/rath-yatra.jpg",
+    "width": 1000,
+    "height": 677,
+    "artist": "G.-U. Tolkiehn",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Rath_Yatra_Puri_07-11027.jpg",
+    "title": "Rath Yatra Puri 07-11027.jpg"
+  },
+  "raksha-bandhan": {
+    "src": "/photos/festivals/raksha-bandhan.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "ସରୋଜ କୁମାର ବେହେରା",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rakhi_1.JPG",
+    "title": "Rakhi 1.JPG"
+  },
+  "janmashtami": {
+    "src": "/photos/festivals/janmashtami.jpg",
+    "width": 796,
+    "height": 970,
+    "artist": "Raja Ravi Varma",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Yesoda-krishna.jpg",
+    "title": "Yesoda-krishna.jpg"
+  },
+  "navratri": {
+    "src": "/photos/festivals/navratri.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "आर्या जोशी",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shardiya_Navratri_Festival_in_Pune_2020.jpg",
+    "title": "Shardiya Navratri Festival in Pune 2020.jpg"
+  },
+  "dussehra": {
+    "src": "/photos/festivals/dussehra.jpg",
+    "width": 1000,
+    "height": 499,
+    "artist": "Ms Sarah Welch",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Navratri_Navaratri_festival_preparations_and_performance_arts_collage.jpg",
+    "title": "Navratri Navaratri festival preparations and performance arts collage.jpg"
+  },
+  "karva-chauth": {
+    "src": "/photos/festivals/karva-chauth.jpg",
+    "width": 1000,
+    "height": 618,
+    "artist": "Rohit Sharma",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Karva_Chauth_festival.jpg",
+    "title": "Karva Chauth festival.jpg"
+  },
+  "chhath-puja": {
+    "src": "/photos/festivals/chhath-puja.jpg",
+    "width": 1000,
+    "height": 562,
+    "artist": "Steffen Gauger",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:JanakpurChhathParvaFestival.jpg",
+    "title": "JanakpurChhathParvaFestival.jpg"
+  },
+  "guru-nanak-jayanti": {
+    "src": "/photos/festivals/guru-nanak-jayanti.jpg",
+    "width": 1000,
+    "height": 665,
+    "artist": "Giridhar Appaji Nag Y from Bangalore, India",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Akal_Takht_illuminated,_in_Harmandir_Sahib_complex,_Amritsar.jpg",
+    "title": "Akal Takht illuminated, in Harmandir Sahib complex, Amritsar.jpg"
   }
 };
 
@@ -738,6 +878,86 @@ export const DISH_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "source": "https://commons.wikimedia.org/wiki/File:Strawberry_layer_cake.jpg",
     "title": "Strawberry layer cake.jpg"
+  },
+  "gajak": {
+    "src": "/photos/dishes/gajak.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Khalid Mahmood",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gachak.JPG",
+    "title": "Gachak.JPG"
+  },
+  "sarson-da-saag": {
+    "src": "/photos/dishes/sarson-da-saag.jpg",
+    "width": 500,
+    "height": 375,
+    "artist": "w:en:User:Lokantha",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Saagroti.jpg",
+    "title": "Saagroti.jpg"
+  },
+  "panakam": {
+    "src": "/photos/dishes/panakam.jpg",
+    "width": 833,
+    "height": 1250,
+    "artist": "Nithyasrm",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panagam_picture.JPG",
+    "title": "Panagam picture.JPG"
+  },
+  "khaja": {
+    "src": "/photos/dishes/khaja.jpg",
+    "width": 1000,
+    "height": 976,
+    "artist": "Subhashish Panigrahi",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Baleswari_khaja_pheni_Oriya_cuisine.jpg",
+    "title": "Baleswari khaja pheni Oriya cuisine.jpg"
+  },
+  "ghevar": {
+    "src": "/photos/dishes/ghevar.jpg",
+    "width": 1000,
+    "height": 673,
+    "artist": "Pradeep717",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ghevar_with_Malai_Topping.jpg",
+    "title": "Ghevar with Malai Topping.jpg"
+  },
+  "sabudana-khichdi": {
+    "src": "/photos/dishes/sabudana-khichdi.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Sharvarism",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Upwas_Special_Sabudana_Khichadi.jpg",
+    "title": "Upwas Special Sabudana Khichadi.jpg"
+  },
+  "mathri": {
+    "src": "/photos/dishes/mathri.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Randhir",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Mathri.JPG",
+    "title": "Mathri.JPG"
+  },
+  "thekua": {
+    "src": "/photos/dishes/thekua.jpg",
+    "width": 1000,
+    "height": 665,
+    "artist": "Biswarup Ganguly",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thekua_-_Chhath_Festival_-_Kolkata_2013-11-09_4316.JPG",
+    "title": "Thekua - Chhath Festival - Kolkata 2013-11-09 4316.JPG"
   }
 };
 
@@ -1134,6 +1354,16 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:POS_at_night_Skyline.jpg",
     "title": "POS at night Skyline.jpg"
+  },
+  "kohima": {
+    "src": "/photos/places/kohima.jpg",
+    "width": 1000,
+    "height": 749,
+    "artist": "The Anonymous Earthling",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Capital_Cultural_Hall.jpg",
+    "title": "Capital Cultural Hall.jpg"
   }
 };
 

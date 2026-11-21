@@ -945,6 +945,46 @@ export const FESTIVAL_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "source": "https://commons.wikimedia.org/wiki/File:Moldova_Competitiveness_Project,_USAID_Moldova_(48121804303).jpg",
     "title": "Moldova Competitiveness Project, USAID Moldova (48121804303).jpg"
+  },
+  "abissa": {
+    "src": "/photos/festivals/abissa.jpg",
+    "width": 799,
+    "height": 508,
+    "artist": "Joker-x http://fr.wikipedia.org/wiki/User:Joker-x",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:800px-Grand-Bassam.jpg",
+    "title": "800px-Grand-Bassam.jpg"
+  },
+  "naghol": {
+    "src": "/photos/festivals/naghol.jpg",
+    "width": 1000,
+    "height": 710,
+    "artist": "Paul Stein from New Jersey, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Landdiving1.jpg",
+    "title": "Landdiving1.jpg"
+  },
+  "fallas-del-pirineu": {
+    "src": "/photos/festivals/fallas-del-pirineu.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "JSama",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Baixada_de_Falles_a_Sort,_2026.jpg",
+    "title": "Baixada de Falles a Sort, 2026.jpg"
+  },
+  "liechtenstein-national-day": {
+    "src": "/photos/festivals/liechtenstein-national-day.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Förkle",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hans_Adam_II_Schlosswiese_2023.jpg",
+    "title": "Hans Adam II Schlosswiese 2023.jpg"
   }
 };
 
@@ -2264,6 +2304,106 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "source": "https://commons.wikimedia.org/wiki/File:Escaz%C3%BA_at_night_2009.jpg",
     "title": "Escazú at night 2009.jpg"
+  },
+  "jinja": {
+    "src": "/photos/places/jinja.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Ilona1001",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Uganda_Jinja_Streetview.JPG",
+    "title": "Uganda Jinja Streetview.JPG"
+  },
+  "lobamba": {
+    "src": "/photos/places/lobamba.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Parliament_building_of_Eswatini,_Lobamba.jpg",
+    "title": "Parliament building of Eswatini, Lobamba.jpg"
+  },
+  "ouagadougou": {
+    "src": "/photos/places/ouagadougou.jpg",
+    "width": 600,
+    "height": 800,
+    "artist": "Thierry Draus",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ouagadougou_Skyline.jpg",
+    "title": "Ouagadougou Skyline.jpg"
+  },
+  "grand-bassam": {
+    "src": "/photos/places/grand-bassam.jpg",
+    "width": 799,
+    "height": 508,
+    "artist": "Joker-x http://fr.wikipedia.org/wiki/User:Joker-x",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:800px-Grand-Bassam.jpg",
+    "title": "800px-Grand-Bassam.jpg"
+  },
+  "san-salvador": {
+    "src": "/photos/places/san-salvador.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "Frankjh",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Monumento_al_Salvador_del_Mundo_1.jpg",
+    "title": "Monumento al Salvador del Mundo 1.jpg"
+  },
+  "bridgetown": {
+    "src": "/photos/places/bridgetown.jpg",
+    "width": 933,
+    "height": 1250,
+    "artist": "P.Lechien",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bridgetown_aerial.JPG",
+    "title": "Bridgetown aerial.JPG"
+  },
+  "bluefields": {
+    "src": "/photos/places/bluefields.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "Ridiculopathy",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Historical_Museum_of_Afro-descendants,_Bluefields,_Nicaragua_09.jpg",
+    "title": "Historical Museum of Afro-descendants, Bluefields, Nicaragua 09.jpg"
+  },
+  "nukualofa": {
+    "src": "/photos/places/nukualofa.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Uhooep",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Royal_Palace,_Nuku%27alofa,_Nov_18.jpg",
+    "title": "Royal Palace, Nuku'alofa, Nov 18.jpg"
+  },
+  "vaduz": {
+    "src": "/photos/places/vaduz.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Lucas Kendall",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_Vaduz.jpg",
+    "title": "View of Vaduz.jpg"
+  },
+  "kara": {
+    "src": "/photos/places/kara.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Milos58",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kara,_Togo_-_panoramio.jpg",
+    "title": "Kara, Togo - panoramio.jpg"
   }
 };
 

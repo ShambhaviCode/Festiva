@@ -50,7 +50,7 @@ export const worldFestivals2: Festival[] = [
     localName: "Ivana Kupala",
     tagline: "Midsummer fires and flower wreaths",
     summary: "A midsummer night when people in Ukraine jump over bonfires, float flower wreaths on rivers and search the woods for the legendary fern flower.",
-    countries: ["UA"],
+    countries: ["UA", "BY"],
     region: "europe",
     observedBy: "Ukrainians and other Eastern Slavic peoples",
     category: "community",

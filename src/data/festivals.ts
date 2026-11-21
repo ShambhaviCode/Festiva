@@ -5,6 +5,7 @@ import { worldFestivals2 } from "./festivals-world-2";
 import { worldFestivals3 } from "./festivals-world-3";
 import { worldFestivals4 } from "./festivals-world-4";
 import { worldFestivals5 } from "./festivals-world-5";
+import { worldFestivals6 } from "./festivals-world-6";
 
 /**
  * Curated festival dataset.
@@ -383,7 +384,7 @@ const coreFestivals: Festival[] = [
     name: "Eid al-Fitr",
     tagline: "The festival of breaking the fast",
     summary: "The celebration that ends Ramadan: morning prayers, charity, new clothes, visits and a table of sweets.",
-    countries: ["ID", "EG", "TR", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO"],
+    countries: ["ID", "EG", "TR", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO", "YE", "SY", "PS", "MR", "DJ", "KM", "GM", "GN", "TD", "BN", "MV"],
     region: "middle-east",
     observedBy: "Muslim communities worldwide",
     category: "faith",
@@ -426,7 +427,7 @@ const coreFestivals: Festival[] = [
     name: "Eid al-Adha",
     tagline: "The festival of sacrifice",
     summary: "The second great festival of Islam, at the close of the Hajj pilgrimage, centred on prayer, sacrifice and sharing food.",
-    countries: ["TR", "EG", "ID", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO"],
+    countries: ["TR", "EG", "ID", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO", "YE", "SY", "PS", "MR", "DJ", "KM", "GM", "GN", "TD", "BN", "MV"],
     region: "middle-east",
     observedBy: "Muslim communities worldwide",
     category: "faith",
@@ -738,7 +739,7 @@ const coreFestivals: Festival[] = [
     name: "Nowruz",
     tagline: "A new day at the spring equinox",
     summary: "The Persian New Year, celebrated for more than three thousand years at the exact moment spring begins.",
-    countries: ["IR", "AZ", "AF", "TJ", "KG", "IQ"],
+    countries: ["IR", "AZ", "AF", "TJ", "KG", "IQ", "TM"],
     region: "middle-east",
     observedBy: "Iranian, Afghan, Kurdish, Azerbaijani and Central Asian communities, among others",
     category: "new-year",
@@ -831,7 +832,7 @@ const coreFestivals: Festival[] = [
     name: "Christmas",
     tagline: "A midwinter celebration of birth and giving",
     summary: "The Christian celebration of the birth of Jesus, also kept as a cultural holiday of lights, music, food and gifts around the world.",
-    countries: ["DE", "MX", "IT", "GB", "US", "ET"],
+    countries: ["DE", "MX", "IT", "GB", "US", "ET", "VA"],
     region: "europe",
     observedBy: "Christian communities worldwide, and many others as a cultural holiday",
     category: "faith",
@@ -1773,7 +1774,7 @@ const coreFestivals: Festival[] = [
   },
 ];
 
-export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...worldFestivals, ...worldFestivals2, ...worldFestivals3, ...worldFestivals4, ...worldFestivals5];
+export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...worldFestivals, ...worldFestivals2, ...worldFestivals3, ...worldFestivals4, ...worldFestivals5, ...worldFestivals6];
 
 export const festivalBySlug = new Map(festivals.map((f) => [f.slug, f]));
 

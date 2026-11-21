@@ -602,6 +602,69 @@ export const FESTIVAL_CULTURE: Record<string, FestivalCulture> = {
     originalNames: [n("San Juan Ára", "Guaraní", "gn"), n("Fiesta de San Juan", "Spanish", "es")],
     symbolism: [s("Fire games", "Courage and luck for the year"), s("Chipa", "The bread of Paraguayan fairs")],
   },
+
+  // Sixth world batch, added 22 November 2026 (festivals-world-6.ts).
+  "nyege-nyege": {
+    originalNames: [n("Nyege Nyege", "Luganda", "lg")],
+    symbolism: [s("The name", "From a Luganda phrase for an irresistible urge to dance"), s("The Nile", "The river at the heart of the festival")],
+  },
+  umhlanga: {
+    originalNames: [n("Umhlanga", "siSwati", "ss")],
+    symbolism: [s("Reeds", "Brought to repair the Queen Mother's windbreak"), s("Red feathers", "Worn by princesses")],
+  },
+  fespaco: {
+    originalNames: [n("Festival panafricain du cinéma et de la télévision de Ouagadougou", "French", "fr")],
+    symbolism: [s("The Golden Stallion of Yennenga", "The top prize, named after the warrior princess of the Mossi"), s("Filmmakers' Square", "A monument to African cinema")],
+  },
+  abissa: {
+    originalNames: [n("Abissa", "Nzema", "nzi")],
+    symbolism: [s("Open criticism", "Truth spoken to clear the air for the new year"), s("Sacred drums", "The voice of the ancestors")],
+  },
+  "mindelo-carnival": {
+    originalNames: [n("Carnaval do Mindelo", "Portuguese", "pt")],
+    symbolism: [s("The Mandingas", "Dancers in black body paint and grass skirts"), s("Floats", "Months of work by each group")],
+  },
+  "fiestas-agostinas": {
+    originalNames: [n("Fiestas Agostinas", "Spanish", "es")],
+    symbolism: [s("The Divine Saviour of the World", "The patron of the capital and the nation"), s("The Bajada", "The image of Christ transfigured")],
+  },
+  "garifuna-settlement-day": {
+    originalNames: [n("Yurumein", "Garifuna", "cab")],
+    symbolism: [s("The dugout canoe", "The arrival of the Garifuna in 1832"), s("Drums", "The heartbeat of Garifuna music")],
+  },
+  "crop-over": {
+    originalNames: [],
+    namesNote: "Known by its English name; Bajan Creole adds many of the festival's words, such as 'kadooment'.",
+    symbolism: [s("The last canes", "The end of the sugar harvest"), s("Grand Kadooment", "The final carnival parade")],
+  },
+  "palo-de-mayo": {
+    originalNames: [n("Palo de Mayo", "Spanish", "es"), n("Maypole", "Creole English", "en")],
+    symbolism: [s("The maypole", "Fertility and the rainy season"), s("Fruit and ribbons", "The abundance of the coast")],
+  },
+  "heilala-festival": {
+    originalNames: [n("Heilala", "Tongan", "to")],
+    symbolism: [s("The heilala flower", "Tonga's national flower"), s("Torches along the shore", "Light shared across the island")],
+  },
+  naghol: {
+    originalNames: [n("Naghol", "Sa", "sss")],
+    symbolism: [s("The leap", "Courage, and a blessing for the yams"), s("Liana vines", "Chosen with care, as a life depends on them")],
+  },
+  "fallas-del-pirineu": {
+    originalNames: [n("Falles del Pirineu", "Catalan", "ca")],
+    symbolism: [s("The falla torch", "Fire carried down from the mountain"), s("The solstice", "The longest day of the year")],
+  },
+  "sainte-devote": {
+    originalNames: [n("Fête de la Sainte-Dévote", "French", "fr")],
+    symbolism: [s("The burning boat", "The thief's boat, burned in legend"), s("The dove", "Which guided the saint's relics to Monaco")],
+  },
+  "liechtenstein-national-day": {
+    originalNames: [n("Staatsfeiertag", "German", "de")],
+    symbolism: [s("The prince's invitation", "The bond between the princely family and the people"), s("Fireworks", "Celebration over the Rhine valley")],
+  },
+  evala: {
+    originalNames: [n("Evala", "Kabye", "kbp")],
+    symbolism: [s("Wrestling", "Strength and courage on the way to adulthood"), s("Village rivalry", "Friendly competition between communities")],
+  },
 };
 
 /** A plain description of how the festival's date is set, from its date rule unless overridden. */

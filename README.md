@@ -4,7 +4,7 @@
 
 **Global festival discovery and AI-assisted celebration planning.**
 
-[Live demo](https://festiva-eta.vercel.app) · [Architecture](docs/ARCHITECTURE.md) · [Sponsor evidence](docs/evidence/integration-evidence-2026-11-21-live.md)
+[Live demo](https://festiva-eta.vercel.app) 
 
 ![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript_strict-3178c6?style=flat-square&logo=typescript&logoColor=white)

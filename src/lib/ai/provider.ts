@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { aiStatus, serverEnv, type ServerEnv } from "../env.server";
+import { getSarvam, type SarvamProvider } from "../integrations/sarvam";
 
 /** Provider abstraction: add a provider by implementing `complete`. */
 export interface CompletionRequest {
@@ -71,13 +72,27 @@ export function openAIProvider(apiKey: string, model: string, fetchImpl: typeof 
   };
 }
 
-/** Returns null when no credentials are configured. Callers must then use their non-AI path. */
+/** Sarvam's chat model behind the generic provider interface. The HTTP call stays in integrations/sarvam. */
+export function sarvamAIProvider(sarvam: SarvamProvider): AIProvider {
+  return {
+    name: "sarvam",
+    model: sarvam.models.chat,
+    complete: ({ system, user, maxTokens, signal }) => sarvam.complete(system, user, maxTokens, signal),
+  };
+}
+
+/**
+ * Anthropic or OpenAI when configured; otherwise Sarvam's chat model when a
+ * Sarvam key is set. Returns null when nothing is configured, and callers
+ * then use their non-AI path.
+ */
 export function getProvider(env: ServerEnv = serverEnv()): AIProvider | null {
   const status = aiStatus(env);
   if (!status.configured || !status.model) return null;
   if (status.provider === "anthropic") return anthropicProvider(env.ANTHROPIC_API_KEY!, status.model);
   if (status.provider === "openai") return openAIProvider(env.OPENAI_API_KEY!, status.model);
-  return null;
+  const sarvam = status.provider === "sarvam" ? getSarvam(env) : null;
+  return sarvam ? sarvamAIProvider(sarvam) : null;
 }
 
 /** Pull the first JSON object out of a model reply, tolerating code fences and surrounding prose. */

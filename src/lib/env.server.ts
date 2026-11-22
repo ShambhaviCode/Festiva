@@ -84,9 +84,11 @@ export function serverEnv(): ServerEnv {
   return parseServerEnv(process.env);
 }
 
-export function aiStatus(env: ServerEnv = serverEnv()): { configured: boolean; provider?: "anthropic" | "openai"; model?: string } {
+export function aiStatus(env: ServerEnv = serverEnv()): { configured: boolean; provider?: "anthropic" | "openai" | "sarvam"; model?: string } {
   const provider = env.AI_PROVIDER ?? (env.ANTHROPIC_API_KEY ? "anthropic" : env.OPENAI_API_KEY ? "openai" : undefined);
   if (provider === "anthropic" && env.ANTHROPIC_API_KEY) return { configured: true, provider, model: env.AI_MODEL ?? "claude-haiku-5-5" };
   if (provider === "openai" && env.OPENAI_API_KEY) return { configured: true, provider, model: env.AI_MODEL ?? "gpt-4o-mini" };
+  // Fallback: Sarvam's chat model, when a Sarvam key is set (see integrations/sarvam).
+  if (env.SARVAM_API_KEY) return { configured: true, provider: "sarvam", model: env.SARVAM_CHAT_MODEL ?? "sarvam-105b" };
   return { configured: false };
 }

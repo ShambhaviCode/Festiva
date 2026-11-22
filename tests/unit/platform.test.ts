@@ -1,7 +1,8 @@
 /** @jest-environment node */
 import { z } from "zod";
 import { looksLikeInjection, sanitiseUserText, stripUrls, wrapUntrusted } from "@/lib/ai/guard";
-import { AIError, anthropicProvider, extractJson, generateStructured, getProvider, openAIProvider, type AIProvider } from "@/lib/ai/provider";
+import { AIError, anthropicProvider, extractJson, generateStructured, getProvider, openAIProvider, sarvamAIProvider, type AIProvider } from "@/lib/ai/provider";
+import { SarvamProvider } from "@/lib/integrations/sarvam";
 import { parsePublicEnv } from "@/lib/env";
 import { aiStatus, parseServerEnv } from "@/lib/env.server";
 import { bearer, readJson } from "@/lib/http";
@@ -33,6 +34,27 @@ describe("environment validation", () => {
     expect(aiStatus(parseServerEnv({ AI_PROVIDER: "openai", OPENAI_API_KEY: "sk-test", AI_MODEL: "custom" }))).toEqual({ configured: true, provider: "openai", model: "custom" });
     expect(aiStatus(parseServerEnv({ AI_PROVIDER: "openai", ANTHROPIC_API_KEY: "sk-test" })).configured).toBe(false);
     expect(getProvider(parseServerEnv({ ANTHROPIC_API_KEY: "sk-test" }))?.name).toBe("anthropic");
+  });
+  test("a Sarvam key alone powers the AI features with Sarvam's chat model", () => {
+    const env = parseServerEnv({ SARVAM_API_KEY: "sk_test_sarvam" });
+    expect(aiStatus(env)).toEqual({ configured: true, provider: "sarvam", model: "sarvam-105b" });
+    expect(getProvider(env)).toMatchObject({ name: "sarvam", model: "sarvam-105b" });
+    // An explicitly configured Anthropic or OpenAI key still wins.
+    expect(getProvider(parseServerEnv({ SARVAM_API_KEY: "sk_test_sarvam", ANTHROPIC_API_KEY: "sk-test" }))?.name).toBe("anthropic");
+  });
+  test("the Sarvam provider sends a plain chat request and returns the text", async () => {
+    let sent: { url: string; headers: Record<string, string>; body: Record<string, unknown> } | undefined;
+    const fetchImpl = (async (url: string, init: RequestInit) => {
+      sent = { url, headers: init.headers as Record<string, string>, body: JSON.parse(String(init.body)) };
+      return new Response(JSON.stringify({ choices: [{ message: { content: '{"answer":"Namaste","grounded":true}' } }] }), { status: 200 });
+    }) as unknown as typeof fetch;
+    const provider = sarvamAIProvider(new SarvamProvider({ apiKey: "sk_test_sarvam", baseUrl: "http://localhost:9", sttModel: "saaras:v4", translateModel: "sarvam-translate:v1", chatModel: "sarvam-105b", timeoutMs: 5000 }, fetchImpl));
+    const reply = await generateStructured(provider, { system: "sys", user: "hi", schema: z.object({ answer: z.string(), grounded: z.boolean() }) });
+    expect(reply).toEqual({ answer: "Namaste", grounded: true });
+    expect(sent?.url).toBe("http://localhost:9/v1/chat/completions");
+    expect(sent?.headers["api-subscription-key"]).toBe("sk_test_sarvam");
+    expect(sent?.body).toMatchObject({ model: "sarvam-105b", max_tokens: 700 });
+    expect((sent?.body.messages as { role: string }[]).map((m) => m.role)).toEqual(["system", "user"]);
   });
   test("malformed values fail loudly", () => {
     expect(() => parsePublicEnv({ NEXT_PUBLIC_SUPABASE_URL: "not a url", NEXT_PUBLIC_SUPABASE_ANON_KEY: "k" })).toThrow(/must be a valid http\(s\) URL/);

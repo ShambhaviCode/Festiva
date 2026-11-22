@@ -133,9 +133,13 @@ export class SarvamProvider {
     return { stt: this.config.sttModel, translate: this.config.translateModel, chat: this.config.chatModel };
   }
 
-  private async call<T>(capability: "speech_to_text" | "translate" | "chat", model: string, path: string, init: RequestInit, schema: z.ZodType<T>): Promise<{ data: T; ms: number }> {
+  private async call<T>(capability: "speech_to_text" | "translate" | "chat", model: string, path: string, init: RequestInit, schema: z.ZodType<T>, outerSignal?: AbortSignal): Promise<{ data: T; ms: number }> {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), this.config.timeoutMs);
+    if (outerSignal) {
+      if (outerSignal.aborted) controller.abort();
+      else outerSignal.addEventListener("abort", () => controller.abort(), { once: true });
+    }
     const started = performance.now();
     let status: number | null = null;
     const finish = async (ok: boolean, code: string) => {
@@ -253,6 +257,35 @@ export class SarvamProvider {
     const result = schema.safeParse(parsed);
     if (!result.success) throw new SarvamError("invalid_response", MESSAGES.invalid_response);
     return result.data;
+  }
+
+  /**
+   * Plain chat completion for FESTIVA Intelligence. Returns the model's text;
+   * the caller (generateStructured) extracts and validates the JSON reply.
+   */
+  async complete(system: string, user: string, maxTokens: number, signal?: AbortSignal): Promise<string> {
+    const { data } = await this.call(
+      "chat",
+      this.config.chatModel,
+      "/v1/chat/completions",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          model: this.config.chatModel,
+          temperature: 0.2,
+          max_tokens: maxTokens,
+          reasoning_effort: null,
+          messages: [
+            { role: "system", content: system },
+            { role: "user", content: user },
+          ],
+        }),
+      },
+      chatResponse,
+      signal,
+    );
+    return data.choices[0].message.content ?? "";
   }
 
   /** Propose structured wishlist fields from an approved preference (English text). The person reviews them before saving. */

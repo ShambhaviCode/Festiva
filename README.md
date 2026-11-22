@@ -97,6 +97,6 @@ npm run test:e2e                    # Playwright end-to-end and accessibility
 
 <div align="center">
 
-Built by **Shambhavi M K** · [GitHub](https://github.com/ShambhaviCode) · MIT License
+Built by **Shambhavi * · [GitHub](https://github.com/ShambhaviCode) · MIT License
 
 </div>

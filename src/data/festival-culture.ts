@@ -665,6 +665,128 @@ export const FESTIVAL_CULTURE: Record<string, FestivalCulture> = {
     originalNames: [n("Evala", "Kabye", "kbp")],
     symbolism: [s("Wrestling", "Strength and courage on the way to adulthood"), s("Village rivalry", "Friendly competition between communities")],
   },
+
+  // The last countries, added 22 November 2026 (festivals-world-7.ts).
+  "luanda-carnival": {
+    originalNames: [n("Carnaval de Luanda", "Portuguese", "pt")],
+    symbolism: [s("Semba", "The rhythm at the heart of Angolan carnival"), s("Neighbourhood groups", "Pride of each district")],
+  },
+  "antigua-carnival": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("Emancipation", "The freedom the carnival commemorates"), s("Steelpan", "The Caribbean's own instrument")],
+  },
+  "kuru-dance-festival": {
+    originalNames: [],
+    namesNote: "Known by its English name; the San speak several Khoe and Tuu languages.",
+    symbolism: [s("The healing dance", "A trance dance for healing the community"), s("Ostrich-eggshell beads", "One of the oldest crafts in the world")],
+  },
+  "fespam": {
+    originalNames: [n("Festival panafricain de musique", "French", "fr")],
+    symbolism: [s("Congolese rumba", "UNESCO-listed music of the two Congos"), s("The festival's home", "Brazzaville, on the Congo river")],
+  },
+  "kataklysmos": {
+    originalNames: [n("Κατακλυσμός", "Greek", "el", "Kataklysmós")],
+    symbolism: [s("Water", "Purification, and the memory of the flood"), s("Tsiattista", "Improvised poetry duels")],
+  },
+  "world-creole-music-festival": {
+    originalNames: [],
+    namesNote: "Known by its English name; the festival celebrates Kwéyòl, the Creole language of Dominica.",
+    symbolism: [s("Bouyon", "Dominica's own modern music"), s("Wob dwiyet", "The national dress of madras cloth")],
+  },
+  "spicemas": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("The Jab Jab", "Oil and chains recalling and mocking slavery"), s("Nutmeg", "The spice of the Spice Isle")],
+  },
+  "bissau-carnival": {
+    originalNames: [n("Carnaval de Bissau", "Portuguese", "pt")],
+    symbolism: [s("Bijagós masks", "Bulls and sharks from island initiation rites"), s("Gumbe", "The music of Guinea-Bissau")],
+  },
+  "la-ceiba-carnival": {
+    originalNames: [n("Carnaval de la Amistad", "Spanish", "es")],
+    symbolism: [s("San Isidro", "The patron saint of La Ceiba"), s("Carnavalitos", "Street parties in every neighbourhood")],
+  },
+  "kiribati-independence-day": {
+    originalNames: [n("Te Kaotan Inaomata", "Gilbertese", "gil")],
+    symbolism: [s("The frigatebird", "On the flag, a symbol of freedom"), s("The maneaba", "The meeting house at the heart of community")],
+  },
+  "moshoeshoe-day": {
+    originalNames: [n("Letsatsi la Moshoeshoe", "Sesotho", "st")],
+    symbolism: [s("Thaba-Bosiu", "The mountain fortress of the founder"), s("The mokorotlo", "The Basotho hat, shaped like a local mountain")],
+  },
+  "liberia-independence-day": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("The Lone Star", "The single star of the Liberian flag"), s("1847", "The year of independence")],
+  },
+  "famadihana": {
+    originalNames: [n("Famadihana", "Malagasy", "mg")],
+    symbolism: [s("Lamba silk shrouds", "Renewed for the ancestors"), s("Dancing with the ancestors", "A joyful reunion of the family")],
+  },
+  "lake-of-stars": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("The lake", "Lake Malawi, the 'lake of stars' named by Livingstone"), s("Sunsets", "The festival's backdrop")],
+  },
+  "chopi-timbila": {
+    originalNames: [n("M'saho", "Chopi", "cce")],
+    symbolism: [s("The timbila", "Wooden xylophones tuned with gourds"), s("The m'saho suite", "Music, dance and poetry in movements")],
+  },
+  "maharero-day": {
+    originalNames: [n("Maharero Day", "Otjiherero", "hz")],
+    symbolism: [s("Horned headdresses", "Cow horns, the wealth of a pastoral people"), s("Uniforms", "Military dress adopted and transformed")],
+  },
+  "angam-day": {
+    originalNames: [n("Angam", "Nauruan", "na")],
+    symbolism: [s("1,500", "The population number thought needed for survival"), s("Homecoming", "The meaning of 'angam'")],
+  },
+  "palau-independence-day": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("The full moon on the flag", "Unity and the right time for activities"), s("Storyboards", "Carved legends of Palau")],
+  },
+  "marshall-islands-constitution-day": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("Stick charts", "Maps of ocean swells used by navigators"), s("Outrigger canoes", "The skill of Marshallese sailing")],
+  },
+  "yap-day": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("Rai stone money", "Giant stone discs whose ownership is remembered, not moved"), s("Bamboo dance", "A traditional Yapese performance")],
+  },
+  "sugar-mas": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("Moko Jumbies", "Stilt-walkers from West African tradition"), s("Sugar", "The islands' plantation history")],
+  },
+  "jounen-kweyol": {
+    originalNames: [n("Jounen Kwéyòl", "Saint Lucian Creole", "acf")],
+    symbolism: [s("Madras", "The cloth of the national dress"), s("Kwéyòl", "The Creole language of the island")],
+  },
+  "vincy-mas": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("Mardi Gras", "The final day of the parade of bands"), s("Panorama", "The steelpan competition")],
+  },
+  "feast-of-saint-marinus": {
+    originalNames: [n("Festa di San Marino", "Italian", "it")],
+    symbolism: [s("The Three Towers", "Symbols of the republic"), s("Crossbows", "The republic's historic defenders")],
+  },
+  "festival-kreol": {
+    originalNames: [n("Festival Kreol", "Seychellois Creole", "crs")],
+    symbolism: [s("Moutya", "A dance born from the songs of enslaved people"), s("Kreol Seselwa", "The language that unites the islands")],
+  },
+  "solomon-islands-independence-day": {
+    originalNames: [],
+    namesNote: "Known by its English name.",
+    symbolism: [s("Panpipes", "Bamboo ensembles of Malaita"), s("Shell money", "Traditional currency, still used in custom exchanges")],
+  },
+  "tuvalu-independence-day": {
+    originalNames: [n("Aso Tutokotasi", "Tuvaluan", "tvl")],
+    symbolism: [s("Fatele", "Dance and song that grow faster and faster"), s("The falekaupule", "The island meeting hall")],
+  },
 };
 
 /** A plain description of how the festival's date is set, from its date rule unless overridden. */

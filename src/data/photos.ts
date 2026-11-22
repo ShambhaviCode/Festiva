@@ -985,6 +985,46 @@ export const FESTIVAL_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Hans_Adam_II_Schlosswiese_2023.jpg",
     "title": "Hans Adam II Schlosswiese 2023.jpg"
+  },
+  "luanda-carnival": {
+    "src": "/photos/festivals/luanda-carnival.jpg",
+    "width": 1000,
+    "height": 605,
+    "artist": "Iamdelcioborges",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Luanda_2025_focused_(cropped).jpg",
+    "title": "Luanda 2025 focused (cropped).jpg"
+  },
+  "bissau-carnival": {
+    "src": "/photos/festivals/bissau-carnival.jpg",
+    "width": 1000,
+    "height": 488,
+    "artist": "Original: Colleen Taugher from Lewiston Idaho, USA Modifications: The original u",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bissau-Stroossenzeen--w.jpg",
+    "title": "Bissau-Stroossenzeen--w.jpg"
+  },
+  "la-ceiba-carnival": {
+    "src": "/photos/festivals/la-ceiba-carnival.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "InterCoined",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Letras_de_La_Ceiba.jpg",
+    "title": "Letras de La Ceiba.jpg"
+  },
+  "angam-day": {
+    "src": "/photos/festivals/angam-day.jpg",
+    "width": 1000,
+    "height": 634,
+    "artist": "Taken in 1896 by Augustin Krämer and uploaded by Rémih",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Scene_at_Arenibek.jpg",
+    "title": "Scene at Arenibek.jpg"
   }
 };
 
@@ -2404,6 +2444,196 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Kara,_Togo_-_panoramio.jpg",
     "title": "Kara, Togo - panoramio.jpg"
+  },
+  "luanda": {
+    "src": "/photos/places/luanda.jpg",
+    "width": 1000,
+    "height": 605,
+    "artist": "Iamdelcioborges",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Luanda_2025_focused_(cropped).jpg",
+    "title": "Luanda 2025 focused (cropped).jpg"
+  },
+  "st-johns-antigua": {
+    "src": "/photos/places/st-johns-antigua.jpg",
+    "width": 1000,
+    "height": 605,
+    "artist": "This image or media was taken or created by Matt H. Wade. To see his entire port",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St_Johns_Antigua_2012.jpg",
+    "title": "St Johns Antigua 2012.jpg"
+  },
+  "brazzaville": {
+    "src": "/photos/places/brazzaville.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "Africany",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Les_lieux_de_Brazzaville_03.jpg",
+    "title": "Les lieux de Brazzaville 03.jpg"
+  },
+  "st-georges-grenada": {
+    "src": "/photos/places/st-georges-grenada.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "cwi.aida",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St_Georges_Grenada_Fort_-_panoramio.jpg",
+    "title": "St Georges Grenada Fort - panoramio.jpg"
+  },
+  "bissau": {
+    "src": "/photos/places/bissau.jpg",
+    "width": 1000,
+    "height": 488,
+    "artist": "Original: Colleen Taugher from Lewiston Idaho, USA Modifications: The original u",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bissau-Stroossenzeen--w.jpg",
+    "title": "Bissau-Stroossenzeen--w.jpg"
+  },
+  "la-ceiba": {
+    "src": "/photos/places/la-ceiba.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "InterCoined",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Letras_de_La_Ceiba.jpg",
+    "title": "Letras de La Ceiba.jpg"
+  },
+  "tarawa": {
+    "src": "/photos/places/tarawa.jpg",
+    "width": 1000,
+    "height": 523,
+    "artist": "Photo taken by Government of Kiribati employee in the course of their work",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:South_Tarawa_from_the_air.jpg",
+    "title": "South Tarawa from the air.jpg"
+  },
+  "maseru": {
+    "src": "/photos/places/maseru.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Lschefa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Maseru_City_CBD.jpg",
+    "title": "Maseru City CBD.jpg"
+  },
+  "monrovia": {
+    "src": "/photos/places/monrovia.jpg",
+    "width": 1000,
+    "height": 663,
+    "artist": "blk24ga",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Liberia,_Africa_-_panoramio_(256).jpg",
+    "title": "Liberia, Africa - panoramio (256).jpg"
+  },
+  "antananarivo": {
+    "src": "/photos/places/antananarivo.jpg",
+    "width": 857,
+    "height": 575,
+    "artist": "Sascha Grabow www.saschagrabow.com",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lake_Anosy,_Central_Antananarivo,_Capital_of_Madagascar,_Photo_by_Sascha_Grabow.jpg",
+    "title": "Lake Anosy, Central Antananarivo, Capital of Madagascar, Photo by Sascha Grabow.jpg"
+  },
+  "majuro": {
+    "src": "/photos/places/majuro.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Cliff Hansen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Eneko_Islet_02.JPG",
+    "title": "Eneko Islet 02.JPG"
+  },
+  "yaren": {
+    "src": "/photos/places/yaren.jpg",
+    "width": 1000,
+    "height": 747,
+    "artist": "Sean Kelleher from Melbourne, Australia",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Parliament_(15403802091).jpg",
+    "title": "Parliament (15403802091).jpg"
+  },
+  "koror": {
+    "src": "/photos/places/koror.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "ito1117",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Main_St,_Koror,_Palau_-_panoramio_(1).jpg",
+    "title": "Main St, Koror, Palau - panoramio (1).jpg"
+  },
+  "basseterre": {
+    "src": "/photos/places/basseterre.jpg",
+    "width": 1000,
+    "height": 553,
+    "artist": "giggel",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St._Kitts,_Karibik_-_Marina_in_Basseterre_-_panoramio.jpg",
+    "title": "St. Kitts, Karibik - Marina in Basseterre - panoramio.jpg"
+  },
+  "kingstown": {
+    "src": "/photos/places/kingstown.jpg",
+    "width": 800,
+    "height": 531,
+    "artist": "Unknown",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Kingstown.jpg",
+    "title": "Kingstown.jpg"
+  },
+  "city-of-san-marino": {
+    "src": "/photos/places/city-of-san-marino.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Francesco Bini",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:San_marino,_veduta_del_monte_titano_02.jpg",
+    "title": "San marino, veduta del monte titano 02.jpg"
+  },
+  "victoria-seychelles": {
+    "src": "/photos/places/victoria-seychelles.jpg",
+    "width": 640,
+    "height": 427,
+    "artist": "Gerard Larose, Seychelles Tourism Board",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Victoria_clock_tower.jpg",
+    "title": "Victoria clock tower.jpg"
+  },
+  "honiara": {
+    "src": "/photos/places/honiara.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Kahunapule Michael Johnson from Pukalani, Hawaii, United States of America",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Honiara_View.jpg",
+    "title": "Honiara View.jpg"
+  },
+  "funafuti": {
+    "src": "/photos/places/funafuti.jpg",
+    "width": 1000,
+    "height": 664,
+    "artist": "Michael Coghlan",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Funafuti_airport_-_Fiji_Airways.jpg",
+    "title": "Funafuti airport - Fiji Airways.jpg"
   }
 };
 

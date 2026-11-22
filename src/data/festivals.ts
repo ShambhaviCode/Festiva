@@ -6,6 +6,7 @@ import { worldFestivals3 } from "./festivals-world-3";
 import { worldFestivals4 } from "./festivals-world-4";
 import { worldFestivals5 } from "./festivals-world-5";
 import { worldFestivals6 } from "./festivals-world-6";
+import { worldFestivals7 } from "./festivals-world-7";
 
 /**
  * Curated festival dataset.
@@ -384,7 +385,7 @@ const coreFestivals: Festival[] = [
     name: "Eid al-Fitr",
     tagline: "The festival of breaking the fast",
     summary: "The celebration that ends Ramadan: morning prayers, charity, new clothes, visits and a table of sweets.",
-    countries: ["ID", "EG", "TR", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO", "YE", "SY", "PS", "MR", "DJ", "KM", "GM", "GN", "TD", "BN", "MV"],
+    countries: ["ID", "EG", "TR", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO", "YE", "SY", "PS", "MR", "DJ", "KM", "GM", "GN", "TD", "BN", "MV", "SL"],
     region: "middle-east",
     observedBy: "Muslim communities worldwide",
     category: "faith",
@@ -427,7 +428,7 @@ const coreFestivals: Festival[] = [
     name: "Eid al-Adha",
     tagline: "The festival of sacrifice",
     summary: "The second great festival of Islam, at the close of the Hajj pilgrimage, centred on prayer, sacrifice and sharing food.",
-    countries: ["TR", "EG", "ID", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO", "YE", "SY", "PS", "MR", "DJ", "KM", "GM", "GN", "TD", "BN", "MV"],
+    countries: ["TR", "EG", "ID", "PK", "AE", "BD", "SA", "OM", "QA", "KW", "BH", "DZ", "LY", "SD", "NE", "SO", "YE", "SY", "PS", "MR", "DJ", "KM", "GM", "GN", "TD", "BN", "MV", "SL"],
     region: "middle-east",
     observedBy: "Muslim communities worldwide",
     category: "faith",
@@ -466,7 +467,7 @@ const coreFestivals: Festival[] = [
     localName: "Spring Festival, Tết, Seollal",
     tagline: "Fifteen days to begin the year together",
     summary: "The most important holiday in much of East and Southeast Asia: a reunion dinner, red envelopes, and visits that continue until the Lantern Festival.",
-    countries: ["CN", "VN", "KR", "SG"],
+    countries: ["CN", "VN", "KR", "SG", "KP"],
     region: "east-asia",
     observedBy: "Chinese, Vietnamese, Korean and other communities across Asia and the diaspora",
     category: "new-year",
@@ -832,7 +833,7 @@ const coreFestivals: Festival[] = [
     name: "Christmas",
     tagline: "A midwinter celebration of birth and giving",
     summary: "The Christian celebration of the birth of Jesus, also kept as a cultural holiday of lights, music, food and gifts around the world.",
-    countries: ["DE", "MX", "IT", "GB", "US", "ET", "VA"],
+    countries: ["DE", "MX", "IT", "GB", "US", "ET", "VA", "BI", "CF", "CD", "GQ", "GA", "ST", "SS", "TL", "ZW"],
     region: "europe",
     observedBy: "Christian communities worldwide, and many others as a cultural holiday",
     category: "faith",
@@ -1291,7 +1292,7 @@ const coreFestivals: Festival[] = [
     name: "Meskel",
     tagline: "The finding of the True Cross, lit by a bonfire",
     summary: "Ethiopian and Eritrean Orthodox Christians mark the finding of the True Cross with processions, song and the great Demera bonfire.",
-    countries: ["ET"],
+    countries: ["ET", "ER"],
     region: "africa",
     observedBy: "Ethiopian and Eritrean Orthodox Tewahedo Christians, and Ethiopians of many backgrounds",
     category: "faith",
@@ -1774,7 +1775,7 @@ const coreFestivals: Festival[] = [
   },
 ];
 
-export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...worldFestivals, ...worldFestivals2, ...worldFestivals3, ...worldFestivals4, ...worldFestivals5, ...worldFestivals6];
+export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...worldFestivals, ...worldFestivals2, ...worldFestivals3, ...worldFestivals4, ...worldFestivals5, ...worldFestivals6, ...worldFestivals7];
 
 export const festivalBySlug = new Map(festivals.map((f) => [f.slug, f]));
 

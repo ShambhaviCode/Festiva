@@ -6,6 +6,9 @@ import { SaveButton } from "@/components/SaveButton";
 import { SourceLink } from "@/components/Sources";
 import { brandBySlug, brands, CATEGORY_LABELS, giftIdeas, TIER_LABELS } from "@/data/shop";
 import { paletteFor, type SlugProps } from "@/lib/view";
+import { BRAND_STORES } from "@/lib/integrations/brand-catalog";
+import { getLiveCatalog } from "@/lib/brand-catalog-cache";
+import { LiveProducts } from "@/components/LiveProducts";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ slug: b.slug }));
@@ -23,6 +26,7 @@ export default async function BrandPage({ params }: SlugProps) {
   const brand = brandBySlug.get(slug);
   if (!brand) notFound();
   const ideas = giftIdeas.filter((g) => g.brands.includes(brand.slug));
+  const live = BRAND_STORES[brand.slug] ? await getLiveCatalog(brand.slug, 12) : null;
   return (
     <article>
       <DetailHero
@@ -48,6 +52,11 @@ export default async function BrandPage({ params }: SlugProps) {
         }
       />
       <div className="shell pb-20">
+        {live && (
+          <Block title={`Live from ${brand.name}`} id="live">
+            <LiveProducts catalog={live} brandName={brand.name} />
+          </Block>
+        )}
         <Block title="Known for" id="known-for">
           <ul className="list-disc pl-5">
             {brand.knownFor.map((k) => (
@@ -75,7 +84,7 @@ export default async function BrandPage({ params }: SlugProps) {
         </Block>
         <Block title="What FESTIVA does not know" id="limits">
           <p>
-            FESTIVA does not hold prices, availability, delivery areas or reviews for {brand.name}, and is not affiliated with it. The tier is an editorial guide to the brand&rsquo;s general positioning. For anything you need to rely on, use the official site.
+            {live ? `Products and prices above come live from ${brand.name}'s own store; FESTIVA does not hold delivery areas or reviews, and is not affiliated with ${brand.name}.` : `FESTIVA does not hold prices, availability, delivery areas or reviews for ${brand.name}, and is not affiliated with it: ${brand.name} does not publish a public product feed.`} The tier is an editorial guide to the brand&rsquo;s general positioning. For anything you need to rely on, use the official site.
           </p>
         </Block>
         <div className="rule border-t pt-6">

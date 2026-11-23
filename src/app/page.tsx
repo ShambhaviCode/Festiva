@@ -64,7 +64,7 @@ export default function HomePage() {
         <div className="shell relative grid items-center gap-10 pb-14 pt-10 lg:grid-cols-[1.05fr_1fr] lg:pb-20 lg:pt-14">
           <div className="min-w-0">
             <p className="rise inline-flex items-center gap-2 rounded-full bg-plum-deep px-3.5 py-1.5 text-sm font-semibold text-ivory" style={{ "--i": 0 } as React.CSSProperties}>
-              <Rosette size={18} /> {festivals.length} festivals · {festivalCountryCount} countries · real photos
+              <Rosette size={18} /> {festivals.length} festivals · {festivalCountryCount} countries
             </p>
             <h1 className="display-hero rise mt-6" style={{ "--i": 1 } as React.CSSProperties}>
               Discover the world.{" "}

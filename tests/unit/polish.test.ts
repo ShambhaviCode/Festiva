@@ -96,3 +96,35 @@ describe("Photographs", () => {
     expect(foods.filter((f) => !f.vegetarian).map((f) => f.slug)).toEqual([]);
   });
 });
+
+describe("Live brand catalogue", () => {
+  const store = { domain: "www.example-store.com", currency: "INR" as const };
+  const feed = {
+    products: [
+      { id: 1, title: "Block-print kurta", handle: "block-print-kurta", product_type: "Kurta", images: [{ src: "https://cdn.shopify.com/s/files/1/kurta.jpg?v=1" }], variants: [{ price: "1499.00", compare_at_price: "1999.00", available: true }, { price: "1299.00", compare_at_price: null, available: false }] },
+      { id: 2, title: "Sold out scarf", handle: "scarf", images: [{ src: "https://cdn.shopify.com/s/files/1/scarf.jpg" }], variants: [{ price: "499.00", available: false }] },
+      { id: 3, title: "No photo", handle: "no-photo", images: [], variants: [{ price: "99.00", available: true }] },
+      { id: 4, title: "Odd image host", handle: "odd", images: [{ src: "https://evil.example/x.jpg" }], variants: [{ price: "10.00", available: true }] },
+    ],
+  };
+
+  test("keeps only in-stock products with a store photo, and reads the store's own prices exactly", async () => {
+    const { parseStoreProducts } = await import("@/lib/integrations/brand-catalog");
+    const products = parseStoreProducts(feed, store);
+    expect(products).toHaveLength(1);
+    expect(products[0]).toMatchObject({ title: "Block-print kurta", url: "https://www.example-store.com/products/block-print-kurta", priceMinor: 149900, compareAtMinor: 199900, currency: "INR" });
+    expect(products[0].image).toBe("https://cdn.shopify.com/s/files/1/kurta.jpg?v=1&width=600");
+  });
+
+  test("a store that fails or is unknown is reported as unavailable, never invented", async () => {
+    const { fetchBrandCatalog } = await import("@/lib/integrations/brand-catalog");
+    const down = (async () => new Response("nope", { status: 503 })) as unknown as typeof fetch;
+    expect(await fetchBrandCatalog("fabindia", down)).toMatchObject({ status: "unavailable", reason: "The store answered HTTP 503." });
+    const offline = (async () => { throw new Error("offline"); }) as unknown as typeof fetch;
+    expect((await fetchBrandCatalog("giva", offline)).status).toBe("unavailable");
+    expect((await fetchBrandCatalog("cartier", offline)).status).toBe("unavailable");
+    const ok = (async () => new Response(JSON.stringify(feed), { status: 200 })) as unknown as typeof fetch;
+    const live = await fetchBrandCatalog("nicobar", ok);
+    expect(live.status).toBe("live");
+  });
+});

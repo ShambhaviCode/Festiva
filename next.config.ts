@@ -9,7 +9,7 @@ const csp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://cdn.shopify.com",
   // Gift Circle plays back a voice recording locally before it is sent.
   "media-src 'self' blob:",
   "font-src 'self' data:",

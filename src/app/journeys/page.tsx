@@ -56,7 +56,7 @@ export default function JourneysPage() {
           </div>
         </div>
       </section>
-      <section className="shell py-14" aria-label="Destinations">
+      <section id="destinations" className="shell scroll-mt-24 py-14" aria-label="Destinations">
         <CatalogExplorer items={items} facets={facets} searchLabel="Search destinations" placeholder="Try “Kyoto”, “lanterns” or “river”" noun={["destination", "destinations"]} />
       </section>
       <section className="bg-cream" aria-labelledby="countries-heading">

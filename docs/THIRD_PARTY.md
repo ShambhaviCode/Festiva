@@ -34,3 +34,14 @@ FESTIVA calls these services only from its server, only when their credentials a
 | NudgeBee | Event Webhook (`/api/webhooks/event`), GraphQL `events_list` | github.com/nudgebee/nudgebee-docs (published at docs.nudgebee.com), 17 November 2026 |
 
 The NudgeBee, Sarvam and Flagsmith names belong to their owners. FESTIVA uses them only to describe the integrations.
+
+## Brand logos
+
+Shown only to identify each brand on its Shop card and detail page. Each logo is its owner's trademark; FESTIVA has no relationship with any of these brands. Listed in `src/data/brand-logos.ts`.
+
+- **Fabindia** (`public/logos/fabindia.svg`): Wikimedia Commons, [File:Fabindia_logo.svg](https://commons.wikimedia.org/wiki/File:Fabindia_logo.svg), public domain.
+- **Haldiram's** (`public/logos/haldirams.svg`): English Wikipedia, [File:Haldiram's_2024_Logo.svg](https://en.wikipedia.org/wiki/File:Haldiram%27s_2024_Logo.svg), a non-free logo used there under fair use.
+- **Lindt & Sprüngli** (`public/logos/lindt.svg`): English Wikipedia, [File:Lindt_&_Sprüngli.svg](https://en.wikipedia.org/wiki/File:Lindt_%26_Spr%C3%BCngli.svg), a non-free logo used there under fair use.
+- **Godiva** (`public/logos/godiva.svg`): English Wikipedia, [File:Godiva_Chocolatier_Logo.svg](https://en.wikipedia.org/wiki/File:Godiva_Chocolatier_Logo.svg), a non-free logo used there under fair use.
+
+The three non-free logos are not freely licensed. They are used here at the site owner's decision, for identification only; remove them if a brand objects. Other brands keep FESTIVA's typographic name plate.

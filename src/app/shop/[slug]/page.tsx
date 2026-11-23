@@ -1,3 +1,4 @@
+import { BRAND_LOGOS } from "@/data/brand-logos";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Block, DetailHero } from "@/components/PageIntro";
@@ -34,9 +35,16 @@ export default async function BrandPage({ params }: SlugProps) {
         art={{ kind: "brand", name: brand.name, tier: brand.tier, origin: brand.origin }}
         transitionName={`art-brand-${brand.slug}`}
         actions={
-          <a href={brand.officialUrl} className="btn btn-plum" target="_blank" rel="noopener noreferrer nofollow">
-            Visit the official {brand.name} site
-          </a>
+          <>
+            <a href={brand.officialUrl} className="btn btn-plum" target="_blank" rel="noopener noreferrer nofollow">
+              Visit the official {brand.name} site
+            </a>
+            {BRAND_LOGOS[brand.slug] && (
+              <p className="note mt-3 w-full">
+                Logo from <a className="link" href={BRAND_LOGOS[brand.slug].source} target="_blank" rel="noopener noreferrer">{BRAND_LOGOS[brand.slug].sourceLabel}</a> ({BRAND_LOGOS[brand.slug].license}). Shown only to identify the brand.
+              </p>
+            )}
+          </>
         }
       />
       <div className="shell pb-20">

@@ -1,3 +1,4 @@
+import { BRAND_LOGOS } from "@/data/brand-logos";
 import Image from "next/image";
 import { photoFor } from "@/data/photos";
 import { seeded } from "@/domain/random";
@@ -59,7 +60,7 @@ export function ArtImage({ art, seed, palette, className = "h-full w-full", size
     case "locator":
       return <Locator lat={art.lat} lon={art.lon} palette={palette} className={className} />;
     case "brand":
-      return <BrandTile name={art.name} tier={art.tier} origin={art.origin} className={className} />;
+      return <BrandTile name={art.name} tier={art.tier} origin={art.origin} logo={BRAND_LOGOS[seed]?.src} className={className} />;
   }
 }
 
@@ -235,8 +236,21 @@ const TIER_STYLE: Record<GiftTier, { bg: string; ink: string; rule: string; word
 };
 
 /** A brand shown by name in FESTIVA's own typography. It deliberately does not imitate any brand's logo. */
-export function BrandTile({ name, tier, origin, className }: { name: string; tier: GiftTier; origin: string; className?: string }) {
+export function BrandTile({ name, tier, origin, logo, className }: { name: string; tier: GiftTier; origin: string; logo?: string; className?: string }) {
   const s = TIER_STYLE[tier];
+  // The brand's own logo, when a licensed copy exists: shown on a white plate so it keeps its colours.
+  if (logo) {
+    return (
+      <div className={`relative flex flex-col items-center justify-center gap-4 bg-white p-8 text-center ${className ?? ""}`} aria-hidden="true">
+        <span className="pointer-events-none absolute inset-3 rounded-xl border" style={{ borderColor: s.rule, opacity: 0.55 }} />
+        {/* eslint-disable-next-line @next/next/no-img-element -- a small static SVG logo; next/image adds nothing here */}
+        <img src={logo} alt="" className="max-h-[42%] w-auto max-w-[72%] object-contain" />
+        <span className="text-[0.85rem] italic text-ink">
+          {s.word}, from {origin}
+        </span>
+      </div>
+    );
+  }
   const size = name.length > 12 ? "text-[clamp(1.6rem,3.2vw,2.4rem)]" : "text-[clamp(1.9rem,4vw,3rem)]";
   return (
     <div className={`relative flex flex-col items-center justify-center p-6 text-center ${className ?? ""}`} style={{ background: s.bg, color: s.ink }} aria-hidden="true">

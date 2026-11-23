@@ -14,6 +14,8 @@ interface Props {
   brandNames: Record<string, string>;
   categoryLabels: Record<GiftCategory, string>;
   tierLabels: Record<GiftTier, string>;
+  /** Amazon search links per idea (built on the server), and whether they carry an affiliate tag. */
+  retailer?: { links: Record<string, string>; label: string; affiliate: boolean };
 }
 
 const RECIPIENTS = Object.entries(LABELS.audience) as [string, string][];
@@ -22,6 +24,7 @@ const RECIPIENTS = Object.entries(LABELS.audience) as [string, string][];
 export function GiftFinder({
   ideas,
   brandNames,
+  retailer,
   categoryLabels,
   tierLabels,
 }: Props) {
@@ -218,13 +221,25 @@ export function GiftFinder({
                       (curated examples)
                     </p>
                   )}
-                  <div className="mt-auto pt-4">
+                  <div className="mt-auto flex flex-wrap items-center gap-2.5 pt-4">
                     <SaveButton
                       kind="wishlist"
                       id={idea.slug}
                       name={idea.title}
                       small
                     />
+                    {retailer?.links[idea.slug] && (
+                      <a
+                        href={retailer.links[idea.slug]}
+                        target="_blank"
+                        rel={`noopener noreferrer${retailer.affiliate ? " sponsored" : ""}`}
+                        className="btn btn-line btn-sm"
+                        aria-label={`Search ${retailer.label} for ${idea.title} (opens in a new tab)`}
+                      >
+                        Search {retailer.label}
+                        <svg aria-hidden="true" viewBox="0 0 16 16" className="h-3.5 w-3.5"><path d="M6 3h7v7M13 3 4 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+                      </a>
+                    )}
                   </div>
                 </li>
               ))}

@@ -298,6 +298,20 @@
   .peek-btn:active {
     transform: scale(0.95);
   }
+  .footer-link {
+    color: color-mix(in srgb, var(--color-ivory) 86%, transparent);
+    background-image: linear-gradient(var(--color-marigold), var(--color-marigold));
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition:
+      color var(--dur-fast) var(--ease-out-soft),
+      background-size var(--dur-base) var(--ease-out-soft);
+  }
+  .footer-link:hover {
+    color: var(--color-ivory);
+    background-size: 100% 1.5px;
+  }
   .btn-sm {
     min-height: 2.25rem;
     padding: 0.35rem 0.95rem;

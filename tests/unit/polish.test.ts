@@ -1,5 +1,7 @@
 /** @jest-environment node */
 import { confirmAction, type ConfirmRequest } from "@/lib/confirm";
+import type { ServerEnv } from "@/lib/env.server";
+import { amazonSearchUrl, amazonStatus } from "@/lib/integrations/amazon";
 
 /** A minimal browser window: an event target with a native confirm. */
 function fakeWindow(answer: boolean) {
@@ -39,5 +41,25 @@ describe("confirmAction", () => {
     await expect(confirmAction({ title: "Clear data?", tone: "danger", confirmLabel: "Clear data" })).resolves.toBe(false);
     expect(w.confirm).not.toHaveBeenCalled();
     expect(seen[0]).toMatchObject({ title: "Clear data?", tone: "danger", confirmLabel: "Clear data" });
+  });
+});
+
+describe("Amazon links for Shop", () => {
+  const env = (extra: Record<string, string>) => ({ ...extra }) as unknown as ServerEnv;
+
+  test("without configuration: a plain Amazon search link, no affiliate tag, and no claim of live products", () => {
+    const url = new URL(amazonSearchUrl("Silver diya set", env({})));
+    expect(url.origin).toBe("https://www.amazon.in");
+    expect(url.pathname).toBe("/s");
+    expect(url.searchParams.get("k")).toBe("Silver diya set");
+    expect(url.searchParams.has("tag")).toBe(false);
+    expect(amazonStatus(env({}))).toEqual({ marketplace: "amazon.in", affiliate: false, liveProducts: false });
+  });
+
+  test("the Associates tag and marketplace are used only when set; live products need all three keys", () => {
+    const configured = env({ AMAZON_ASSOCIATE_TAG: "festiva-21", AMAZON_MARKETPLACE: "amazon.co.uk" });
+    expect(new URL(amazonSearchUrl("Tea gift box", configured)).searchParams.get("tag")).toBe("festiva-21");
+    expect(amazonStatus(configured)).toMatchObject({ marketplace: "amazon.co.uk", affiliate: true, liveProducts: false });
+    expect(amazonStatus(env({ AMAZON_ASSOCIATE_TAG: "festiva-21", AMAZON_PAAPI_ACCESS_KEY: "a", AMAZON_PAAPI_SECRET_KEY: "b" })).liveProducts).toBe(true);
   });
 });

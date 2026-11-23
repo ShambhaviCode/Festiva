@@ -67,6 +67,14 @@ const serverSchema = z.object({
   NUDGEBEE_API_URL: serviceUrl,
   NUDGEBEE_API_TOKEN: optional,
   NUDGEBEE_APP_URL: serviceUrl,
+
+  // --- Amazon (Shop) --------------------------------------------------------
+  // The Associates tag is added to "Search on Amazon" links only when set. The Product Advertising API keys
+  // are reserved for live product data, which FESTIVA does not show until those keys are approved and set.
+  AMAZON_ASSOCIATE_TAG: optional.pipe(z.string().regex(/^[A-Za-z0-9-]{3,40}$/, "must be an Amazon Associates tag").optional()),
+  AMAZON_MARKETPLACE: optional.pipe(z.enum(["amazon.in", "amazon.com", "amazon.co.uk", "amazon.de", "amazon.co.jp", "amazon.com.au"]).optional()),
+  AMAZON_PAAPI_ACCESS_KEY: optional,
+  AMAZON_PAAPI_SECRET_KEY: optional,
 });
 
 export type ServerEnv = z.infer<typeof serverSchema>;

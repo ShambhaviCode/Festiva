@@ -598,10 +598,6 @@ export const FESTIVAL_CULTURE: Record<string, FestivalCulture> = {
     originalNames: [n("Día del Boyero", "Spanish", "es")],
     symbolism: [s("The painted oxcart", "Costa Rica's national symbol of work"), s("The blessing", "Thanks for the animals and the harvest")],
   },
-  "san-juan-ara": {
-    originalNames: [n("San Juan Ára", "Guaraní", "gn"), n("Fiesta de San Juan", "Spanish", "es")],
-    symbolism: [s("Fire games", "Courage and luck for the year"), s("Chipa", "The bread of Paraguayan fairs")],
-  },
 
   // Sixth world batch, added 22 November 2026 (festivals-world-6.ts).
   "nyege-nyege": {

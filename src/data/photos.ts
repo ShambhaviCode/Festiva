@@ -2139,16 +2139,6 @@ export const DISH_PHOTOS: Record<string, Photo> = {
     "source": "https://commons.wikimedia.org/wiki/File:Ballokume_dhe_lule.jpg",
     "title": "Ballokume dhe lule.jpg"
   },
-  "chipa": {
-    "src": "/photos/dishes/chipa.jpg",
-    "width": 1000,
-    "height": 750,
-    "artist": "Horacio Cambeiro",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Chipa_paraguaya_en_el_Circuito_Comercial_de_Encarnaci%C3%B3n_(Paraguay).jpg",
-    "title": "Chipa paraguaya en el Circuito Comercial de Encarnación (Paraguay).jpg"
-  },
   "maamoul": {
     "src": "/photos/dishes/maamoul.jpg",
     "width": 1000,
@@ -3754,6 +3744,16 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Timmy_Burarrwanga_at_Bawaka.JPG",
     "title": "Timmy Burarrwanga at Bawaka.JPG"
+  },
+  "basel": {
+    "src": "/photos/places/basel.jpg",
+    "width": 1000,
+    "height": 625,
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Blick_von_der_Mittleren._Br%C3%BCcke_zur_Grossbasler_Altstadt_(2023).jpg",
+    "title": "Blick von der Mittleren. Brücke zur Grossbasler Altstadt (2023).jpg"
   }
 };
 

@@ -1779,6 +1779,9 @@ export const festivals: Festival[] = [...coreFestivals, ...indiaFestivals, ...wo
 
 export const festivalBySlug = new Map(festivals.map((f) => [f.slug, f]));
 
+/** How many countries have at least one festival in the guide (the number the site shows). */
+export const festivalCountryCount = new Set(festivals.flatMap((f) => f.countries)).size;
+
 export const CATEGORY_LABELS: Record<Festival["category"], string> = {
   light: "Festivals of light",
   harvest: "Harvest",

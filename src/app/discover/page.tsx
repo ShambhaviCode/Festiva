@@ -4,7 +4,7 @@ import { CatalogExplorer, type CatalogItem, type Facet } from "@/components/Cata
 import { PageIntro } from "@/components/PageIntro";
 import { UpcomingList } from "@/components/Upcoming";
 import { countries, countryName } from "@/data/countries";
-import { CATEGORY_LABELS, festivals, REGION_LABELS } from "@/data/festivals";
+import { CATEGORY_LABELS, festivalCountryCount, festivals, REGION_LABELS } from "@/data/festivals";
 import { monthName, typicalMonths } from "@/domain/dates";
 import { datedFestivals, placeLine } from "@/lib/view";
 
@@ -50,7 +50,7 @@ const facets: Facet[] = [
 export default function DiscoverPage() {
   return (
     <>
-      <PageIntro title="Discover festivals" lede={`${festivals.length} celebrations across ${countries.length} countries, each with its story, its customs and an honest note on when it falls. Search by name, place or tradition.`}>
+      <PageIntro title="Discover festivals" lede={`${festivals.length} celebrations across ${festivalCountryCount} countries, each with its story, its customs and an honest note on when it falls. Search by name, place or tradition.`}>
         <p className="mt-5 flex flex-wrap gap-x-8 gap-y-2">
           <Link href="/discover/calendar" className="link link-accent">
             Browse the calendar by month

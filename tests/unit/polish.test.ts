@@ -78,3 +78,21 @@ describe("Brand logos", () => {
     }
   });
 });
+
+describe("Photographs", () => {
+  test("every festival, dish, garment and place shows a real photograph, never generated artwork", async () => {
+    const { festivals } = await import("@/data/festivals");
+    const { foods } = await import("@/data/foods");
+    const { attire } = await import("@/data/attire");
+    const { destinations } = await import("@/data/destinations");
+    const { imageFor } = await import("@/data/photo-fallbacks");
+    expect(festivals.filter((f) => !imageFor("rosette", f.slug)).map((f) => f.slug)).toEqual([]);
+    expect(foods.filter((f) => !imageFor("plate", f.slug)).map((f) => f.slug)).toEqual([]);
+    expect(attire.filter((a) => !imageFor("textile", a.slug)).map((a) => a.slug)).toEqual([]);
+    expect(destinations.filter((d) => !imageFor("locator", d.slug)).map((d) => d.slug)).toEqual([]);
+  });
+  test("Taste lists vegetarian dishes only", async () => {
+    const { foods } = await import("@/data/foods");
+    expect(foods.filter((f) => !f.vegetarian).map((f) => f.slug)).toEqual([]);
+  });
+});

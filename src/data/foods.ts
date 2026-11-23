@@ -87,7 +87,6 @@ export const foods: Food[] = [
   f("mont-lone-yay-paw", "Mont lone yay paw", "MM", ["thingyan"], "sweet", "vegan", [], ["glutinous rice flour", "jaggery", "grated coconut"], "Rice-flour balls filled with jaggery, made and shared at Thingyan; one may hide a chilli as a prank.", "Mont_lone_yay_baw"),
   f("ambok", "Ambok", "KH", ["bon-om-touk"], "snack", "vegan", [], ["young rice, roasted and pounded flat", "coconut", "banana"], "Flattened young rice mixed with coconut and banana, eaten at midnight to salute the moon at Bon Om Touk.", "Ambok"),
   f("maple-taffy", "Maple taffy", "CA", ["quebec-winter-carnival"], "sweet", "vegan", [], ["maple syrup", "fresh snow"], "Hot maple syrup poured on snow and rolled onto a stick as it sets: tire d'érable.", "Maple_taffy"),
-  f("basler-mehlsuppe", "Basler Mehlsuppe", "CH", ["basel-fasnacht"], "main", "vegetarian", ["gluten", "dairy"], ["browned flour", "butter", "stock", "onion", "grated cheese"], "Basel's browned-flour soup, eaten in the small hours after the Morgestraich.", "Mehlsuppe"),
   // Second world batch foods, added 22 November 2026 (all vegetarian).
   f("mazurek", "Mazurek", "PL", ["smigus-dyngus"], "sweet", "vegetarian", ["gluten", "dairy", "egg", "nuts"], ["shortcrust pastry", "caramel or chocolate", "nuts", "dried fruit"], "A flat Easter cake decorated with nuts and dried fruit, made for the Polish Easter table.", "Mazurek_(cake)"),
   f("varenyky", "Varenyky", "UA", ["kupala-night"], "main", "vegetarian", ["gluten", "dairy"], ["flour", "potato", "onion", "sour cream", "cherries for a sweet version"], "Ukraine's filled dumplings, made with potato, cheese or summer cherries.", "Varenyky"),
@@ -107,7 +106,6 @@ export const foods: Food[] = [
   f("churchkhela", "Churchkhela", "GE", ["rtveli"], "sweet", "vegan", ["nuts"], ["walnuts or hazelnuts", "thickened grape juice", "flour"], "Strings of nuts dipped in thickened grape must and dried, made at harvest time.", "Churchkhela"),
   // Fifth world batch foods, added 22 November 2026 (all vegetarian).
   f("ftira", "Ftira", "MT", ["mnarja"], "main", "vegan", ["gluten"], ["sourdough", "olive oil", "tomatoes", "capers", "olives"], "Malta's ring-shaped sourdough bread, often filled with tomato, capers and olives.", "Ftira"),
-  f("chipa", "Chipa", "PY", ["san-juan-ara"], "snack", "vegetarian", ["dairy", "egg"], ["cassava starch", "cheese", "eggs", "anise"], "Small baked rings of cassava starch and cheese, sold at every Paraguayan fair.", "Chipa"),
 ];
 
 export const foodBySlug = new Map(foods.map((food) => [food.slug, food]));

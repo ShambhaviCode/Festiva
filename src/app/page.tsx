@@ -4,8 +4,7 @@ import { HeroSearch } from "@/components/home/HeroSearch";
 import { UpcomingRail, type RailPhoto } from "@/components/home/UpcomingRail";
 import { Rosette } from "@/components/Logo";
 import { WorldMap } from "@/components/WorldMap";
-import { countries } from "@/data/countries";
-import { CATEGORY_LABELS, festivalBySlug, festivals } from "@/data/festivals";
+import { CATEGORY_LABELS, festivalBySlug, festivalCountryCount, festivals } from "@/data/festivals";
 import { indiaDivisions, linksForDivision } from "@/data/geo-india";
 import { ATTIRE_PHOTOS, DISH_PHOTOS, FESTIVAL_PHOTOS, PLACE_PHOTOS, type Photo } from "@/data/photos";
 import { imageFor } from "@/data/photo-fallbacks";
@@ -65,7 +64,7 @@ export default function HomePage() {
         <div className="shell relative grid items-center gap-10 pb-14 pt-10 lg:grid-cols-[1.05fr_1fr] lg:pb-20 lg:pt-14">
           <div className="min-w-0">
             <p className="rise inline-flex items-center gap-2 rounded-full bg-plum-deep px-3.5 py-1.5 text-sm font-semibold text-ivory" style={{ "--i": 0 } as React.CSSProperties}>
-              <Rosette size={18} /> {festivals.length} festivals · {countries.length} countries · real photos
+              <Rosette size={18} /> {festivals.length} festivals · {festivalCountryCount} countries · real photos
             </p>
             <h1 className="display-hero rise mt-6" style={{ "--i": 1 } as React.CSSProperties}>
               Discover the world.{" "}
@@ -141,7 +140,7 @@ export default function HomePage() {
               Every country on Natural Earth&rsquo;s boundaries, coloured by how many festivals the guide holds there. Open a country to see its festivals; open India to go state by state.
             </p>
             <ul className="mt-5 grid gap-2 text-ink">
-              <li className="flex gap-2"><span className="text-jade">●</span> {countries.length} countries, from Japan to Jamaica</li>
+              <li className="flex gap-2"><span className="text-jade">●</span> {festivalCountryCount} countries, from Japan to Jamaica</li>
               <li className="flex gap-2"><span className="text-pink">●</span> India&rsquo;s 28 states and 8 union territories</li>
               <li className="flex gap-2"><span className="text-saffron">●</span> Shareable links to any country or state</li>
             </ul>

@@ -18,7 +18,7 @@
 
 ## Overview
 
-FESTIVA covers 176 festivals across all 196 countries (every UN member state, plus Vatican City, Palestine and Taiwan): history, traditions, food, dress, music and destinations, with a sourced next date for every movable festival. A deterministic **Matchmaker** turns six answers into a complete celebration plan, and **Gift Circle** lets a group organise a gift exchange across languages, by voice or text.
+FESTIVA covers 175 festivals across 195 countries (every UN member state except Paraguay, plus Vatican City, Palestine and Taiwan): history, traditions, food, dress, music and destinations, with a sourced next date for every movable festival. A deterministic **Matchmaker** turns six answers into a complete celebration plan, and **Gift Circle** lets a group organise a gift exchange across languages, by voice or text.
 
 ## What it does for users
 
@@ -45,7 +45,7 @@ FESTIVA covers 176 festivals across all 196 countries (every UN member state, pl
     <td><img src="docs/screenshots/app/gift-circle.jpg" alt="Gift Circle" /><br /><sub><b>Gift Circle:</b> multilingual group gifting powered by Sarvam AI</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/app/discover.jpg" alt="Discover festivals" /><br /><sub><b>Discover:</b> 176 festivals with search and filters</sub></td>
+    <td><img src="docs/screenshots/app/discover.jpg" alt="Discover festivals" /><br /><sub><b>Discover:</b> 175 festivals with search and filters</sub></td>
     <td><img src="docs/screenshots/app/taste.jpg" alt="Festival food" /><br /><sub><b>Taste:</b> festival dishes with diet and allergen notes</sub></td>
   </tr>
   <tr>

@@ -25,10 +25,12 @@ FESTIVA covers 176 festivals across all 196 countries (every UN member state, pl
 | Need | How FESTIVA solves it |
 |---|---|
 | **Understand a celebration** | Each festival page explains meaning, history, regional variations and etiquette, and gives the next date with its source and how certain it is. |
-| **Plan one, fast** | The Matchmaker asks six questions (occasion, place and people, budget, food, style and time, interests) and returns an editable plan: schedule, food, gifts, attire, décor, music and greetings, with a budget that always adds up. |
+| **Plan one, fast** | Describe the celebration in your own words, in English or an Indian language ("Diwali with six friends in Bengaluru, ₹5,000, two days"), and Sarvam AI reads it; or answer six questions. Either way you get an editable plan: schedule, food, gifts, attire, décor, music and greetings, with a budget that FESTIVA's code always adds up. |
 | **Eat right** | Every dish lists vegetarian and vegan status and common allergens, and plans respect dietary needs. |
 | **Gift as a group** | Gift Circle collects everyone's wishes by voice or text in their own language, translates them, suggests gifts, draws Secret Santa and tracks who has contributed. |
-| **Travel and explore** | A world map of 35 places where festivals come alive, with landmarks, experiences and a short itinerary for each. |
+| **Explore the world** | A real, zoomable map on Natural Earth boundaries (India point of view). Open any country to see its festivals; open India to go state by state through all 28 states and 8 union territories. Deep links (`/world?country=IN&region=IN-KL`) are shareable. |
+| **Find anything** | Global search (press `/`) across festivals, countries, India's states, food, attire, places, brands and artists, with keyboard navigation. |
+| **Travel** | Cities and heritage sites where festivals come alive, with landmarks, experiences and a short itinerary for each. |
 | **Share and keep** | Save plans, export them as text, JSON or PDF, share a link and revoke it later. Greeting cards download as images. |
 
 ## Screenshots
@@ -56,7 +58,7 @@ FESTIVA covers 176 festivals across all 196 countries (every UN member state, pl
 
 | | Integration | Verified |
 |---|---|---|
-| **Sarvam AI** | Speech-to-text (`saaras:v4`), translation (`sarvam-translate:v1`), structured preference extraction (`sarvam-105b`, JSON schema). Every AI-derived field carries an HMAC-signed provenance receipt, verified on the server. | Live |
+| **Sarvam AI** | FESTIVA Intelligence and the natural-language planner brief (`sarvam-105b`, JSON schema, any supported Indian language), speech-to-text (`saaras:v4`), translation (`sarvam-translate:v1`), structured preference extraction. Every AI-derived field carries an HMAC-signed provenance receipt, verified on the server. | Live |
 | **Flagsmith** | Official server SDK with local evaluation. Ten flags enforced in both UI and API, validated remote config, and a multivariate onboarding experiment. No redeploy needed for any change. | Live |
 | **NudgeBee** | Five alert rules over real telemetry, delivered to NudgeBee's Event Webhook. Runbooks are approval-gated, reversible and audited. Runs on a self-hosted Community install (Helm on k3s). | Live |
 
@@ -82,7 +84,7 @@ npm run dev            # http://localhost:3000
 
 ```bash
 npm run lint && npm run typecheck   # ESLint, strict TypeScript
-npm test                            # 439 unit tests
+npm test                            # 455 unit tests
 npm run db:verify                   # migrations and RLS on embedded Postgres
 npm run test:e2e                    # Playwright end-to-end and accessibility
 ```

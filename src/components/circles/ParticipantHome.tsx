@@ -13,6 +13,7 @@ import { PreferenceComposer } from "./PreferenceComposer";
 import { Money, Notice, Panel, PreferenceCard } from "./ui";
 import { useCircle, type Capabilities } from "./useCircle";
 import { createLocalStore, toggleIn, useStore } from "@/lib/store";
+import { confirmAction } from "@/lib/confirm";
 
 function Contribution({
   view,
@@ -483,10 +484,7 @@ export function ParticipantHome({ circleId }: { circleId: string }) {
             type="button"
             className="btn btn-line mt-4"
             onClick={async () => {
-              if (
-                !window.confirm("Leave this circle and delete what you added?")
-              )
-                return;
+              if (!(await confirmAction({ title: "Leave this circle?", body: "What you added is deleted.", confirmLabel: "Leave circle", tone: "danger" }))) return;
               await api(`/api/circles/${circleId}/participants/${view.me.id}`, {
                 method: "DELETE",
                 key,

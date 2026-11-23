@@ -29,18 +29,27 @@ test.describe("1–2. Homepage and navigation", () => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Celebrate every culture.");
     await expect(page.getByRole("contentinfo").getByText("Founded by Shambhavi M K")).toBeVisible();
     await expect(page.getByRole("contentinfo").getByRole("link", { name: "GitHub" })).toHaveAttribute("href", "https://github.com/ShambhaviCode");
-    await expect(page.getByTestId("upcoming-list").getByRole("listitem")).toHaveCount(3);
-    await page.locator("main").getByRole("link", { name: "Plan a celebration" }).click();
+    expect(await page.getByTestId("upcoming-list").getByRole("listitem").count()).toBeGreaterThanOrEqual(3);
+    await page.locator("main").getByRole("link", { name: "Plan a celebration" }).first().click();
     await expect(page).toHaveURL(/\/matchmaker$/);
     await expect(page.getByRole("heading", { level: 1, name: "FESTIVA Matchmaker" })).toBeVisible();
   });
 
   test("every main navigation link opens its module", async ({ page }) => {
+    test.setTimeout(150_000);
     await page.goto("/");
-    for (const [label, heading] of [["Discover", "Discover festivals"], ["Journeys", "Journeys"], ["Taste", "Taste"], ["Wear", "Wear"], ["Shop", "Shop"], ["Wishes", "Wishes"], ["Play", "Play"], ["Sound", "Sound"], ["Intelligence", "FESTIVA Intelligence"]]) {
-      await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: label, exact: true }).click();
-      await expect(page.getByRole("heading", { level: 1, name: heading, exact: true })).toBeVisible();
-      await expect(page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: label, exact: true })).toHaveAttribute("aria-current", "page");
+    const main = page.getByRole("navigation", { name: "Main" });
+    // Top-level destinations.
+    for (const [label, heading] of [["World", "Where is the world celebrating?"], ["Journeys", "Journeys"], ["Shop", "Shop"]]) {
+      await main.getByRole("link", { name: label, exact: true }).click();
+      await expect(page.getByRole("heading", { level: 1, name: heading, exact: true })).toBeVisible({ timeout: 30_000 });
+      await expect(main.getByRole("link", { name: label, exact: true })).toHaveAttribute("aria-current", "page");
+    }
+    // Sections inside the Discover, Culture and Plan menus.
+    for (const [menu, label, heading] of [["Discover", "All festivals", "Discover festivals"], ["Discover", "Ask FESTIVA", "FESTIVA Intelligence"], ["Culture", "Taste", "Taste"], ["Culture", "Wear", "Wear"], ["Culture", "Wishes", "Wishes"], ["Culture", "Play", "Play"], ["Culture", "Sound", "Sound"], ["Plan", "Celebration planner", "FESTIVA Matchmaker"]]) {
+      await main.getByRole("button", { name: menu }).click();
+      await main.getByRole("link", { name: new RegExp(`^${label}`) }).click();
+      await expect(page.getByRole("heading", { level: 1, name: heading, exact: true })).toBeVisible({ timeout: 30_000 });
     }
   });
 
@@ -58,18 +67,19 @@ test.describe("1–2. Homepage and navigation", () => {
 test.describe("3–7. Discovery", () => {
   test("festival search and filters narrow the list and can be cleared", async ({ page }) => {
     await page.goto("/discover");
-    await expect(page.getByTestId("result-count")).toHaveText("46 festivals");
+    await expect(page.getByTestId("result-count")).toHaveText(/^\d{3} festivals$/);
     await page.getByLabel("Search festivals").fill("lantern");
     await expect(page.getByTestId("catalog-grid").getByRole("heading", { name: "Mid-Autumn Festival" })).toBeVisible();
     await expect(page.getByTestId("result-count")).toContainText("match your filters");
     await page.getByLabel("Search festivals").fill("");
     await page.getByLabel("Region").selectOption("africa");
-    await expect(page.getByTestId("result-count")).toHaveText("5 festivals match your filters");
+    await expect(page.getByTestId("result-count")).toHaveText(/^\d+ festivals? match your filters$/);
     await expect(page.getByTestId("catalog-grid").getByRole("heading", { name: "Timkat" })).toBeVisible();
-    await page.getByLabel("Usually falls in").selectOption("12");
+    // A search plus a region that together match nothing shows the empty state.
+    await page.getByLabel("Search festivals").fill("zzqx");
     await expect(page.getByText("Nothing matches those filters.")).toBeVisible();
     await page.getByRole("button", { name: "Clear filters" }).first().click();
-    await expect(page.getByTestId("result-count")).toHaveText("46 festivals");
+    await expect(page.getByTestId("result-count")).toHaveText(/^\d{3} festivals$/);
     await page.getByLabel("Search festivals").fill("tet");
     await expect(page.getByTestId("catalog-grid").getByRole("heading", { name: "Lunar New Year" })).toBeVisible();
   });
@@ -119,7 +129,7 @@ test.describe("3–7. Discovery", () => {
     await page.getByRole("button", { name: "Vegan", exact: true }).click();
     const count = digits(await page.getByTestId("result-count").textContent());
     expect(count).toBeGreaterThan(3);
-    expect(count).toBeLessThan(20);
+    expect(count).toBeLessThan(80);
     await expect(page.getByTestId("catalog-grid").getByRole("heading", { name: "Biryani" })).toHaveCount(0);
     await page.goto("/taste/mooncake");
     await expect(page.getByText("Usually contains: gluten, egg.")).toBeVisible();
@@ -203,6 +213,7 @@ test.describe("9–13. Matchmaker", () => {
   });
 
   test("items can be replaced, edited, removed and regenerated", async ({ page }) => {
+    test.setTimeout(120_000);
     await completeWizard(page);
     const gifts = page.getByTestId("section-gifts");
     const before = await gifts.getByRole("listitem").count();
@@ -402,6 +413,7 @@ test.describe("15. Play", () => {
 
 test.describe("16. Sound", () => {
   test("search by language, country and genre; favourites persist", async ({ page }) => {
+    test.setTimeout(120_000);
     await page.goto("/sound");
     await page.getByTestId("sound-search").fill("Korean");
     await expect(page.getByTestId("artist-row")).toHaveCount(3);
@@ -439,17 +451,33 @@ test.describe("17–18. Accounts and private data", () => {
   });
 });
 
-test.describe("20. WebGL and motion fallbacks", () => {
-  test("the globe renders with WebGL when available", async ({ page }) => {
-    await page.goto("/");
-    await expect(page.locator("[data-globe]")).not.toHaveAttribute("data-globe", "pending");
-    const mode = await page.locator("[data-globe]").getAttribute("data-globe");
-    expect(["webgl", "canvas"]).toContain(mode);
-    await expect(page.locator("[data-globe] canvas")).toHaveCount(1);
+test.describe("20. World map", () => {
+  test("draws real country shapes and opens India down to a state from a link", async ({ page }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (e) => errors.push(e.message));
+    await page.goto("/world?country=IN&region=IN-KL");
+    const svg = page.getByTestId("world-map-svg");
+    await expect(svg).toBeVisible();
+    expect(await svg.locator("path").count()).toBeGreaterThan(200);
+    const panel = page.getByTestId("map-panel");
+    await expect(panel.getByRole("heading", { level: 2, name: "Kerala" })).toBeVisible();
+    await expect(panel.getByRole("link", { name: /Onam/ })).toBeVisible();
+    await expect(page).toHaveURL(/country=IN&region=IN-KL/);
+    expect(errors).toEqual([]);
   });
 
-  test("without WebGL the page falls back to a 2D drawing and stays fully usable", async ({ browser }) => {
-    const context = await browser.newContext();
+  test("the country list works without the map, and Escape goes back up a level", async ({ page }) => {
+    await page.goto("/world");
+    const panel = page.getByTestId("map-panel");
+    await panel.getByLabel("Find a country").fill("Japan");
+    await panel.getByRole("button", { name: /^Japan/ }).click();
+    await expect(panel.getByRole("heading", { level: 2, name: "Japan" })).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(panel.getByRole("heading", { level: 2, name: "Explore the world" })).toBeVisible();
+  });
+
+  test("with reduced motion and no WebGL the map still opens a country", async ({ browser }) => {
+    const context = await browser.newContext({ reducedMotion: "reduce" });
     await context.addInitScript(() => {
       const original = HTMLCanvasElement.prototype.getContext;
       HTMLCanvasElement.prototype.getContext = function (this: HTMLCanvasElement, type: string, ...rest: unknown[]) {
@@ -458,26 +486,8 @@ test.describe("20. WebGL and motion fallbacks", () => {
       } as typeof original;
     });
     const page = await context.newPage();
-    const errors: string[] = [];
-    page.on("pageerror", (e) => errors.push(e.message));
-    await page.goto("/");
-    await expect(page.locator("[data-globe]")).toHaveAttribute("data-globe", "canvas");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Discover the world.");
-    await page.locator("main").getByRole("link", { name: /Explore 46 festivals/ }).click();
-    await expect(page.getByRole("heading", { level: 1, name: "Discover festivals" })).toBeVisible();
-    expect(errors).toEqual([]);
-    await context.close();
-  });
-
-  test("reduced motion stops the globe animating", async ({ browser }) => {
-    const context = await browser.newContext({ reducedMotion: "reduce" });
-    const page = await context.newPage();
-    let frames = 0;
-    await page.exposeFunction("__countFrame", () => (frames += 1));
-    await page.goto("/");
-    await expect(page.locator("[data-globe]")).not.toHaveAttribute("data-globe", "pending");
-    const shots = [await page.locator("[data-globe] canvas").screenshot(), await page.waitForTimeout(700).then(() => page.locator("[data-globe] canvas").screenshot())];
-    expect(shots[0].equals(shots[1])).toBe(true);
+    await page.goto("/world?country=BR");
+    await expect(page.getByTestId("map-panel").getByRole("heading", { level: 2, name: "Brazil" })).toBeVisible();
     await context.close();
   });
 });

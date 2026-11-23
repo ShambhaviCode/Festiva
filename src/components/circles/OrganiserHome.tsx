@@ -17,6 +17,7 @@ import {
   BudgetMeter,
 } from "./ui";
 import { useCircle } from "./useCircle";
+import { confirmAction } from "@/lib/confirm";
 
 function Invite({
   circle,
@@ -355,12 +356,7 @@ export function OrganiserHome({ circleId }: { circleId: string }) {
                     type="button"
                     className="link note"
                     onClick={async () => {
-                      if (
-                        !window.confirm(
-                          `Remove ${p.name} and everything they added?`,
-                        )
-                      )
-                        return;
+                      if (!(await confirmAction({ title: `Remove ${p.name}?`, body: "Everything they added to this circle is deleted.", confirmLabel: "Remove", tone: "danger" }))) return;
                       await api(
                         `/api/circles/${circleId}/participants/${p.id}`,
                         { method: "DELETE", key },
@@ -532,11 +528,7 @@ export function OrganiserHome({ circleId }: { circleId: string }) {
                 data-testid="draw-names"
                 onClick={async () => {
                   setSantaError(null);
-                  if (
-                    circle.assignments &&
-                    !window.confirm("Draw again? Everyone's match will change.")
-                  )
-                    return;
+                  if (circle.assignments && !(await confirmAction({ title: "Draw names again?", body: "Everyone's match will change.", confirmLabel: "Draw again" }))) return;
                   try {
                     await api(`/api/circles/${circleId}/secret-santa`, {
                       method: "POST",
@@ -597,12 +589,7 @@ export function OrganiserHome({ circleId }: { circleId: string }) {
           type="button"
           className="btn btn-line mt-4"
           onClick={async () => {
-            if (
-              !window.confirm(
-                "Delete this circle for everyone? This cannot be undone.",
-              )
-            )
-              return;
+            if (!(await confirmAction({ title: "Delete this circle for everyone?", body: "This cannot be undone.", confirmLabel: "Delete circle", tone: "danger" }))) return;
             await api(`/api/circles/${circleId}`, { method: "DELETE", key });
             forgetCircle(circleId);
             router.push("/circles");

@@ -1,24 +1,18 @@
 @import "tailwindcss";
 
 /*
-  FESTIVA design tokens.
-  Palette follows the brand brief: warm ivory, cream, charcoal, saffron,
-  muted gold, deep plum and emerald, with restrained cultural accents.
-  Text colours are chosen to meet WCAG AA on their intended surfaces:
-  saffron-deep and ink on ivory/cream, gold-soft and ivory on plum/emerald.
+  FESTIVA design tokens: bold and vibrant.
+  A warm white canvas, midnight plum ink, and a festival palette used with
+  intent: saffron for action, marigold for highlights, coral, pink, jade and
+  turquoise as section accents. Text colours meet WCAG AA on their surfaces:
+  ink, plum and saffron-deep on ivory and cream; ivory and marigold on plum.
 */
-/*
- * Metric-matched fallbacks: while the web fonts load, text is set in a local
- * font scaled to the same average width and line metrics, so the swap moves
- * nothing. Figures measured from the bundled font files against Times New
- * Roman and Arial (Liberation Serif and Sans share their metrics).
- */
 @font-face {
-  font-family: "Bodoni Moda Fallback";
-  src: local("Times New Roman"), local("Liberation Serif"), local("Tinos");
-  size-adjust: 115.45%;
-  ascent-override: 97.44%;
-  descent-override: 34.65%;
+  font-family: "Bricolage Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Arimo");
+  size-adjust: 104%;
+  ascent-override: 92%;
+  descent-override: 26%;
   line-gap-override: 0%;
 }
 
@@ -32,26 +26,38 @@
 }
 
 @theme {
-  --color-ivory: #fbf6ea;
-  --color-cream: #f2e7cf;
-  --color-charcoal: #241f27;
-  --color-ink: #574f5c;
-  --color-saffron: #f0a030;
-  --color-saffron-deep: #9a5005;
-  --color-gold: #b9995e;
-  --color-gold-soft: #dcc898;
-  --color-plum: #33143a;
-  --color-plum-deep: #1e0a23;
-  --color-emerald: #0e5a48;
-  --color-emerald-deep: #083b30;
-  --color-vermilion: #b93626;
+  --color-ivory: #fffaf2;
+  --color-cream: #ffefd9;
+  --color-charcoal: #1b1024;
+  --color-ink: #4b3f55;
+  --color-saffron: #ff9f1c;
+  --color-saffron-deep: #b24a00;
+  --color-gold: #e8b931;
+  --color-gold-soft: #ffd98a;
+  --color-marigold: #ffc23d;
+  --color-plum: #2d1052;
+  --color-plum-deep: #170833;
+  --color-emerald: #00785f;
+  --color-emerald-deep: #005a48;
+  --color-jade: #19c39a;
+  --color-turquoise: #12b5c4;
+  --color-coral: #ff6b4a;
+  --color-pink: #d4106f;
+  --color-vermilion: #cf3520;
 
-  --font-display: "Bodoni Moda Variable", "Bodoni Moda Fallback", "Bodoni 72", Didot, "Times New Roman", serif;
+  --font-display: "Bricolage Grotesque Variable", "Bricolage Fallback", "Arial Black", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Instrument Sans Variable", "Instrument Sans Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --breakpoint-nav: 76rem;
+  --breakpoint-nav: 64rem;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-soft: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Motion scale: fast for small feedback, base for menus and overlays, slow for sheets and pages. */
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 320ms;
 }
 
 @layer base {
@@ -71,16 +77,16 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.012em;
-    line-height: 1.06;
+    font-weight: 750;
+    letter-spacing: -0.035em;
+    line-height: 1;
     text-wrap: balance;
   }
   p {
     text-wrap: pretty;
   }
   ::selection {
-    background: var(--color-saffron);
+    background: var(--color-marigold);
     color: var(--color-plum-deep);
   }
   :focus-visible {
@@ -121,20 +127,44 @@
   /* Type scale (ratio ≈ 1.333, fluid at the top end). */
   .display-hero {
     font-family: var(--font-display);
-    font-weight: 480;
-    font-size: clamp(2.5rem, 4.9vw, 5.1rem);
-    line-height: 0.98;
-    letter-spacing: -0.022em;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 5.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
   }
   .display-1 {
-    font-size: clamp(2.3rem, 5.2vw, 4.2rem);
+    font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+    line-height: 0.96;
   }
   .display-2 {
-    font-size: clamp(1.85rem, 3.4vw, 2.9rem);
+    font-size: clamp(1.75rem, 3vw, 2.6rem);
   }
   .display-3 {
-    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-    line-height: 1.15;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-saffron-deep);
+  }
+  .on-dark .eyebrow {
+    color: var(--color-marigold);
+  }
+  /* Highlighted words in headlines: a marigold brush stroke behind the text. */
+  .mark {
+    background: linear-gradient(transparent 58%, color-mix(in srgb, var(--color-marigold) 85%, transparent) 58%, color-mix(in srgb, var(--color-marigold) 85%, transparent) 92%, transparent 92%);
+    padding-inline: 0.06em;
+  }
+  .on-dark .mark {
+    background: none;
+    color: var(--color-marigold);
   }
   .lede {
     font-size: clamp(1.1rem, 1.5vw, 1.3rem);
@@ -158,14 +188,22 @@
     min-height: 2.875rem;
     padding: 0.65rem 1.5rem;
     border-radius: 999px;
-    font-weight: 560;
+    font-weight: 650;
     font-size: 1rem;
     line-height: 1.2;
     border: 1.5px solid transparent;
     transition:
       background-color 180ms var(--ease-out-soft),
       color 180ms var(--ease-out-soft),
-      border-color 180ms var(--ease-out-soft);
+      border-color 180ms var(--ease-out-soft),
+      transform 180ms var(--ease-out-soft),
+      box-shadow 180ms var(--ease-out-soft);
+  }
+  .btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  .btn:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
   }
   .btn:disabled {
     opacity: 0.5;
@@ -174,9 +212,18 @@
   .btn-saffron {
     background: var(--color-saffron);
     color: var(--color-plum-deep);
+    box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--color-saffron) 80%, transparent);
   }
   .btn-saffron:hover:not(:disabled) {
-    background: var(--color-gold-soft);
+    background: var(--color-marigold);
+    box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--color-saffron) 90%, transparent);
+  }
+  .btn-pink {
+    background: var(--color-pink);
+    color: #fff;
+  }
+  .btn-pink:hover:not(:disabled) {
+    background: #b30d5c;
   }
   .btn-plum {
     background: var(--color-plum);
@@ -191,6 +238,65 @@
   }
   .btn-line:hover:not(:disabled) {
     background: color-mix(in srgb, currentColor 10%, transparent);
+  }
+  .btn-danger {
+    background: var(--color-vermilion);
+    color: #fff;
+  }
+  .btn-danger:hover:not(:disabled) {
+    background: #a92a18;
+  }
+  .btn[aria-busy="true"] {
+    cursor: progress;
+  }
+  .btn[aria-busy="true"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border-radius: 999px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    animation: festiva-spin 700ms linear infinite;
+  }
+  .icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    color: var(--color-ink);
+    transition:
+      background-color var(--dur-fast) var(--ease-out-soft),
+      color var(--dur-fast) var(--ease-out-soft),
+      transform var(--dur-fast) var(--ease-out-soft);
+  }
+  .icon-btn:hover {
+    background: color-mix(in srgb, var(--color-charcoal) 8%, transparent);
+    color: var(--color-charcoal);
+  }
+  .icon-btn:active {
+    transform: scale(0.94);
+  }
+  /* Quick look on catalog cards: always visible (touch has no hover), quieter until the card is hovered. */
+  .peek-btn {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-ivory) 92%, transparent);
+    color: var(--color-plum-deep);
+    box-shadow: 0 6px 16px -8px rgba(23, 8, 51, 0.55);
+    transition:
+      transform var(--dur-fast) var(--ease-out-soft),
+      background-color var(--dur-fast) var(--ease-out-soft);
+  }
+  .peek-btn:hover {
+    background: var(--color-marigold);
+    transform: scale(1.06);
+  }
+  .peek-btn:active {
+    transform: scale(0.95);
   }
   .btn-sm {
     min-height: 2.25rem;
@@ -238,6 +344,7 @@
     background: var(--color-plum);
     border-color: var(--color-plum);
     color: var(--color-ivory);
+    font-weight: 600;
   }
   .on-dark .chip {
     border-color: color-mix(in srgb, var(--color-ivory) 40%, transparent);
@@ -254,9 +361,29 @@
     min-height: 2.875rem;
     padding: 0.6rem 0.9rem;
     border: 1px solid color-mix(in srgb, var(--color-charcoal) 32%, transparent);
-    border-radius: 0.5rem;
-    background: #fffdf7;
+    border-radius: 0.8rem;
+    background: #fff;
     color: var(--color-charcoal);
+  }
+  .field {
+    transition:
+      border-color var(--dur-fast) var(--ease-out-soft),
+      box-shadow var(--dur-fast) var(--ease-out-soft);
+  }
+  .field:hover:not(:disabled):not(:focus) {
+    border-color: color-mix(in srgb, var(--color-charcoal) 55%, transparent);
+  }
+  .field:focus {
+    border-color: var(--color-plum);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-plum) 18%, transparent);
+  }
+  .field[aria-invalid="true"] {
+    border-color: var(--color-vermilion);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-vermilion) 14%, transparent);
+  }
+  .field:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
   .field::placeholder {
     color: color-mix(in srgb, var(--color-ink) 78%, transparent);
@@ -273,6 +400,92 @@
   .on-dark .rule,
   .rule-light {
     border-color: color-mix(in srgb, var(--color-ivory) 22%, transparent);
+  }
+
+  .card-lift {
+    transition:
+      transform 260ms var(--ease-out-soft),
+      box-shadow 260ms var(--ease-out-soft);
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 44px -26px color-mix(in srgb, var(--color-plum-deep) 55%, transparent);
+  }
+  .photo-zoom img {
+    transition: transform 700ms var(--ease-out-soft);
+  }
+  .photo-zoom:hover img {
+    transform: scale(1.05);
+  }
+  .pill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--color-charcoal) 82%, transparent);
+    transition: background-color 160ms, color 160ms;
+  }
+  .nav-item:hover {
+    background: var(--color-cream);
+    color: var(--color-plum-deep);
+  }
+  .nav-item-active {
+    background: var(--color-plum-deep);
+    color: var(--color-ivory);
+  }
+  .nav-item-active:hover {
+    background: var(--color-plum);
+    color: var(--color-ivory);
+  }
+  .search-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.25rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--color-charcoal) 18%, transparent);
+    background: #fff;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    color: var(--color-ink);
+    transition: border-color 160ms, box-shadow 160ms;
+  }
+  .search-trigger:hover {
+    border-color: var(--color-saffron);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-saffron) 25%, transparent);
+  }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background: var(--color-ivory);
+    color: var(--color-plum-deep);
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 6px 16px -8px rgba(23, 8, 51, 0.45);
+    transition: transform 140ms, background-color 140ms;
+  }
+  .map-btn:hover {
+    background: var(--color-marigold);
+    transform: translateY(-1px);
   }
 
   /* The arch is FESTIVA's frame: a doorway shape shared by many building traditions. */
@@ -324,6 +537,127 @@
 }
 .fade-in {
   animation: festiva-fade 1400ms ease-out both;
+}
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: festiva-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+@keyframes festiva-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: festiva-marquee 60s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes festiva-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.menu-in {
+  animation: festiva-pop 180ms var(--ease-out-soft) both;
+}
+.palette-in {
+  animation: festiva-pop 220ms var(--ease-out-soft) both;
+}
+@keyframes festiva-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes festiva-drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+.drawer-in:not([hidden]) {
+  animation: festiva-drawer-in 220ms var(--ease-out-soft) both;
+}
+.backdrop-in {
+  animation: festiva-fade-in 180ms ease-out both;
+}
+@keyframes festiva-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.toast-in {
+  animation: festiva-toast-in 260ms var(--ease-out-soft) both;
+}
+.toast-out {
+  animation: festiva-toast-in 240ms var(--ease-out-soft) reverse both;
+}
+@keyframes festiva-save-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.save-pop {
+  animation: festiva-save-pop 360ms var(--ease-spring);
+}
+/* On phones, search opens as a bottom sheet. */
+@keyframes festiva-sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+@media (max-width: 639px) {
+  .palette-in {
+    animation: festiva-sheet-in 300ms var(--ease-out-soft) both;
+  }
+}
+@keyframes festiva-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes festiva-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.float-soft {
+  animation: festiva-float 7s ease-in-out infinite;
+}
+.float-soft:hover {
+  animation-play-state: paused;
+}
+a:hover .logo-spin {
+  animation: festiva-spin 1.2s var(--ease-out-soft);
 }
 
 /* --- Motion vocabulary (FESTIVA 1.1) -------------------------------------
@@ -442,6 +776,104 @@
 /* Long technical strings (variable names, keys) must never widen the page. */
 .break-anywhere {
   overflow-wrap: anywhere;
+}
+
+/* Typing indicator while FESTIVA Intelligence answers. */
+.typing-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+.typing-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--color-saffron-deep);
+  animation: festiva-typing 1s ease-in-out infinite;
+}
+.typing-dots span:nth-child(2) {
+  animation-delay: 150ms;
+}
+.typing-dots span:nth-child(3) {
+  animation-delay: 300ms;
+}
+@keyframes festiva-typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: none;
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* ---------- Overlays (components/ui/Overlay.tsx) ---------- */
+@keyframes festiva-overlay-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes festiva-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+}
+@keyframes festiva-panel-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+.overlay-backdrop {
+  animation: festiva-overlay-fade var(--dur-base) var(--ease-out-soft) both;
+}
+.overlay-backdrop.is-leaving {
+  animation: festiva-overlay-fade 170ms var(--ease-in-soft) reverse both;
+}
+/* Phones: every overlay is a bottom sheet. */
+.overlay-surface {
+  animation: festiva-sheet-in var(--dur-slow) var(--ease-out-soft) both;
+}
+.overlay-surface.is-leaving {
+  animation: festiva-sheet-in 170ms var(--ease-in-soft) reverse both;
+}
+@media (min-width: 640px) {
+  .overlay-dialog {
+    animation-name: festiva-dialog-in;
+    animation-duration: var(--dur-base);
+  }
+  .overlay-panel {
+    animation-name: festiva-panel-in;
+  }
+}
+
+/* ---------- Page transitions (React <ViewTransition> in app/layout.tsx) ---------- */
+::view-transition {
+  pointer-events: none;
+}
+/* Only the page content moves; the header, footer and the rest of the window stay put. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+@keyframes festiva-page-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes festiva-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+::view-transition-old(.page) {
+  animation: festiva-page-out 120ms var(--ease-in-soft) both;
+}
+::view-transition-new(.page) {
+  animation: festiva-page-in var(--dur-base) var(--ease-out-soft) 60ms both;
 }
 
 @media (prefers-reduced-motion: reduce) {

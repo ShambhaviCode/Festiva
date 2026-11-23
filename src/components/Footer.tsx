@@ -1,14 +1,17 @@
 import Link from "next/link";
-import { NAV, site } from "@/lib/site";
-import { Preferences } from "./Preferences";
+import { Logo } from "@/components/Logo";
+import { NAV_GROUPS, site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="on-dark no-print bg-plum-deep text-ivory">
-      <div className="shell grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
+    <footer className="on-dark no-print relative overflow-hidden bg-plum-deep text-ivory">
+      <div aria-hidden="true" className="h-1.5 w-full bg-[linear-gradient(90deg,var(--color-saffron),var(--color-pink),var(--color-turquoise),var(--color-jade),var(--color-marigold))]" />
+      <div className="shell grid gap-12 py-16 lg:grid-cols-[1.2fr_2fr_1fr]">
         <div>
-          <p className="font-[family-name:var(--font-display)] text-3xl tracking-[0.2em]">FESTIVA</p>
-          <p className="mt-4 max-w-sm font-[family-name:var(--font-display)] text-xl italic text-gold-soft">{site.supporting}</p>
+          <Logo tone="light" />
+          <p className="mt-5 max-w-sm font-[family-name:var(--font-display)] text-2xl font-[700] leading-tight tracking-[-0.03em]">
+            Every culture has a celebration. <span className="text-marigold">Find yours.</span>
+          </p>
           <p className="note mt-6 max-w-sm">
             Founded by {site.founder.name}.{" "}
             {site.founder.links.map((link, i) => (
@@ -21,18 +24,35 @@ export function Footer() {
             ))}
           </p>
         </div>
-        <nav aria-label="Footer">
-          <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
-            {[...NAV, { href: "/matchmaker", label: "Matchmaker" }, { href: "/plans", label: "My plans" }, { href: "/saved", label: "Saved" }].map((item) => (
-              <li key={item.href}>
-                <Link className="link" href={item.href}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          {NAV_GROUPS.map((g) => (
+            <div key={g.label}>
+              <Link href={g.href} className="font-semibold text-marigold hover:underline">
+                {g.label}
+              </Link>
+              {g.links && (
+                <ul className="mt-2 grid gap-1.5">
+                  {g.links.map((l) => (
+                    <li key={l.href}>
+                      <Link className="text-ivory/80 hover:text-ivory" href={l.href}>
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </nav>
-        <Preferences />
+        <div>
+          <p className="font-semibold text-marigold">You</p>
+          <ul className="mt-2 grid gap-1.5">
+            <li><Link className="text-ivory/80 hover:text-ivory" href="/account">Account and settings</Link></li>
+            <li><Link className="text-ivory/80 hover:text-ivory" href="/saved">Saved</Link></li>
+            <li><Link className="text-ivory/80 hover:text-ivory" href="/plans">My plans</Link></li>
+          </ul>
+          <p className="note mt-4">Currency, date and number format live in Account and settings.</p>
+        </div>
       </div>
     </footer>
   );

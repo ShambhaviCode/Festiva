@@ -179,8 +179,8 @@ test.describe("Administration: integration status and operations", () => {
     test.setTimeout(120_000);
     await signInAdmin(page, "/admin/operations");
     await expect(page.getByTestId("telemetry")).toBeVisible();
-    page.on("dialog", (dialog) => void dialog.accept());
     await page.getByTestId("start-latency-test").click();
+    await page.getByTestId("confirm-dialog").getByRole("button", { name: "Start test" }).click();
     await expect(page.getByTestId("controls")).toContainText("adding 1800 ms");
 
     // Real requests to the Gift Circle API, slowed by the controlled test.
@@ -196,6 +196,7 @@ test.describe("Administration: integration status and operations", () => {
     await expect(pending.getByTestId("approve")).toBeDisabled();
     await pending.getByTestId("approval-note").fill("The latency came from our own controlled test");
     await pending.getByTestId("approve").click();
+    await page.getByTestId("confirm-dialog").getByRole("button", { name: "Approve and run" }).click();
     await expect(page.getByTestId("decided-proposals")).toContainText("End controlled tests: executed");
     await expect(page.getByTestId("controls")).toContainText("Latency test: off");
     await expect(page.getByTestId("audit-log")).toContainText("runbook.approved");

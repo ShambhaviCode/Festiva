@@ -54,13 +54,19 @@ export async function answerQuestion(input: z.infer<typeof questionSchema>, prov
 
   const started = Date.now();
   const reference = grounded.facts.map((f, i) => `[${i + 1}] ${f.text}`).join("\n");
-  try {
-    const reply = await generateStructured(provider, {
+  const ask = () =>
+    generateStructured(provider, {
       system: SYSTEM,
       user: `${wrapUntrusted("question", question)}\n${wrapUntrusted("reference", reference)}`,
       schema: replySchema,
       maxTokens: 500,
       timeoutMs,
+    });
+  try {
+    // One retry for an unusable reply or a failed request. A timeout is not retried.
+    const reply = await ask().catch((error: unknown) => {
+      if (error instanceof AIError && error.code === "timeout") throw error;
+      return ask();
     });
     logAI({ route: "intelligence", provider: provider.name, outcome: "ok", ms: Date.now() - started, flagged: looksLikeInjection(question) });
     const isGrounded = reply.grounded && grounded.facts.length > 0;

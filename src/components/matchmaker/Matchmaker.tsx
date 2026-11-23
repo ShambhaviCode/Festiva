@@ -9,7 +9,9 @@ import { CURRENCY_CODES, type CurrencyCode } from "@/domain/currency";
 import { generatePlan } from "@/domain/matchmaker/engine";
 import { AGE_BANDS, AUDIENCES, DEFAULT_INPUT, GIFT_TIERS, OBSERVANCES, planSchema, type MatchmakerInput, type Plan } from "@/domain/matchmaker/schema";
 import { track } from "@/lib/analytics";
+import { toast } from "@/lib/toast";
 import { preferences } from "@/lib/store";
+import { BriefBanner, BriefBox, type BriefResult } from "./BriefBox";
 import { PlanView } from "./PlanView";
 import { Wizard } from "./Wizard";
 
@@ -56,6 +58,7 @@ export function Matchmaker({ aiEnabled }: { aiEnabled: boolean }) {
   const params = useSearchParams();
   const [plan, setPlan] = useState<Plan | null>(null);
   const [initial, setInitial] = useState<MatchmakerInput | null>(null);
+  const [brief, setBrief] = useState<BriefResult | null>(null);
   const started = useRef(false);
   const top = useRef<HTMLDivElement>(null);
 
@@ -86,18 +89,34 @@ export function Matchmaker({ aiEnabled }: { aiEnabled: boolean }) {
 
   return (
     <div ref={top} className="scroll-mt-24">
+      {plan && brief && <BriefBanner result={brief} onDismiss={() => setBrief(null)} />}
       {plan ? (
         <PlanView
           plan={plan}
           aiEnabled={aiEnabled}
           onChange={update}
           onEditPreferences={() => {
+            setBrief(null);
             setInitial(plan.input);
             update(null);
             top.current?.scrollIntoView();
           }}
         />
       ) : (
+        <>
+        <div className="mb-12">
+          <BriefBox
+            base={initial}
+            onPlan={(result) => {
+              setBrief(result);
+              toast(result.source === "sarvam" ? "Plan ready, read by Sarvam AI" : "Plan ready");
+              update(generatePlan(result.input, { id: crypto.randomUUID(), now: new Date() }));
+              track("matchmaker_complete", result.input.occasion);
+              top.current?.scrollIntoView();
+            }}
+          />
+          <p className="note mt-4 text-center">Or answer six quick questions below.</p>
+        </div>
         <Wizard
           key={JSON.stringify(initial)}
           initial={initial}
@@ -107,6 +126,7 @@ export function Matchmaker({ aiEnabled }: { aiEnabled: boolean }) {
             top.current?.scrollIntoView();
           }}
         />
+        </>
       )}
     </div>
   );

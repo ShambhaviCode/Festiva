@@ -113,7 +113,12 @@ export function Chat({ aiEnabled }: { aiEnabled: boolean }) {
               </article>
             ),
           )}
-          {busy && <p className="note">Looking that up…</p>}
+          {busy && (
+            <p className="note flex items-center gap-2.5" role="status">
+              <span aria-hidden="true" className="typing-dots"><span /><span /><span /></span>
+              Looking that up…
+            </p>
+          )}
           <div ref={endRef} />
         </div>
 

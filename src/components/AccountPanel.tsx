@@ -6,6 +6,12 @@ import { supabaseConfigured } from "@/lib/env";
 import { syncPlansFromCloud } from "@/lib/plans";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { getSupabase } from "@/lib/supabase/client";
+import { toast } from "@/lib/toast";
+
+type Busy = "in" | "up" | "out" | "sync" | null;
+type Msg = { tone: "success" | "error"; text: string } | null;
+
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
  * Sign-in with Supabase Auth (email and password, or a one-time email link).
@@ -17,8 +23,10 @@ export function AccountPanel() {
   const [email, setEmail] = useState<string | null>(null);
   const [ready, setReady] = useState(!supabaseConfigured);
   const [form, setForm] = useState({ email: "", password: "" });
-  const [message, setMessage] = useState("");
-  const [busy, setBusy] = useState(false);
+  const [message, setMessage] = useState<Msg>(null);
+  const [busy, setBusy] = useState<Busy>(null);
+  const [touched, setTouched] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     let unsubscribe: (() => void) | undefined;
@@ -63,14 +71,31 @@ export function AccountPanel() {
     );
   }
 
-  if (!ready || !supabase) return <p className="note">Checking your session…</p>;
+  if (!ready || !supabase) {
+    return (
+      <p className="note flex items-center gap-2" role="status">
+        <span aria-hidden="true" className="h-4 w-4 animate-spin rounded-full border-2 border-plum border-r-transparent" />
+        Checking your session…
+      </p>
+    );
+  }
 
-  const run = async (action: () => Promise<{ error: { message: string } | null }>, success: string) => {
-    setBusy(true);
-    setMessage("");
-    const { error } = await action();
-    setMessage(error ? error.message : success);
-    setBusy(false);
+  /** One Supabase call: the button shows it is working, errors and successes look different, and a failure never leaves the form stuck. */
+  const run = async (which: Busy, action: () => Promise<{ error: { message: string } | null }>, success: string) => {
+    setBusy(which);
+    setMessage(null);
+    try {
+      const { error } = await action();
+      if (error) setMessage({ tone: "error", text: friendly(error.message) });
+      else {
+        setMessage({ tone: "success", text: success });
+        toast(success);
+      }
+    } catch {
+      setMessage({ tone: "error", text: "We could not reach the sign-in service. Check your connection and try again." });
+    } finally {
+      setBusy(null);
+    }
   };
 
   if (email) {
@@ -79,56 +104,145 @@ export function AccountPanel() {
         <h2 className="display-3">Signed in</h2>
         <p className="mt-2 text-ink">{email}</p>
         <div className="mt-6 flex flex-wrap gap-2.5">
-          <button type="button" className="btn btn-plum" disabled={busy} onClick={async () => setMessage(`Synced ${await syncPlansFromCloud()} plans from your account.`)}>
-            Sync my plans
+          <button
+            type="button"
+            className="btn btn-plum"
+            disabled={busy !== null}
+            aria-busy={busy === "sync"}
+            onClick={async () => {
+              setBusy("sync");
+              setMessage(null);
+              try {
+                const n = await syncPlansFromCloud();
+                const text = n === 1 ? "Synced 1 plan from your account." : `Synced ${n} plans from your account.`;
+                setMessage({ tone: "success", text });
+                toast(text, { action: { label: "My plans", href: "/plans" } });
+              } catch {
+                setMessage({ tone: "error", text: "Your plans could not be synced. Check your connection and try again." });
+              } finally {
+                setBusy(null);
+              }
+            }}
+          >
+            {busy === "sync" ? "Syncing…" : "Sync my plans"}
           </button>
-          <button type="button" className="btn btn-line" disabled={busy} onClick={() => run(() => supabase.auth.signOut(), "Signed out.")}>
-            Sign out
+          <button type="button" className="btn btn-line" disabled={busy !== null} aria-busy={busy === "out"} onClick={() => run("out", () => supabase.auth.signOut(), "Signed out.")}>
+            {busy === "out" ? "Signing out…" : "Sign out"}
           </button>
         </div>
-        <p className="mt-4 text-sm font-medium" role="status">
-          {message}
-        </p>
+        <Message message={message} />
       </div>
     );
   }
 
+  const emailOk = EMAIL.test(form.email.trim());
+  const emailInvalid = touched && !emailOk;
+  const passwordShort = form.password.length > 0 && form.password.length < 8;
+  const failed = message?.tone === "error";
+  const left = 8 - form.password.length;
+
+  const signIn = () =>
+    form.password
+      ? run("in", () => supabase.auth.signInWithPassword({ email: form.email.trim(), password: form.password }), "Signed in.")
+      : run("in", () => supabase.auth.signInWithOtp({ email: form.email.trim(), options: { emailRedirectTo: `${window.location.origin}/account` } }), "Check your email for a sign-in link.");
+
   return (
-    <form className="grid max-w-md gap-5" onSubmit={(e) => e.preventDefault()} data-testid="account-form">
-      <label className="grid">
-        <span className="field-label">Email</span>
-        <input className="field" type="email" required autoComplete="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-      </label>
-      <label className="grid">
-        <span className="field-label">Password</span>
-        <input className="field" type="password" minLength={8} autoComplete="current-password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
-        <span className="note mt-1">At least 8 characters. Leave empty to receive a one-time sign-in link instead.</span>
-      </label>
+    <form
+      className="grid max-w-md gap-5"
+      noValidate
+      onSubmit={(e) => {
+        e.preventDefault();
+        setTouched(true);
+        if (!emailOk || passwordShort || busy) return;
+        void signIn();
+      }}
+      data-testid="account-form"
+    >
+      <div className="grid">
+        <label htmlFor="account-email" className="field-label">
+          Email
+        </label>
+        <input
+          id="account-email"
+          className="field"
+          type="email"
+          inputMode="email"
+          required
+          autoComplete="email"
+          value={form.email}
+          aria-invalid={emailInvalid || failed}
+          aria-describedby={emailInvalid ? "account-email-error" : undefined}
+          onBlur={() => form.email && setTouched(true)}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+        />
+        {emailInvalid && (
+          <p id="account-email-error" className="mt-1.5 text-sm font-medium text-vermilion">
+            Enter an email address like name@example.com.
+          </p>
+        )}
+      </div>
+      <div className="grid">
+        <label htmlFor="account-password" className="field-label">
+          Password <span className="font-normal text-ink">(optional)</span>
+        </label>
+        <div className="relative">
+          <input
+            id="account-password"
+            className="field pr-20"
+            type={showPassword ? "text" : "password"}
+            minLength={8}
+            autoComplete="current-password"
+            value={form.password}
+            aria-invalid={passwordShort || failed}
+            aria-describedby="account-password-hint"
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
+          />
+          <button
+            type="button"
+            className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full px-3 py-1.5 text-sm font-semibold text-plum hover:bg-plum/10"
+            aria-pressed={showPassword}
+            aria-label={showPassword ? "Hide password" : "Show password"}
+            onClick={() => setShowPassword((v) => !v)}
+          >
+            {showPassword ? "Hide" : "Show"}
+          </button>
+        </div>
+        <span id="account-password-hint" className={`mt-1.5 text-sm ${passwordShort ? "font-medium text-vermilion" : "note"}`}>
+          {passwordShort ? `${left} more character${left === 1 ? "" : "s"} needed.` : "At least 8 characters. Leave it empty and we email you a one-time sign-in link instead."}
+        </span>
+      </div>
       <div className="flex flex-wrap gap-2.5">
-        <button
-          type="button"
-          className="btn btn-saffron"
-          disabled={busy || !form.email}
-          onClick={() =>
-            form.password
-              ? run(() => supabase.auth.signInWithPassword(form), "Signed in.")
-              : run(() => supabase.auth.signInWithOtp({ email: form.email, options: { emailRedirectTo: `${window.location.origin}/account` } }), "Check your email for a sign-in link.")
-          }
-        >
-          {form.password ? "Sign in" : "Email me a sign-in link"}
+        <button type="submit" className="btn btn-saffron" disabled={busy !== null || !form.email} aria-busy={busy === "in"}>
+          {busy === "in" ? (form.password ? "Signing in…" : "Sending…") : form.password ? "Sign in" : "Email me a sign-in link"}
         </button>
         <button
           type="button"
           className="btn btn-line"
-          disabled={busy || !form.email || form.password.length < 8}
-          onClick={() => run(() => supabase.auth.signUp({ ...form, options: { emailRedirectTo: `${window.location.origin}/account` } }), "Account created. Check your email to confirm it.")}
+          disabled={busy !== null || !emailOk || form.password.length < 8}
+          aria-busy={busy === "up"}
+          onClick={() => run("up", () => supabase.auth.signUp({ email: form.email.trim(), password: form.password, options: { emailRedirectTo: `${window.location.origin}/account` } }), "Account created. Check your email to confirm it.")}
         >
-          Create account
+          {busy === "up" ? "Creating…" : "Create account"}
         </button>
       </div>
-      <p className="text-sm font-medium" role="status" aria-live="polite">
-        {message}
-      </p>
+      <Message message={message} />
     </form>
+  );
+}
+
+/** Supabase's messages are accurate but terse; say what to do next for the common ones. */
+function friendly(text: string): string {
+  if (/invalid login credentials/i.test(text)) return "That email and password do not match. Try again, or leave the password empty to get a sign-in link.";
+  if (/email not confirmed/i.test(text)) return "Confirm your email first: open the link we sent you, then sign in.";
+  if (/already registered/i.test(text)) return "There is already an account with this email. Sign in instead.";
+  if (/rate limit/i.test(text)) return "Too many attempts. Wait a minute and try again.";
+  return text;
+}
+
+function Message({ message }: { message: Msg }) {
+  return (
+    <p role={message?.tone === "error" ? "alert" : "status"} aria-live="polite" className={`min-h-5 text-sm font-medium ${message?.tone === "error" ? "text-vermilion" : "text-emerald-deep"}`}>
+      {message?.text}
+    </p>
   );
 }

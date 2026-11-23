@@ -137,6 +137,24 @@ describe("Intelligence service", () => {
     expect(reply.notice).toMatch(/did not return a usable answer/);
     expect(reply.facts.length).toBeGreaterThan(0);
   });
+  test("one unusable reply is retried once before falling back", async () => {
+    let calls = 0;
+    const flaky = fake(async () => (++calls === 1 ? "not json" : '{"answer":"Diwali is the festival of lights.","grounded":true}'));
+    const reply = await answerQuestion({ question: "Tell me about Diwali" }, flaky, NOW);
+    expect(calls).toBe(2);
+    expect(reply.mode).toBe("ai");
+    let slowCalls = 0;
+    const slow: AIProvider = {
+      name: "slow",
+      model: "slow-1",
+      complete: ({ signal }) => {
+        slowCalls++;
+        return new Promise<string>((_, reject) => signal.addEventListener("abort", () => reject(new Error("aborted"))));
+      },
+    };
+    expect((await answerQuestion({ question: "Tell me about Diwali" }, slow, NOW, 1000)).mode).toBe("fallback");
+    expect(slowCalls).toBe(1);
+  });
   test("provider errors and timeouts fall back too", async () => {
     const broken = fake(async () => Promise.reject(new Error("503")));
     expect((await answerQuestion({ question: "Tell me about Nowruz" }, broken, NOW)).mode).toBe("fallback");

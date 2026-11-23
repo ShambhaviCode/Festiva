@@ -50,7 +50,7 @@ export type CardLayout = (typeof CARD_LAYOUTS)[number];
 export const LAYOUT_LABELS: Record<CardLayout, string> = { arch: "Doorway", mandala: "Rosette", border: "Frame", plain: "Plain" };
 
 export const CARD_FONTS = [
-  { id: "display", label: "Bodoni Moda", css: '"Bodoni Moda Variable", Didot, serif' },
+  { id: "display", label: "Bricolage Grotesque", css: '"Bricolage Grotesque Variable", "Arial Black", sans-serif' },
   { id: "sans", label: "Instrument Sans", css: '"Instrument Sans Variable", system-ui, sans-serif' },
   { id: "serif", label: "Classic serif", css: 'Georgia, "Times New Roman", serif' },
 ] as const;

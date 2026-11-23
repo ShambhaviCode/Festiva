@@ -288,6 +288,47 @@ export class SarvamProvider {
     return data.choices[0].message.content ?? "";
   }
 
+  /**
+   * Read a celebration brief written in English or an Indian language into Matchmaker answers.
+   * Only stated facts are returned ("", 0 or [] otherwise); the caller validates every field and
+   * FESTIVA's engine builds the plan and does all budget arithmetic.
+   */
+  async readCelebrationBrief(text: string, occasionIds: string[]): Promise<Record<string, unknown> & { language: string; english: string }> {
+    const strList = (items: readonly string[]) => ({ type: "array", items: { type: "string", enum: [...items] }, maxItems: items.length });
+    const jsonSchema = {
+      type: "object",
+      additionalProperties: false,
+      required: ["occasion", "attendees", "audience", "budget", "currency", "city", "countryCode", "duration", "style", "dietary", "interests", "language", "english"],
+      properties: {
+        occasion: { type: "string", enum: ["", ...occasionIds] },
+        attendees: { type: "integer", minimum: 0, maximum: 5000 },
+        audience: { type: "string", enum: ["", "family", "friends", "partner", "colleagues", "children", "community", "solo"] },
+        budget: { type: "number", minimum: 0 },
+        currency: { type: "string", enum: ["", "INR", "USD", "EUR", "GBP", "AED", "SGD", "AUD", "CAD", "JPY"] },
+        city: { type: "string", maxLength: 80 },
+        countryCode: { type: "string", maxLength: 2 },
+        duration: { type: "string", enum: ["", "two-hours", "half-day", "full-day", "weekend"] },
+        style: { type: "string", enum: ["", "traditional", "modern", "intimate", "grand", "eco", "playful"] },
+        dietary: strList(["vegetarian", "vegan", "gluten-free", "nut-free", "dairy-free", "egg-free", "no-pork", "no-alcohol"]),
+        interests: strList(["food", "music", "crafts", "games", "storytelling", "fashion", "gifting", "reflection", "outdoors", "travel"]),
+        language: { type: "string", maxLength: 40 },
+        english: { type: "string", maxLength: 300 },
+      },
+    };
+    const system = [
+      "You read a short description of a celebration someone wants to plan. It may be written in English or in any Indian language.",
+      "Return only what the person actually stated. Use an empty string, 0 or an empty list for anything they did not say; never guess.",
+      "occasion must be one of the allowed ids (for example diwali, holi, onam, pongal, birthday) or empty. attendees counts everyone, including the person writing when they say 'with N friends'.",
+      "budget is the number they wrote, converted from words to digits but not otherwise changed; currency is its ISO code (₹ or rupees is INR).",
+      "city is the place they named, spelled in English (Delhi, Mysuru, Bengaluru). countryCode is the ISO 3166 two-letter code of that place, if any. duration: two days or a weekend is 'weekend'.",
+      "language is the name of the language the text is written in. english is a one-sentence English restatement of the request.",
+      UNTRUSTED_RULE,
+    ].join(" ");
+    const schema = z.object({ language: z.string(), english: z.string() }).passthrough();
+    const result = await this.chatJson(system, wrapUntrusted("question", sanitiseUserText(text, 600)), "celebration_brief", jsonSchema, schema, 500);
+    return { ...result, language: stripUrls(result.language).slice(0, 40), english: stripUrls(result.english).slice(0, 300) };
+  }
+
   /** Propose structured wishlist fields from an approved preference (English text). The person reviews them before saving. */
   async structure(englishText: string): Promise<StructuredPreference> {
     const text = sanitiseUserText(englishText, 1500);

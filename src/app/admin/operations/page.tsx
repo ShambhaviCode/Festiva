@@ -6,6 +6,7 @@ import type { OpsEvent, RuleDefinition } from "@/lib/ops/alerts";
 import type { AuditEntry } from "@/lib/ops/audit";
 import type { Controls } from "@/lib/ops/controls";
 import type { Proposal, RunbookId, RunbookInfo } from "@/lib/ops/runbooks";
+import { confirmAction } from "@/lib/confirm";
 
 interface Data {
   telemetry: { window: string; requests: number; serverErrors: number; circleRequests: number; circleP95Ms: number | null; voiceAttempts: number; voiceFailures: number; processingFailures: number; controlledTestSamples: number };
@@ -25,7 +26,7 @@ function Decision({ proposal, runbook, onDone }: { proposal: Proposal; runbook: 
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   async function decide(approve: boolean) {
-    if (approve && !window.confirm(`Approve and run "${runbook.title}" now?\n\n${runbook.effect}`)) return;
+    if (approve && !(await confirmAction({ title: `Approve and run "${runbook.title}" now?`, body: runbook.effect, confirmLabel: "Approve and run" }))) return;
     setBusy(true);
     const result = await adminFetch("/api/admin/ops", { method: "POST", body: JSON.stringify({ action: "decide", proposalId: proposal.id, approve, note }) });
     setBusy(false);
@@ -195,7 +196,7 @@ export default function OperationsPage() {
                   type="button"
                   className="btn btn-line btn-sm"
                   data-testid="start-latency-test"
-                  onClick={() => window.confirm("Add 1.8 seconds to every Gift Circle API request for up to 10 minutes?") && act({ action: "start_test", scenario: "latency", confirm: true }, "Latency test started.")}
+                  onClick={async () => { if (await confirmAction({ title: "Start the latency test?", body: "Adds 1.8 seconds to every Gift Circle API request for up to 10 minutes.", confirmLabel: "Start test" })) act({ action: "start_test", scenario: "latency", confirm: true }, "Latency test started."); }}
                 >
                   Start latency test
                 </button>
@@ -203,7 +204,7 @@ export default function OperationsPage() {
                   type="button"
                   className="btn btn-line btn-sm"
                   data-testid="start-voice-test"
-                  onClick={() => window.confirm("Fail the next 5 voice requests before they reach Sarvam?") && act({ action: "start_test", scenario: "voice_failures", confirm: true }, "Voice failure test started.")}
+                  onClick={async () => { if (await confirmAction({ title: "Start the voice failure test?", body: "The next 5 voice requests fail before they reach Sarvam.", confirmLabel: "Start test" })) act({ action: "start_test", scenario: "voice_failures", confirm: true }, "Voice failure test started."); }}
                 >
                   Start voice failure test
                 </button>

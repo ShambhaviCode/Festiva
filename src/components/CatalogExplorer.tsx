@@ -5,6 +5,8 @@ import { useId, useMemo, useState, ViewTransition } from "react";
 import { normalise } from "@/domain/text";
 import { useMounted } from "@/lib/hooks";
 import { ArtImage, frameClass, type Art } from "./art/Art";
+import { SaveButton } from "./SaveButton";
+import { Overlay } from "./ui/Overlay";
 
 export interface CatalogItem {
   id: string;
@@ -22,6 +24,10 @@ export interface CatalogItem {
   art?: Art;
   /** Shared with the detail page hero so the artwork morphs between them. */
   transitionName?: string;
+  /** Facts for the Quick look panel. Cards get a Quick look button only when this is set. */
+  details?: { label: string; value: string }[];
+  /** Lets the Quick look panel save the item. */
+  save?: { kind: "festival" | "place" | "wishlist"; id: string; name: string };
 }
 
 export interface Facet {
@@ -188,6 +194,7 @@ export function CatalogExplorer({
     Object.fromEntries(facets.map((f) => [f.key, initial[f.key] ?? ""])),
   );
   const searchId = useId();
+  const [peek, setPeek] = useState<CatalogItem | null>(null);
 
   const indexed = useMemo(
     () =>
@@ -340,7 +347,19 @@ export function CatalogExplorer({
           data-testid="catalog-grid"
         >
           {results.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="relative">
+              {item.details && (
+                <button
+                  type="button"
+                  className="peek-btn absolute right-2.5 top-2.5 z-10"
+                  aria-label={`Quick look: ${item.title}`}
+                  title="Quick look"
+                  aria-haspopup="dialog"
+                  onClick={() => setPeek(item)}
+                >
+                  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px]"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" strokeWidth="1.8" /><circle cx="12" cy="12" r="3" fill="currentColor" /></svg>
+                </button>
+              )}
               <Link href={item.href} className="group block">
                 <ViewTransition name={item.transitionName ?? `art-${item.id}`}>
                   <div
@@ -371,6 +390,44 @@ export function CatalogExplorer({
           ))}
         </ul>
       )}
+      {peek && <QuickLook item={peek} onClose={() => setPeek(null)} />}
     </div>
+  );
+}
+
+/** A side panel (a bottom sheet on phones) with the essentials, so browsing never loses its place. */
+function QuickLook({ item, onClose }: { item: CatalogItem; onClose: () => void }) {
+  const art = item.art ?? { kind: "rosette" as const };
+  return (
+    <Overlay
+      variant="panel"
+      title={item.title}
+      description={item.kicker && <span className="font-medium text-saffron-deep">{item.kicker}</span>}
+      onClose={onClose}
+      testId="quick-look"
+      footer={() => (
+        <>
+          {item.save && <SaveButton kind={item.save.kind} id={item.save.id} name={item.save.name} small />}
+          <Link href={item.href} className="btn btn-plum btn-sm" data-autofocus>
+            Open the full guide
+          </Link>
+        </>
+      )}
+    >
+      <div className={`${frameClass(art.kind)} mt-2 max-h-56 sm:max-h-none`} data-art={art.kind}>
+        <ArtImage art={art} seed={item.seed} palette={item.palette} className="h-full w-full" />
+      </div>
+      <p className="mt-5 text-lg leading-relaxed">{item.summary}</p>
+      {item.details && item.details.length > 0 && (
+        <dl className="mt-5 grid gap-x-6 gap-y-3 border-t border-charcoal/10 pt-5 sm:grid-cols-[auto_1fr]">
+          {item.details.map((d) => (
+            <div key={d.label} className="contents">
+              <dt className="text-sm font-semibold uppercase tracking-[0.08em] text-ink">{d.label}</dt>
+              <dd className="-mt-2 sm:mt-0">{d.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </Overlay>
   );
 }

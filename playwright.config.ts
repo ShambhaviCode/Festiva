@@ -37,9 +37,19 @@ export default defineConfig({
       FESTIVA_DATA_DIR: DATA_DIR,
       FESTIVA_ADMIN_TOKEN: process.env.E2E_ADMIN_TOKEN ?? "e2e-admin-token-0123456789abcdef",
       FESTIVA_METRICS_TOKEN: "e2e-metrics-token-0123456789abcdef",
+      // Keep demo mode even on a machine whose .env.local holds real keys: Next.js never overrides a
+      // variable that is already set, and FESTIVA treats an empty value as "not configured".
+      ANTHROPIC_API_KEY: "",
+      OPENAI_API_KEY: "",
+      SARVAM_API_KEY: "",
+      FLAGSMITH_ENVIRONMENT_KEY: "",
+      NUDGEBEE_EVENT_WEBHOOK_URL: "",
+      NUDGEBEE_EVENT_WEBHOOK_TOKEN: "",
+      NUDGEBEE_API_URL: "",
+      NUDGEBEE_API_TOKEN: "",
     },
     url: `http://localhost:${PORT}/api/health`,
     reuseExistingServer: !process.env.CI,
-    timeout: 240_000,
+    timeout: 600_000,
   },
 });

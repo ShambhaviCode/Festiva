@@ -287,9 +287,9 @@ test("Sarvam failures raise an alert that reaches NudgeBee; pausing voice runs o
   await expect(proposal).toBeVisible();
   await guest.page.reload();
   await expect(guest.page.getByTestId("mode-voice")).toBeEnabled();
-  page.on("dialog", (d) => void d.accept());
   await proposal.getByTestId("approval-note").fill("Sarvam returning 503s; pausing voice, typing stays");
   await proposal.getByTestId("approve").click();
+  await page.getByTestId("confirm-dialog").getByRole("button", { name: "Approve and run" }).click();
   await expect(page.getByTestId("decided-proposals")).toContainText("Pause voice capture: executed");
   await guest.page.reload();
   await expect(guest.page.getByTestId("voice-unavailable")).toContainText("paused by an administrator");
@@ -305,6 +305,7 @@ test("Sarvam failures raise an alert that reaches NudgeBee; pausing voice runs o
   await expect(resume).toContainText("nudgebee-workflow");
   await resume.getByTestId("approval-note").fill("Confirmed recovery in NudgeBee");
   await resume.getByTestId("approve").click();
+  await page.getByTestId("confirm-dialog").getByRole("button", { name: "Approve and run" }).click();
   await expect(page.getByTestId("decided-proposals")).toContainText("Resume voice capture: executed");
   await expect(page.getByTestId("audit-log")).toContainText("nudgebee.event_sent");
   await guest.context.close();

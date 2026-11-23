@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Suspense } from "react";
-import "@fontsource-variable/bodoni-moda/opsz.css";
-import "@fontsource-variable/bodoni-moda/opsz-italic.css";
+import { Suspense, ViewTransition } from "react";
+import "@fontsource-variable/bricolage-grotesque/index.css";
 import "@fontsource-variable/instrument-sans/wght.css";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/Toaster";
+import { ConfirmHost } from "@/components/ui/ConfirmHost";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,9 +30,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1e0a23",
+  themeColor: "#170833",
   width: "device-width",
   initialScale: 1,
+  // Lets bottom sheets and the toaster pad themselves for the iPhone home indicator.
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -45,9 +48,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
         </Suspense>
         <main id="main" className="flex-1">
-          {children}
+          {/* A short crossfade between pages. Layouts persist, so only "update" fires here. */}
+          <ViewTransition update="page" default="none">
+            {children}
+          </ViewTransition>
         </main>
         <Footer />
+        <Toaster />
+        <ConfirmHost />
       </body>
     </html>
   );

@@ -9,8 +9,11 @@
 | Zod | Validation | MIT |
 | @supabase/supabase-js | Database and auth client | MIT |
 | @flagsmith/nodejs | Flagsmith server-side SDK (feature flags, Gift Circle) | MIT |
-| Bodoni Moda (via Fontsource) | Display typeface | SIL Open Font License 1.1 |
+| Bricolage Grotesque (via Fontsource) | Display typeface | SIL Open Font License 1.1 |
 | Instrument Sans (via Fontsource) | Text typeface | SIL Open Font License 1.1 |
+| Natural Earth 1:10m Admin 0 Countries, India point of view, and Admin 1 States and Provinces | World map and subdivision boundaries in `/public/geo`, built by `scripts/build-geo.mjs` (simplified with mapshaper, projected with d3-geo) | Public domain |
+| d3-geo | Map projection (Equal Earth) | ISC |
+| mapshaper (build time only) | Boundary simplification | MPL 2.0 |
 | world-atlas / Natural Earth | Land outlines used to generate `src/data/globe-points.json` and the dot-map grid `src/data/map-grid.json` (`npm run generate:map`, using d3-geo at build time only) | ISC / public domain |
 | Jest, Playwright, axe-core, PGlite, tsx | Development and testing only | MIT / Apache-2.0 / MPL-2.0 |
 
@@ -18,7 +21,7 @@ Festival photographs (45 festivals, `public/photos/festivals/`) come from Wikime
 
 ## Design references
 
-The brief listed eight reference sites. They were consulted for general direction only; no design, code or asset was copied. Two could be read as text (motionsites.ai, 60fps.design). godly.website redirected elsewhere and land-book.com did not load at the time; the remaining sites were not fetched. The visual identity (the plum night, the globe of lights, the arch frame, the rosettes, the Bodoni Moda and Instrument Sans pairing) was designed for FESTIVA from the brief's own palette and principles.
+The brief listed eight reference sites. They were consulted for general direction only; no design, code or asset was copied. Two could be read as text (motionsites.ai, 60fps.design). godly.website redirected elsewhere and land-book.com did not load at the time; the remaining sites were not fetched. The visual identity (originally a plum night, a globe of lights and Bodoni Moda; in November 2026 redesigned as a bold, vibrant system with Bricolage Grotesque and Instrument Sans, a festival palette and a real map) was designed for FESTIVA from the brief's own palette and principles.
 
 ## Sponsor services (Gift Circle)
 

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { favouriteArtists, savedFestivals, savedPlaces, toggleIn, useStore, wishlist, type LocalStore } from "@/lib/store";
+import { toast } from "@/lib/toast";
 
 interface Lookup {
   [id: string]: { title: string; href: string };
@@ -14,12 +15,12 @@ function List({ title, empty, emptyHref, emptyCta, store, lookup, testId }: { ti
     <section className="rule grid gap-4 border-t py-8 lg:grid-cols-[0.36fr_1fr] lg:gap-12" aria-label={title}>
       <h2 className="display-3">{title}</h2>
       {known.length === 0 ? (
-        <p className="text-ink">
-          {empty}{" "}
-          <Link href={emptyHref} className="link link-accent">
+        <div className="rounded-3xl border border-dashed border-charcoal/20 px-6 py-7">
+          <p className="text-ink">{empty}</p>
+          <Link href={emptyHref} className="btn btn-line btn-sm mt-3">
             {emptyCta}
           </Link>
-        </p>
+        </div>
       ) : (
         <ul data-testid={testId}>
           {known.map((id) => (
@@ -27,7 +28,7 @@ function List({ title, empty, emptyHref, emptyCta, store, lookup, testId }: { ti
               <Link href={lookup[id].href} className="font-semibold hover:underline hover:decoration-gold hover:underline-offset-4">
                 {lookup[id].title}
               </Link>
-              <button type="button" className="btn btn-line btn-sm" onClick={() => toggleIn(store, id)} aria-label={`Remove ${lookup[id].title}`}>
+              <button type="button" className="btn btn-line btn-sm" onClick={() => { toggleIn(store, id); toast(`Removed ${lookup[id].title}`, { tone: "info", action: { label: "Undo", onClick: () => toggleIn(store, id) } }); }} aria-label={`Remove ${lookup[id].title}`}>
                 Remove
               </button>
             </li>

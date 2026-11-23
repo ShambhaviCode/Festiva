@@ -23,6 +23,13 @@ const items: CatalogItem[] = festivals.map((f) => ({
   seed: f.slug,
   palette: f.palette,
   transitionName: `art-festival-${f.slug}`,
+  details: [
+    { label: "Usually", value: typicalMonths(f.date, 2026).map((m) => monthName(m)).join(", ") || "Varies" },
+    { label: "Kind", value: CATEGORY_LABELS[f.category] },
+    { label: "Observed by", value: f.observedBy },
+    { label: "Where", value: f.countries.slice(0, 6).map(countryName).join(", ") + (f.countries.length > 6 ? ` and ${f.countries.length - 6} more` : "") },
+  ],
+  save: { kind: "festival", id: f.slug, name: f.name },
   keywords: [f.localName ?? "", f.tagline, f.observedBy, REGION_LABELS[f.region], ...f.countries.map(countryName)].join(" "),
   facets: {
     region: [f.region],
@@ -43,7 +50,7 @@ const facets: Facet[] = [
 export default function DiscoverPage() {
   return (
     <>
-      <PageIntro title="Discover festivals" lede="Thirty-one celebrations from ten regions, each with its story, its customs and an honest note on when it falls. Search by name, place or tradition.">
+      <PageIntro title="Discover festivals" lede={`${festivals.length} celebrations across ${countries.length} countries, each with its story, its customs and an honest note on when it falls. Search by name, place or tradition.`}>
         <p className="mt-5 flex flex-wrap gap-x-8 gap-y-2">
           <Link href="/discover/calendar" className="link link-accent">
             Browse the calendar by month

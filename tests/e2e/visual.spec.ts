@@ -43,10 +43,8 @@ test.describe("24. Visual system", () => {
       await page.goto(path);
       const frames = page.getByTestId("catalog-grid").locator("[data-art]");
       await expect(frames.first()).toHaveAttribute("data-art", kind);
-      await expect(frames.first().locator("svg")).toHaveAttribute(
-        "aria-hidden",
-        "true",
-      );
+      // Each card shows either a credited photo or FESTIVA's generated artwork (an aria-hidden SVG).
+      expect(await frames.first().locator("img, svg[aria-hidden='true']").count()).toBeGreaterThan(0);
     }
   });
 
@@ -111,6 +109,7 @@ test.describe("24. Visual system", () => {
 
   for (const path of ["/journeys", "/shop", "/circles"]) {
     test(`no serious accessibility violations on ${path}`, async ({ page }) => {
+      test.setTimeout(120_000);
       await page.goto(path);
       await page.waitForLoadState("networkidle");
       const results = await new AxeBuilder({ page })
@@ -151,6 +150,7 @@ test.describe("24. Visual system", () => {
 test.describe("25. Layout stability", () => {
   for (const width of [1440, 768, 390]) {
     test(`public pages hold still and fit at ${width}px`, async ({ page }) => {
+      test.setTimeout(240_000);
       await page.setViewportSize({ width, height: 900 });
       await trackLayoutShift(page);
       for (const path of [

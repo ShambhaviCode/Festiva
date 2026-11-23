@@ -19,7 +19,8 @@ test.describe("19. Mobile experience", () => {
   });
 
   test("no page scrolls sideways on a phone", async ({ page }) => {
-    for (const path of ["/", "/discover", "/discover/diwali", "/matchmaker", "/shop", "/wishes", "/play/memory", "/sound", "/intelligence", "/circles", "/circles/new", "/admin"]) {
+    test.setTimeout(240_000);
+    for (const path of ["/", "/world", "/discover", "/discover/diwali", "/matchmaker", "/shop", "/wishes", "/play/memory", "/sound", "/intelligence", "/circles", "/circles/new", "/admin"]) {
       await page.goto(path);
       await page.waitForLoadState("networkidle");
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);

@@ -44,4 +44,7 @@ Shown only to identify each brand on its Shop card and detail page. Each logo is
 - **Lindt & Sprüngli** (`public/logos/lindt.svg`): English Wikipedia, [File:Lindt_&_Sprüngli.svg](https://en.wikipedia.org/wiki/File:Lindt_%26_Spr%C3%BCngli.svg), a non-free logo used there under fair use.
 - **Godiva** (`public/logos/godiva.svg`): English Wikipedia, [File:Godiva_Chocolatier_Logo.svg](https://en.wikipedia.org/wiki/File:Godiva_Chocolatier_Logo.svg), a non-free logo used there under fair use.
 
-The three non-free logos are not freely licensed. They are used here at the site owner's decision, for identification only; remove them if a brand objects. Other brands keep FESTIVA's typographic name plate.
+- **Cartier, Swarovski, Tanishq**: Wikimedia Commons, public domain ([Cartier](https://commons.wikimedia.org/wiki/File:Cartier_logo.svg), [Swarovski](https://commons.wikimedia.org/wiki/File:Swarovski_new_logo.svg), [Tanishq](https://commons.wikimedia.org/wiki/File:Tanishq_Logo.svg)).
+- **Biba, Manyavar, Anita Dongre, Sabyasachi, GIVA, Good Earth, Nicobar**: taken from the logo in each brand's own website header (24 November 2026). Biba's is drawn from the site's own icon font; Sabyasachi's is recoloured from white to near-black to show on a light plate. Manyavar's site shows its combined Manyavar and Mohey logo, used as published.
+
+The non-free and website-sourced logos are not freely licensed. They are used here at the site owner's decision, for identification only; remove them if a brand objects. Other brands keep FESTIVA's typographic name plate.

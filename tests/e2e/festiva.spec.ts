@@ -131,8 +131,8 @@ test.describe("3–7. Discovery", () => {
     expect(count).toBeGreaterThan(3);
     expect(count).toBeLessThan(80);
     await expect(page.getByTestId("catalog-grid").getByRole("heading", { name: "Biryani" })).toHaveCount(0);
-    await page.goto("/taste/mooncake");
-    await expect(page.getByText("Usually contains: gluten, egg.")).toBeVisible();
+    await page.goto("/taste/panettone");
+    await expect(page.getByText("Usually contains: gluten, egg, dairy.")).toBeVisible();
     await expect(page.getByText("not allergy advice")).toBeVisible();
     await page.goto("/wear");
     await page.getByLabel("Search garments and textiles").fill("korea");
@@ -567,7 +567,7 @@ test.describe("23. Accessibility, SEO and security headers", () => {
     expect(sitemap.status()).toBe(200);
     const xml = await sitemap.text();
     expect(xml).toContain("/discover/diwali");
-    expect(xml).toContain("/taste/mooncake");
+    expect(xml).toContain("/taste/panettone");
     expect(xml).not.toContain("/share/");
     const robots = await (await request.get("/robots.txt")).text();
     expect(robots).toMatch(/Disallow: \/api\//);

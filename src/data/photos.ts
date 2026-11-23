@@ -1025,6 +1025,606 @@ export const FESTIVAL_PHOTOS: Record<string, Photo> = {
     "licenseUrl": null,
     "source": "https://commons.wikimedia.org/wiki/File:Scene_at_Arenibek.jpg",
     "title": "Scene at Arenibek.jpg"
+  },
+  "thanksgiving": {
+    "src": "/photos/festivals/thanksgiving.jpg",
+    "width": 900,
+    "height": 688,
+    "artist": "Jean Leon Gerome Ferris",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:The_First_Thanksgiving_Jean_Louis_Gerome_Ferris.png",
+    "title": "The First Thanksgiving Jean Louis Gerome Ferris.png"
+  },
+  "lohri": {
+    "src": "/photos/festivals/lohri.jpg",
+    "width": 891,
+    "height": 1250,
+    "artist": "Callofthenight",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lohri-fire.jpg",
+    "title": "Lohri-fire.jpg"
+  },
+  "ram-navami": {
+    "src": "/photos/festivals/ram-navami.jpg",
+    "width": 862,
+    "height": 1188,
+    "artist": "Tariq Khan via DTM",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ram_in_Ayodhya.jpg",
+    "title": "Ram in Ayodhya.jpg"
+  },
+  "hornbill-festival": {
+    "src": "/photos/festivals/hornbill-festival.jpg",
+    "width": 960,
+    "height": 720,
+    "artist": "Homen Biswas",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hornbil_Festival,_Kohima_6.jpg",
+    "title": "Hornbil Festival, Kohima 6.jpg"
+  },
+  "barranquilla-carnival": {
+    "src": "/photos/festivals/barranquilla-carnival.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Horaciotaricco",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Horacio_Taricco_Lavin_Carnaval_de_barranquilla_colombia.jpg",
+    "title": "Horacio Taricco Lavin Carnaval de barranquilla colombia.jpg"
+  },
+  "sao-joao-porto": {
+    "src": "/photos/festivals/sao-joao-porto.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Hugo Cadavez from Portugal",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Festa_de_Sao_Joao_(Porto).jpg",
+    "title": "Festa de Sao Joao (Porto).jpg"
+  },
+  "vendimia": {
+    "src": "/photos/festivals/vendimia.jpg",
+    "width": 1000,
+    "height": 657,
+    "artist": "Tanenhaus",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Reina_de_La_Paz_(2348694105).jpg",
+    "title": "Reina de La Paz (2348694105).jpg"
+  },
+  "quebec-winter-carnival": {
+    "src": "/photos/festivals/quebec-winter-carnival.jpg",
+    "width": 1000,
+    "height": 675,
+    "artist": "Shapiros10",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carnival_1.jpg",
+    "title": "Carnival 1.jpg"
+  },
+  "fes-sacred-music": {
+    "src": "/photos/festivals/fes-sacred-music.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Ramon Fornós",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:FESTIVAL_FES_2102_ARCHIE_SHEPP.JPG",
+    "title": "FESTIVAL FES 2102 ARCHIE SHEPP.JPG"
+  },
+  "smigus-dyngus": {
+    "src": "/photos/festivals/smigus-dyngus.jpg",
+    "width": 1000,
+    "height": 763,
+    "artist": "Polimerek",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Smiergusnicy_polewaja_panne_2.jpg",
+    "title": "Smiergusnicy polewaja panne 2.jpg"
+  },
+  "baba-marta": {
+    "src": "/photos/festivals/baba-marta.jpg",
+    "width": 1000,
+    "height": 600,
+    "artist": "GadzhevaMaya",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Baba_Marta.jpg",
+    "title": "Baba Marta.jpg"
+  },
+  "paro-tsechu": {
+    "src": "/photos/festivals/paro-tsechu.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Stephen Shephard",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Dance_of_the_Black_Hats_-_Paro_Tsechu.jpg",
+    "title": "Dance of the Black Hats - Paro Tsechu.jpg"
+  },
+  "sauti-za-busara": {
+    "src": "/photos/festivals/sauti-za-busara.jpg",
+    "width": 834,
+    "height": 1250,
+    "artist": "Sameer Kermalli",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Divine_light_for_music!.jpg",
+    "title": "Divine light for music!.jpg"
+  },
+  "saint-louis-jazz": {
+    "src": "/photos/festivals/saint-louis-jazz.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Ji-Elle",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Saint-Louis-du-S%C3%A9n%C3%A9gal.JPG",
+    "title": "Saint-Louis-du-Sénégal.JPG"
+  },
+  "goroka-show": {
+    "src": "/photos/festivals/goroka-show.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Anselmo Lastra",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Goroka_Show_-_Lastra.jpg",
+    "title": "Goroka Show - Lastra.jpg"
+  },
+  "uzgavenes": {
+    "src": "/photos/festivals/uzgavenes.jpg",
+    "width": 830,
+    "height": 1250,
+    "artist": "Andrius Petrucenia",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Uzgavenes_2010_-_more.jpg",
+    "title": "Uzgavenes 2010 - more.jpg"
+  },
+  "martisor": {
+    "src": "/photos/festivals/martisor.jpg",
+    "width": 835,
+    "height": 1250,
+    "artist": "Endangered Snowdrop",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Traditional_Romanian_M%C4%83r%C8%9Bi%C8%99or.jpg",
+    "title": "Traditional Romanian Mărțișor.jpg"
+  },
+  "dia-de-los-difuntos-ecuador": {
+    "src": "/photos/festivals/dia-de-los-difuntos-ecuador.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Ceibos",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tradici%C3%B3n_del_d%C3%ADa_de_los_difuntos_en_la_pen%C3%ADnsula_de_Santa_Elena.jpg",
+    "title": "Tradición del día de los difuntos en la península de Santa Elena.jpg"
+  },
+  "haitian-kanaval": {
+    "src": "/photos/festivals/haitian-kanaval.jpg",
+    "width": 960,
+    "height": 881,
+    "artist": "Bmcao2",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Haitian_Carnival_(Kanaval).jpg",
+    "title": "Haitian Carnival (Kanaval).jpg"
+  },
+  "desfile-de-llamadas": {
+    "src": "/photos/festivals/desfile-de-llamadas.jpg",
+    "width": 832,
+    "height": 1250,
+    "artist": "Jimmy Baikovicius from Montevideo, Uruguay",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Desfile_de_Llamadas_-_Montevideo,_Uruguay_-_February_2011_-_(1).jpg",
+    "title": "Desfile de Llamadas - Montevideo, Uruguay - February 2011 - (1).jpg"
+  },
+  "teuila-festival": {
+    "src": "/photos/festivals/teuila-festival.jpg",
+    "width": 992,
+    "height": 1250,
+    "artist": "OceaniaRiseUp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Moemoana_Safa%CA%BBato%CA%BBa_Schwenke.jpg",
+    "title": "Moemoana Safaʻatoʻa Schwenke.jpg"
+  },
+  "feast-of-saint-blaise": {
+    "src": "/photos/festivals/feast-of-saint-blaise.jpg",
+    "width": 1000,
+    "height": 1081,
+    "artist": "Martin Falbisoner",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Saint_Blaise%27s_Church,_Dubrovnik_-_September_2017.jpg",
+    "title": "Saint Blaise's Church, Dubrovnik - September 2017.jpg"
+  },
+  "dita-e-veres": {
+    "src": "/photos/festivals/dita-e-veres.jpg",
+    "width": 1000,
+    "height": 663,
+    "artist": "Buona1",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dita_e_Veres_01.jpg",
+    "title": "Dita e Veres 01.jpg"
+  },
+  "vardavar": {
+    "src": "/photos/festivals/vardavar.jpg",
+    "width": 800,
+    "height": 533,
+    "artist": "Камалян001",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vardavar_011_Vartavar.jpg",
+    "title": "Vardavar 011 Vartavar.jpg"
+  },
+  "kuomboka": {
+    "src": "/photos/festivals/kuomboka.jpg",
+    "width": 1000,
+    "height": 667,
+    "artist": "Jae zambia",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kuomboka_ceremony_in_Zambia_11.jpg",
+    "title": "Kuomboka ceremony in Zambia 11.jpg"
+  },
+  "las-tablas-carnival": {
+    "src": "/photos/festivals/las-tablas-carnival.jpg",
+    "width": 1000,
+    "height": 1000,
+    "artist": "Carnaval.com Studios",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Las_Tablas_Carnaval_Sunday_Night_10.jpg",
+    "title": "Las Tablas Carnaval Sunday Night 10.jpg"
+  },
+  "mnarja": {
+    "src": "/photos/festivals/mnarja.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Jonathan borg zigli",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:L-IMNARJA.jpg",
+    "title": "L-IMNARJA.jpg"
+  },
+  "ohrid-summer-festival": {
+    "src": "/photos/festivals/ohrid-summer-festival.jpg",
+    "width": 1000,
+    "height": 738,
+    "artist": "Marcin Konsek",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2011_Ochryda,_Antyczny_teatr_(02).jpg",
+    "title": "2011 Ochryda, Antyczny teatr (02).jpg"
+  },
+  "la-vega-carnival": {
+    "src": "/photos/festivals/la-vega-carnival.jpg",
+    "width": 500,
+    "height": 667,
+    "artist": "Vegano1988",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Dominican_Republic_Carnival_Mask_La_Vega.jpg",
+    "title": "Dominican Republic Carnival Mask La Vega.jpg"
+  },
+  "umhlanga": {
+    "src": "/photos/festivals/umhlanga.jpg",
+    "width": 1000,
+    "height": 620,
+    "artist": "Amada44",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Eswatini_Reed_Dance_2006_-01.jpg",
+    "title": "Eswatini Reed Dance 2006 -01.jpg"
+  },
+  "mindelo-carnival": {
+    "src": "/photos/festivals/mindelo-carnival.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Hanay",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%D7%A7%D7%A8%D7%A0%D7%91%D7%9C_%D7%9E%D7%99%D7%A0%D7%93%D7%9C%D7%95_%D7%91%D7%90%D7%99_%D7%A1%D7%90%D7%95_%D7%95%D7%99%D7%A1%D7%A0%D7%98%D7%94_%D7%91%D7%90%D7%99%D7%99_%D7%9B%D7%A3_%D7%95%D7%A8%D7%93%D7%94_%D7%A4%D7%91%D7%A8%D7%95%D7%90%D7%A8_2023_21.jpg",
+    "title": "קרנבל מינדלו באי סאו ויסנטה באיי כף ורדה פברואר 2023 21.jpg"
+  },
+  "fiestas-agostinas": {
+    "src": "/photos/festivals/fiestas-agostinas.jpg",
+    "width": 960,
+    "height": 719,
+    "artist": "Echa24161",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cathedral_of_San_Salvador_2023.png",
+    "title": "Cathedral of San Salvador 2023.png"
+  },
+  "garifuna-settlement-day": {
+    "src": "/photos/festivals/garifuna-settlement-day.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Garinagu Melivn",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Garifuna_Celebration,_19th_November,_Dangriga,_Belize.jpg",
+    "title": "Garifuna Celebration, 19th November, Dangriga, Belize.jpg"
+  },
+  "palo-de-mayo": {
+    "src": "/photos/festivals/palo-de-mayo.jpg",
+    "width": 833,
+    "height": 1250,
+    "artist": "HazelPacheco",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palo_de_Mayo,_Panam%C3%A1.jpg",
+    "title": "Palo de Mayo, Panamá.jpg"
+  },
+  "sainte-devote": {
+    "src": "/photos/festivals/sainte-devote.jpg",
+    "width": 1000,
+    "height": 1000,
+    "artist": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%C3%89glise_de_Saint-D%C3%A9vote_Monaco_IMG_1204.jpg",
+    "title": "Église de Saint-Dévote Monaco IMG 1204.jpg"
+  },
+  "fespam": {
+    "src": "/photos/festivals/fespam.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Dienb5",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Image_du_Fespam_2025_12e_%C3%A9dition_18.jpg",
+    "title": "Image du Fespam 2025 12e édition 18.jpg"
+  },
+  "kataklysmos": {
+    "src": "/photos/festivals/kataklysmos.jpg",
+    "width": 1000,
+    "height": 663,
+    "artist": "Valantis Antoniades",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Castle_square_wharf.JPG",
+    "title": "Castle square wharf.JPG"
+  },
+  "moshoeshoe-day": {
+    "src": "/photos/festivals/moshoeshoe-day.jpg",
+    "width": 1000,
+    "height": 667,
+    "artist": "U.S. Embassy Maseru",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:King_Moshoeshoe_Day_2023_at_Thaba_Bosiu.jpg",
+    "title": "King Moshoeshoe Day 2023 at Thaba Bosiu.jpg"
+  },
+  "famadihana": {
+    "src": "/photos/festivals/famadihana.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "MPMF24",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:FAMADIHANA_MPMF24.jpg",
+    "title": "FAMADIHANA MPMF24.jpg"
+  },
+  "lake-of-stars": {
+    "src": "/photos/festivals/lake-of-stars.jpg",
+    "width": 1000,
+    "height": 667,
+    "artist": "Casperntilo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ric_Hassani_at_LOS.jpg",
+    "title": "Ric Hassani at LOS.jpg"
+  },
+  "maharero-day": {
+    "src": "/photos/festivals/maharero-day.jpg",
+    "width": 861,
+    "height": 1250,
+    "artist": "Unknown photographer",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:SamuelMaharero.jpg",
+    "title": "SamuelMaharero.jpg"
+  },
+  "liberia-independence-day": {
+    "src": "/photos/festivals/liberia-independence-day.jpg",
+    "width": 1000,
+    "height": 727,
+    "artist": "Unknown authorUnknown author",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Liberian_Independence_Day_Celebration_2019.png",
+    "title": "Liberian Independence Day Celebration 2019.png"
+  },
+  "yap-day": {
+    "src": "/photos/festivals/yap-day.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "U.S. Navy photo by Petty Officer 3rd Class Luis Sanchez",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:SEABEES_FROM_DETACHMENT_YAP_CELEBRATE_YAP_DAY_(8945780).jpg",
+    "title": "SEABEES FROM DETACHMENT YAP CELEBRATE YAP DAY (8945780).jpg"
+  },
+  "vaisakhi": {
+    "src": "/photos/festivals/vaisakhi.jpg",
+    "width": 960,
+    "height": 990,
+    "artist": "Michael Clark",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Handsworth_Vaisakhi.jpg",
+    "title": "Handsworth Vaisakhi.jpg"
+  },
+  "santiago-de-cuba-carnival": {
+    "src": "/photos/festivals/santiago-de-cuba-carnival.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "DnTrotaMundos ☮",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:De_carnaval_en_Santiago_de_Cuba_-_panoramio.jpg",
+    "title": "De carnaval en Santiago de Cuba - panoramio.jpg"
+  },
+  "masopust": {
+    "src": "/photos/festivals/masopust.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Pohled 111",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pr%C5%AFvod_a_zastaven%C3%AD_U_Bo%C5%99il%C5%AF_(Masopust)_02.jpg",
+    "title": "Průvod a zastavení U Bořilů (Masopust) 02.jpg"
+  },
+  "sankt-hans": {
+    "src": "/photos/festivals/sankt-hans.jpg",
+    "width": 1000,
+    "height": 1000,
+    "artist": "Kristian Bang",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Sankt_Hans_B%C3%A5l_p%C3%A5_Engen.jpg",
+    "title": "Sankt Hans Bål på Engen.jpg"
+  },
+  "nauryz": {
+    "src": "/photos/festivals/nauryz.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "Graphique38",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nauryz_in_Pavlodar.jpg",
+    "title": "Nauryz in Pavlodar.jpg"
+  },
+  "baalbeck-festival": {
+    "src": "/photos/festivals/baalbeck-festival.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lebanon,_Baalbek,_Temple_of_Bacchus_2.jpg",
+    "title": "Lebanon, Baalbek, Temple of Bacchus 2.jpg"
+  },
+  "fespaco": {
+    "src": "/photos/festivals/fespaco.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Sputniktilt",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Siege_FESPACO_Ouaga.jpg",
+    "title": "Siege FESPACO Ouaga.jpg"
+  },
+  "heilala-festival": {
+    "src": "/photos/festivals/heilala-festival.jpg",
+    "width": 1000,
+    "height": 745,
+    "artist": "Tauʻolunga",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Garcinia_sessilis,_flower.jpg",
+    "title": "Garcinia sessilis, flower.jpg"
+  },
+  "evala": {
+    "src": "/photos/festivals/evala.jpg",
+    "width": 1000,
+    "height": 865,
+    "artist": "Wisdom Mensah de Linitiateur",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Evala_chez_le_peuple_Kaby%C3%A9_au_Nord_du_Togo.jpg",
+    "title": "Evala chez le peuple Kabyé au Nord du Togo.jpg"
+  },
+  "chopi-timbila": {
+    "src": "/photos/festivals/chopi-timbila.jpg",
+    "width": 1000,
+    "height": 636,
+    "artist": "Jean-Pierre Dalbéra from Paris, France",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Le_Timbila,_xylophone_du_Mozambique_(Biennale_de_Venise_2015)_(20192901852).jpg",
+    "title": "Le Timbila, xylophone du Mozambique (Biennale de Venise 2015) (20192901852).jpg"
+  },
+  "tuvalu-independence-day": {
+    "src": "/photos/festivals/tuvalu-independence-day.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "JialiangGao",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fatele_Funafuti_Tuvalu.jpg",
+    "title": "Fatele Funafuti Tuvalu.jpg"
+  },
+  "orthodox-easter-greece": {
+    "src": "/photos/festivals/orthodox-easter-greece.jpg",
+    "width": 1000,
+    "height": 670,
+    "artist": "Jean Housen",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Orthodox_cross_procession_Corfu_Easter_2014.jpg",
+    "title": "Orthodox cross procession Corfu Easter 2014.jpg"
+  },
+  "dia-del-boyero": {
+    "src": "/photos/festivals/dia-del-boyero.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Jmillan325",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Entrada_de_Boyeros.jpg",
+    "title": "Entrada de Boyeros.jpg"
+  },
+  "kiribati-independence-day": {
+    "src": "/photos/festivals/kiribati-independence-day.jpg",
+    "width": 783,
+    "height": 1250,
+    "artist": "Nomis Elaws",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:I-Kiribati_dancer.jpg",
+    "title": "I-Kiribati dancer.jpg"
+  },
+  "palau-independence-day": {
+    "src": "/photos/festivals/palau-independence-day.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Wang Yu Ching / Office of the President (中華民國總統府)",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dance_show_in_Palau_2019-03-23.jpg",
+    "title": "Dance show in Palau 2019-03-23.jpg"
+  },
+  "marshall-islands-constitution-day": {
+    "src": "/photos/festivals/marshall-islands-constitution-day.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "總統府",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:10.30_%E9%A6%AC%E5%9C%8B%E5%82%B3%E7%B5%B1%E3%80%8C%E6%A3%8D%E6%A3%92%E8%88%9E%E8%B9%88%E3%80%8D%EF%BC%88Jabwa_Dance%EF%BC%89%E8%A1%A8%E6%BC%94_(37343844894).jpg",
+    "title": "10.30 馬國傳統「棍棒舞蹈」（Jabwa Dance）表演 (37343844894).jpg"
+  },
+  "vincy-mas": {
+    "src": "/photos/festivals/vincy-mas.jpg",
+    "width": 1000,
+    "height": 641,
+    "artist": "Charles R. Childs",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Kingstown_-_Natives_in_carnival_costume.jpg",
+    "title": "Kingstown - Natives in carnival costume.jpg"
   }
 };
 
@@ -1548,6 +2148,156 @@ export const DISH_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Chipa_paraguaya_en_el_Circuito_Comercial_de_Encarnaci%C3%B3n_(Paraguay).jpg",
     "title": "Chipa paraguaya en el Circuito Comercial de Encarnación (Paraguay).jpg"
+  },
+  "maamoul": {
+    "src": "/photos/dishes/maamoul.jpg",
+    "width": 1000,
+    "height": 564,
+    "artist": "روتانا",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ma%27amoul_Filled_with_Dates_and_Nuts.jpg",
+    "title": "Ma'amoul Filled with Dates and Nuts.jpg"
+  },
+  "zongzi": {
+    "src": "/photos/dishes/zongzi.jpg",
+    "width": 1000,
+    "height": 1127,
+    "artist": "Emilyyxx",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:China_Northwestern_Style_Zongzi.jpg",
+    "title": "China Northwestern Style Zongzi.jpg"
+  },
+  "soda-bread": {
+    "src": "/photos/dishes/soda-bread.jpg",
+    "width": 1000,
+    "height": 999,
+    "artist": "Jim  Lukach",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Irish_soda_bread_(25292114472)_(cropped).jpg",
+    "title": "Irish soda bread (25292114472) (cropped).jpg"
+  },
+  "jollof-rice": {
+    "src": "/photos/dishes/jollof-rice.jpg",
+    "width": 1000,
+    "height": 1010,
+    "artist": "Atimukoh",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Native_Jollof_Rice_(cropped).jpg",
+    "title": "Native Jollof Rice (cropped).jpg"
+  },
+  "kpokpoi": {
+    "src": "/photos/dishes/kpokpoi.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Niiarmahktagoe",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Image_from_Homowo_Festival(Ga_Mashie)_1.jpg",
+    "title": "Image from Homowo Festival(Ga Mashie) 1.jpg"
+  },
+  "tilkut": {
+    "src": "/photos/dishes/tilkut.jpg",
+    "width": 703,
+    "height": 1250,
+    "artist": "Goutam1962",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tilkut_preparation_during_Sankranti_01.jpg",
+    "title": "Tilkut preparation during Sankranti 01.jpg"
+  },
+  "ugadi-pachadi": {
+    "src": "/photos/dishes/ugadi-pachadi.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Srinivas14",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:UgadiPachadi.JPG",
+    "title": "UgadiPachadi.JPG"
+  },
+  "til-pitha": {
+    "src": "/photos/dishes/til-pitha.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "পাপৰি বৰা",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Til_Pitha_2.jpg",
+    "title": "Til Pitha 2.jpg"
+  },
+  "tompouce": {
+    "src": "/photos/dishes/tompouce.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Amin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tompouce_tompoes.jpg",
+    "title": "Tompouce tompoes.jpg"
+  },
+  "ambok": {
+    "src": "/photos/dishes/ambok.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Willuconquer",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ak_Ambok.jpg",
+    "title": "Ak Ambok.jpg"
+  },
+  "colada-morada": {
+    "src": "/photos/dishes/colada-morada.jpg",
+    "width": 960,
+    "height": 720,
+    "artist": "Juan Jorge Arellano Lima, Perú",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Colada_morada.jpg",
+    "title": "Colada morada.jpg"
+  },
+  "churchkhela": {
+    "src": "/photos/dishes/churchkhela.jpg",
+    "width": 500,
+    "height": 330,
+    "artist": "Levan Gokadze (uploaded by Giorgi Balakhadze)",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kakheti,_Georgia_%E2%80%94_Churchkhela.jpg",
+    "title": "Kakheti, Georgia — Churchkhela.jpg"
+  },
+  "maple-taffy": {
+    "src": "/photos/dishes/maple-taffy.jpg",
+    "width": 960,
+    "height": 720,
+    "artist": "MartialArtsNomad.com from Vancouver, Canada",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Taffysicles_(4068260392).jpg",
+    "title": "Taffysicles (4068260392).jpg"
+  },
+  "kada-prasad": {
+    "src": "/photos/dishes/kada-prasad.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Immanuelle",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Golden_Temple_complex-Karah_Parshad.jpg",
+    "title": "Golden Temple complex-Karah Parshad.jpg"
+  },
+  "ftira": {
+    "src": "/photos/dishes/ftira.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Slganado",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Ftira.JPG",
+    "title": "Ftira.JPG"
   }
 };
 
@@ -1651,6 +2401,86 @@ export const ATTIRE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
     "source": "https://commons.wikimedia.org/wiki/File:Mongols_clothes_man_and_woman.jpg",
     "title": "Mongols clothes man and woman.jpg"
+  },
+  "lehenga-choli": {
+    "src": "/photos/attire/lehenga-choli.jpg",
+    "width": 810,
+    "height": 1250,
+    "artist": "Usblogger27",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_flared_lehenga.jpg",
+    "title": "A flared lehenga.jpg"
+  },
+  "shalwar-kameez": {
+    "src": "/photos/attire/shalwar-kameez.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Women_of_Puducherry.jpg",
+    "title": "Women of Puducherry.jpg"
+  },
+  "qipao": {
+    "src": "/photos/attire/qipao.jpg",
+    "width": 833,
+    "height": 1250,
+    "artist": "Peachyeung316",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_White_cheongsam_at_Shum_Shui_Po.jpg",
+    "title": "A White cheongsam at Shum Shui Po.jpg"
+  },
+  "mantilla": {
+    "src": "/photos/attire/mantilla.jpg",
+    "width": 960,
+    "height": 1175,
+    "artist": "Museu Valencià d'Etnologia from València, España",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Objectes_de_la_Sala_Sec%C3%A0_i_Muntanya_(26914857930).jpg",
+    "title": "Objectes de la Sala Secà i Muntanya (26914857930).jpg"
+  },
+  "habesha-kemis": {
+    "src": "/photos/attire/habesha-kemis.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "Elroe tadele",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shimgilina.jpg",
+    "title": "Shimgilina.jpg"
+  },
+  "kente": {
+    "src": "/photos/attire/kente.jpg",
+    "width": 1000,
+    "height": 795,
+    "artist": "Warmglow",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Different_Kente_cloth,_Tafi,_Volta_region.jpg",
+    "title": "Different Kente cloth, Tafi, Volta region.jpg"
+  },
+  "chut-thai": {
+    "src": "/photos/attire/chut-thai.jpg",
+    "width": 960,
+    "height": 1162,
+    "artist": "Z3144228",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:(Detail)_Siam_traditional_clothes.jpg",
+    "title": "(Detail) Siam traditional clothes.jpg"
+  },
+  "midsommarkrans": {
+    "src": "/photos/attire/midsommarkrans.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Peter Salanki",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Midsommarkransar.jpg",
+    "title": "Midsommarkransar.jpg"
   }
 };
 
@@ -2634,6 +3464,296 @@ export const PLACE_PHOTOS: Record<string, Photo> = {
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "source": "https://commons.wikimedia.org/wiki/File:Funafuti_airport_-_Fiji_Airways.jpg",
     "title": "Funafuti airport - Fiji Airways.jpg"
+  },
+  "hoi-an": {
+    "src": "/photos/places/hoi-an.jpg",
+    "width": 500,
+    "height": 332,
+    "artist": "hienmtd",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:B%E1%BA%BFn_H%E1%BB%99i_An.jpg",
+    "title": "Bến Hội An.jpg"
+  },
+  "kandy": {
+    "src": "/photos/places/kandy.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "මියුරු සංකල්ප",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Front_view_of_Temple_of_the_Tooth,_Kandy.jpg",
+    "title": "Front view of Temple of the Tooth, Kandy.jpg"
+  },
+  "oaxaca": {
+    "src": "/photos/places/oaxaca.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "User: (WT-shared) Anyludes at  wts wikivoyage",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Colonial_Oaxaca.jpg",
+    "title": "Colonial Oaxaca.jpg"
+  },
+  "hilo": {
+    "src": "/photos/places/hilo.jpg",
+    "width": 1000,
+    "height": 562,
+    "artist": "Robert Linsdell from St. Andrews, Canada",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Puhi_and_Kuhio_Bay,_Hilo_(503745)_(20340913684)_(cropped).jpg",
+    "title": "Puhi and Kuhio Bay, Hilo (503745) (20340913684) (cropped).jpg"
+  },
+  "karasjok": {
+    "src": "/photos/places/karasjok.jpg",
+    "width": 1000,
+    "height": 665,
+    "artist": "Illustratedjc",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Karasjok-kirke.JPG",
+    "title": "Karasjok-kirke.JPG"
+  },
+  "osogbo": {
+    "src": "/photos/places/osogbo.jpg",
+    "width": 960,
+    "height": 640,
+    "artist": "Hammed usman",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_statue_signifying_the_maternity_nature_of_iya_osun_at_the_sacred_grove_of_oshun2-1.jpg",
+    "title": "A statue signifying the maternity nature of iya osun at the sacred grove of oshun2-1.jpg"
+  },
+  "goroka": {
+    "src": "/photos/places/goroka.jpg",
+    "width": 1000,
+    "height": 322,
+    "artist": "Manuel Hetzel",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Goroka.JPG",
+    "title": "Goroka.JPG"
+  },
+  "musanze": {
+    "src": "/photos/places/musanze.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Nina R",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Volcanoes_National_Park_Rwanda.jpg",
+    "title": "Volcanoes National Park Rwanda.jpg"
+  },
+  "yare": {
+    "src": "/photos/places/yare.jpg",
+    "width": 1000,
+    "height": 664,
+    "artist": "Carlos Eduardo Ramírez Kalajzic",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_las_puertas_de_la_iglesia_de_San_Francisco_de_Yare.jpg",
+    "title": "A las puertas de la iglesia de San Francisco de Yare.jpg"
+  },
+  "apia": {
+    "src": "/photos/places/apia.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Stephen Glauser \n\nuploaded to Wikimedia Commons by Teinesavaii",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Central_Bank_of_Samoa_(2009).jpg",
+    "title": "Central Bank of Samoa (2009).jpg"
+  },
+  "las-tablas": {
+    "src": "/photos/places/las-tablas.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Deivis Quintero by Neblett Studio",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iglesia_de_la_Patrona_Santa_Librada.jpg",
+    "title": "Iglesia de la Patrona Santa Librada.jpg"
+  },
+  "herceg-novi": {
+    "src": "/photos/places/herceg-novi.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Serbianboy",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Herceg_Novi_from_sea_1.jpg",
+    "title": "Herceg Novi from sea 1.jpg"
+  },
+  "la-vega": {
+    "src": "/photos/places/la-vega.jpg",
+    "width": 1000,
+    "height": 563,
+    "artist": "Veganazo99",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Vega_Dominican_Republic_downtown_architecture.jpg",
+    "title": "La Vega Dominican Republic downtown architecture.jpg"
+  },
+  "mindelo": {
+    "src": "/photos/places/mindelo.jpg",
+    "width": 500,
+    "height": 345,
+    "artist": "Francisco Santos",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:2006.07.12.cv.sv.mindelo.palacio.jpg",
+    "title": "2006.07.12.cv.sv.mindelo.palacio.jpg"
+  },
+  "dangriga": {
+    "src": "/photos/places/dangriga.jpg",
+    "width": 960,
+    "height": 638,
+    "artist": "Rick's Pics (Montreal)",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dangriga,_Belize_-_2009_-_towards_the_Sea.jpg",
+    "title": "Dangriga, Belize - 2009 - towards the Sea.jpg"
+  },
+  "pentecost-island": {
+    "src": "/photos/places/pentecost-island.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Choguet",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pentecost_Land_Diving_II.JPG",
+    "title": "Pentecost Land Diving II.JPG"
+  },
+  "andorra-la-vella": {
+    "src": "/photos/places/andorra-la-vella.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "August Dominus",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Andorra_la_Vella_2025.jpg",
+    "title": "Andorra la Vella 2025.jpg"
+  },
+  "monaco": {
+    "src": "/photos/places/monaco.jpg",
+    "width": 1000,
+    "height": 753,
+    "artist": "Georges Jansoone (JoJan)",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Harbour_of_Fontvielle,_Monaco_(view_from_above)_2009-05-09.jpg",
+    "title": "Harbour of Fontvielle, Monaco (view from above) 2009-05-09.jpg"
+  },
+  "ghanzi": {
+    "src": "/photos/places/ghanzi.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Cindy Heppelmann &amp; Hp.Baumeler",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ghanzi_aerial_view_(2018).jpg",
+    "title": "Ghanzi aerial view (2018).jpg"
+  },
+  "larnaca": {
+    "src": "/photos/places/larnaca.jpg",
+    "width": 1000,
+    "height": 663,
+    "artist": "Valantis Antoniades",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aspect_of_the_old_town3.JPG",
+    "title": "Aspect of the old town3.JPG"
+  },
+  "roseau": {
+    "src": "/photos/places/roseau.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Nelro",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Roseau657.jpg",
+    "title": "Roseau657.jpg"
+  },
+  "lake-malawi": {
+    "src": "/photos/places/lake-malawi.jpg",
+    "width": 500,
+    "height": 375,
+    "artist": "Yoni Lerner",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Canoes_on_Lake_Malawi.jpg",
+    "title": "Canoes on Lake Malawi.jpg"
+  },
+  "yap": {
+    "src": "/photos/places/yap.jpg",
+    "width": 1000,
+    "height": 657,
+    "artist": "Dr. James P. McVey, NOAA Sea Grant Program",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Community_house_of_Yorlap_(Yap_Islands)_with_stone_money_made_in_Palau_NOAA.jpg",
+    "title": "Community house of Yorlap (Yap Islands) with stone money made in Palau NOAA.jpg"
+  },
+  "okahandja": {
+    "src": "/photos/places/okahandja.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Martin Hipangwa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Okahandja_mucipality.jpg",
+    "title": "Okahandja mucipality.jpg"
+  },
+  "castries": {
+    "src": "/photos/places/castries.jpg",
+    "width": 1000,
+    "height": 666,
+    "artist": "Prayitno / Thank you for (12 millions +) view from Los Angeles, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Castries_Cruise_Port_(23678144863).jpg",
+    "title": "Castries Cruise Port (23678144863).jpg"
+  },
+  "bunol": {
+    "src": "/photos/places/bunol.jpg",
+    "width": 960,
+    "height": 656,
+    "artist": "B25es",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Castillo_bu%C3%B1ol_20082000.jpg",
+    "title": "Castillo buñol 20082000.jpg"
+  },
+  "addis-ababa": {
+    "src": "/photos/places/addis-ababa.jpg",
+    "width": 1000,
+    "height": 750,
+    "artist": "Bair175",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Meskel_celebrations_2003,_Meskel_Square,_Addis_Ababa,_before_fire_is_lit.jpg",
+    "title": "Meskel celebrations 2003, Meskel Square, Addis Ababa, before fire is lit.jpg"
+  },
+  "wellington": {
+    "src": "/photos/places/wellington.jpg",
+    "width": 960,
+    "height": 720,
+    "artist": "Frozen-Coke-Rocks at English Wikipedia",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Wellington_Waterfront_and_Skylined.jpg",
+    "title": "Wellington Waterfront and Skylined.jpg"
+  },
+  "gulkula": {
+    "src": "/photos/places/gulkula.jpg",
+    "width": 937,
+    "height": 1250,
+    "artist": "CraigLHodges",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Timmy_Burarrwanga_at_Bawaka.JPG",
+    "title": "Timmy Burarrwanga at Bawaka.JPG"
   }
 };
 

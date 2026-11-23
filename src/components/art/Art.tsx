@@ -1,6 +1,6 @@
 import { BRAND_LOGOS } from "@/data/brand-logos";
 import Image from "next/image";
-import { photoFor } from "@/data/photos";
+import { imageFor } from "@/data/photo-fallbacks";
 import { seeded } from "@/domain/random";
 import type { Food, GiftTier } from "@/domain/types";
 import { Motif } from "../Motif";
@@ -48,7 +48,7 @@ export function frameClass(kind: Art["kind"]): string {
 
 export function ArtImage({ art, seed, palette, className = "h-full w-full", sizes = "(max-width: 768px) 90vw, 40vw" }: { art: Art; seed: string; palette: Palette; className?: string; sizes?: string }) {
   // A freely licensed photograph when one has been sourced; otherwise the generated artwork.
-  const photo = photoFor(art.kind, seed);
+  const photo = imageFor(art.kind, seed);
   if (photo) return <Image src={photo.src} alt="" aria-hidden="true" width={photo.width} height={photo.height} sizes={sizes} className={`${className} object-cover`} style={{ backgroundColor: palette[0] }} />;
   switch (art.kind) {
     case "rosette":

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ViewTransition, type ReactNode } from "react";
-import { photoFor } from "@/data/photos";
+import { imageFor } from "@/data/photo-fallbacks";
 import { ArtImage, frameClass, type Art } from "./art/Art";
 
 export function PageIntro({
@@ -87,11 +87,11 @@ export function DetailHero({
 
 /** Credit line for a freely licensed photograph, as its licence requires. */
 function PhotoCredit({ kind, seed }: { kind: Art["kind"]; seed: string }) {
-  const photo = photoFor(kind, seed);
+  const photo = imageFor(kind, seed);
   if (!photo) return null;
   return (
     <p className="note -mt-6 text-xs lg:col-start-2">
-      Photo:{" "}
+      {photo.placeName ? `Photo of ${photo.placeName}, where it is held:` : "Photo:"}{" "}
       <a href={photo.source} className="link" rel="noopener noreferrer" target="_blank">
         {photo.artist}
       </a>

@@ -16,7 +16,6 @@ const TYPE = { sweet: "Sweet", main: "Main dish", snack: "Snack", drink: "Drink"
 
 function dietTags(food: (typeof foods)[number]): string[] {
   const tags: string[] = [];
-  if (food.vegetarian) tags.push("vegetarian");
   if (food.vegan) tags.push("vegan");
   if (!food.contains.includes("gluten")) tags.push("no-gluten");
   if (!food.contains.includes("nuts")) tags.push("no-nuts");
@@ -45,7 +44,6 @@ const facets: Facet[] = [
     key: "diet",
     label: "Dietary preference",
     options: [
-      { value: "vegetarian", label: "Vegetarian" },
       { value: "vegan", label: "Vegan" },
       { value: "no-gluten", label: "Typically without gluten" },
       { value: "no-nuts", label: "Typically without nuts" },
@@ -59,7 +57,7 @@ const facets: Facet[] = [
 export default function TastePage() {
   return (
     <>
-      <PageIntro title="Taste" lede="The dishes that make a festival taste like itself. Dietary notes describe the typical recipe only; households differ, so always confirm ingredients with the cook, especially for allergies." />
+      <PageIntro title="Taste" lede="The dishes that make a festival taste like itself, all of them vegetarian. Dietary notes describe the typical recipe only; households differ, so always confirm ingredients with the cook, especially for allergies." />
       <section className="shell pb-20" aria-label="Dishes">
         <CatalogExplorer items={items} facets={facets} searchLabel="Search dishes and ingredients" placeholder="Try “saffron”, “dumpling” or “Mexico”" noun={["dish", "dishes"]} />
       </section>

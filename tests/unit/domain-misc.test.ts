@@ -18,7 +18,7 @@ describe("search", () => {
   });
   test("can be limited by type and finds across modules", () => {
     expect(search("kyoto", { types: ["destination"] })[0].href).toBe("/journeys/kyoto");
-    expect(search("mooncake", { types: ["food"] })[0].href).toBe("/taste/mooncake");
+    expect(search("panettone", { types: ["food"] })[0].href).toBe("/taste/panettone");
     expect(search("korean", { types: ["artist"] }).map((d) => d.title)).toEqual(expect.arrayContaining(["BTS", "IU"]));
     expect(search("sabyasachi", { types: ["brand"] })).toHaveLength(1);
   });

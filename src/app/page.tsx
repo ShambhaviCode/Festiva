@@ -8,6 +8,7 @@ import { countries } from "@/data/countries";
 import { CATEGORY_LABELS, festivalBySlug, festivals } from "@/data/festivals";
 import { indiaDivisions, linksForDivision } from "@/data/geo-india";
 import { ATTIRE_PHOTOS, DISH_PHOTOS, FESTIVAL_PHOTOS, PLACE_PHOTOS, type Photo } from "@/data/photos";
+import { imageFor } from "@/data/photo-fallbacks";
 import { BUDGET_LABELS } from "@/domain/budget";
 import { formatMoney } from "@/domain/currency";
 import { generatePlan } from "@/domain/matchmaker/engine";
@@ -51,7 +52,7 @@ export default function HomePage() {
   const budgetTop = [...sample.budget.lines].sort((a, b) => b.amountMinor - a.amountMinor).slice(0, 4);
   const budgetMax = Math.max(...budgetTop.map((l) => l.amountMinor), 1);
   const railItems = datedFestivals.map((d) => ({ ...d, category: CATEGORY_LABELS[festivalBySlug.get(d.slug)!.category] }));
-  const railPhotos: Record<string, RailPhoto> = Object.fromEntries(Object.entries(FESTIVAL_PHOTOS).map(([k, p]) => [k, { src: p.src, width: p.width, height: p.height }]));
+  const railPhotos: Record<string, RailPhoto> = Object.fromEntries(festivals.flatMap((f) => { const p = imageFor("rosette", f.slug); return p ? [[f.slug, { src: p.src, width: p.width, height: p.height }]] : []; }));
   const india = indiaDivisions.map((d) => ({ ...d, n: new Set(linksForDivision(d.id).map((l) => l.festival)).size }));
 
   return (

@@ -63,3 +63,18 @@ describe("Amazon links for Shop", () => {
     expect(amazonStatus(env({ AMAZON_ASSOCIATE_TAG: "festiva-21", AMAZON_PAAPI_ACCESS_KEY: "a", AMAZON_PAAPI_SECRET_KEY: "b" })).liveProducts).toBe(true);
   });
 });
+
+describe("Brand logos", () => {
+  test("every brand in Shop has a logo file that exists, with a recorded source", async () => {
+    const { brands } = await import("@/data/shop");
+    const { BRAND_LOGOS } = await import("@/data/brand-logos");
+    const { existsSync } = await import("node:fs");
+    const { join } = await import("node:path");
+    for (const b of brands) {
+      const logo = BRAND_LOGOS[b.slug];
+      expect([b.slug, Boolean(logo)]).toEqual([b.slug, true]);
+      expect(existsSync(join(process.cwd(), "public", logo.src))).toBe(true);
+      expect(logo.source).toMatch(/^https:\/\//);
+    }
+  });
+});

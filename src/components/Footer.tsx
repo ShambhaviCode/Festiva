@@ -94,7 +94,6 @@ export function Footer() {
               </span>
             ))}
           </p>
-          <p>Photographs from Wikimedia Commons under free licences, credited where shown.</p>
         </div>
       </div>
     </footer>

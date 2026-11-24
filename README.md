@@ -163,6 +163,6 @@ Photographs are from Wikimedia Commons under free licences, credited on each pag
 
 <div align="center">
 
-Built with care by **Shambhavi M K** · [GitHub](https://github.com/ShambhaviCode) · MIT License
+Built with care by **Shambhavi** · [GitHub](https://github.com/ShambhaviCode) · MIT License
 
 </div>

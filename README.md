@@ -1,104 +1,164 @@
 <div align="center">
 
-# FESTIVA
+<img src="src/app/icon.svg" width="84" alt="FESTIVA rosette logo" />
 
-**Global festival discovery and AI-assisted celebration planning.**
+# festiva
 
-[Live demo](https://festiva-eta.vercel.app) 
+### Discover the world. Celebrate every culture.
 
-![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript_strict-3178c6?style=flat-square&logo=typescript&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase_RLS-3ecf8e?style=flat-square&logo=supabase&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-555555?style=flat-square)
+**Plan any celebration by simply describing it, in English or an Indian language, and hear FESTIVA answer back in yours.**
 
+[**Open the live app →**](https://festiva-eta.vercel.app) &nbsp;·&nbsp; [Demo script](docs/DEMO_3_MINUTES.md) &nbsp;·&nbsp; [Architecture](docs/ARCHITECTURE.md) &nbsp;·&nbsp; [Sponsor evidence](docs/SPONSOR_EVIDENCE.md)
 
+![Sarvam AI](https://img.shields.io/badge/Sarvam_AI-voice_in,_voice_out-ff9f1c?style=for-the-badge)
+![Flagsmith](https://img.shields.io/badge/Flagsmith-10_live_flags-d4106f?style=for-the-badge)
+![NudgeBee](https://img.shields.io/badge/NudgeBee-approval--gated_runbooks-12b5c4?style=for-the-badge)
+
+![Next.js 16](https://img.shields.io/badge/Next.js_16-000?style=flat-square&logo=nextdotjs&logoColor=white)
+![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-Auth_+_RLS-3ecf8e?style=flat-square&logo=supabase&logoColor=white)
+![Tests](https://img.shields.io/badge/unit_tests-582_passing-19c39a?style=flat-square)
+![License MIT](https://img.shields.io/badge/license-MIT-555?style=flat-square)
+
+<sub>Built for <b>Festive Hacks</b> by WeMakeDevs × WeAreDevelopers · 25 November 2026 · Bengaluru</sub>
+
+<br />
+
+<img src="docs/screenshots/app/home.jpg" width="92%" alt="FESTIVA home page" />
 
 </div>
 
-## Overview
+---
 
-FESTIVA covers 175 festivals across 195 countries (every UN member state except Paraguay, plus Vatican City, Palestine and Taiwan): history, traditions, food, dress, music and destinations, with a sourced next date for every movable festival. A deterministic **Matchmaker** turns six answers into a complete celebration plan, and **Gift Circle** lets a group organise a gift exchange across languages, by voice or text.
+## The problem
 
-## What it does for users
+Festival season is the busiest time of the year, and planning it is still a mess of WhatsApp threads, spreadsheets and guesswork. Who is coming, what to cook for a vegetarian aunt, what to wear, what to gift on a ₹5,000 budget, what the festival even means. And the tools that could help start with an English text box, so the person who would rather just *say* "दिल्ली में परिवार के दस लोगों के साथ होली मनानी है" has to translate their own life first.
 
-| Need | How FESTIVA solves it |
+## What FESTIVA does
+
+**Describe the celebration the way you would to a friend. FESTIVA understands it, plans it, and answers you out loud in your own language.**
+
+| | |
 |---|---|
-| **Understand a celebration** | Each festival page explains meaning, history, regional variations and etiquette, and gives the next date with its source and how certain it is. |
-| **Plan one, fast** | Describe the celebration in your own words, in English or an Indian language ("Diwali with six friends in Bengaluru, ₹5,000, two days"), and Sarvam AI reads it; or answer six questions. Either way you get an editable plan: schedule, food, gifts, attire, décor, music and greetings, with a budget that FESTIVA's code always adds up. |
-| **Eat right** | Every dish lists vegetarian and vegan status and common allergens, and plans respect dietary needs. |
-| **Gift as a group** | Gift Circle collects everyone's wishes by voice or text in their own language, translates them, suggests gifts, draws Secret Santa and tracks who has contributed. |
-| **Explore the world** | A real, zoomable map on Natural Earth boundaries (India point of view). Open any country to see its festivals; open India to go state by state through all 28 states and 8 union territories. Deep links (`/world?country=IN&region=IN-KL`) are shareable. |
-| **Find anything** | Global search (press `/`) across festivals, countries, India's states, food, attire, places, brands and artists, with keyboard navigation. |
-| **Travel** | Cities and heritage sites where festivals come alive, with landmarks, experiences and a short itinerary for each. |
-| **Share and keep** | Save plans, export them as text, JSON or PDF, share a link and revoke it later. Greeting cards download as images. |
-
-## Screenshots
+| 🗣️ **Voice in, voice out** | Type or speak a brief in Hindi, Kannada, Tamil or any of 22 Indian languages. **Sarvam AI** reads it, FESTIVA builds the plan, and replies in *your* language and script, then reads that reply aloud. |
+| 🧮 **A plan you can trust** | Schedule, food for every diet, gifts, dress, décor, music and greetings, all editable. The **budget always adds up**, because the arithmetic runs in code with integer paise, never in an AI model. |
+| 🎁 **Gift Circle** | Organise a family gift exchange across languages: everyone records or types their wishes, Sarvam transcribes and translates them, FESTIVA suggests gifts and draws Secret Santa. |
+| 🗺️ **Explore the world** | A real zoomable map on Natural Earth boundaries. Open any country, or go state by state through all **28 states and 8 union territories** of India. |
+| 🛍️ **Shop real products** | Live products and prices straight from Fabindia, GIVA, Nicobar and Godiva's own stores, refreshed hourly, plus curated gift ideas for 14 brands. |
+| 🌍 **Understand every festival** | **175 festivals across 195 countries**: history, meaning, etiquette, regional variations and a **sourced** next date for every movable festival. |
+| 🍛 **Eat right** | 66 festival dishes, **all vegetarian**, with vegan and allergen notes. |
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/screenshots/app/home.jpg" alt="Home page with the festival globe" /><br /><sub><b>Home:</b> a WebGL globe of festival lights</sub></td>
-    <td width="50%"><img src="docs/screenshots/app/festival.jpg" alt="Diwali festival page" /><br /><sub><b>Festival page:</b> meaning, sourced next date and a one-click plan</sub></td>
+    <td width="50%"><img src="docs/screenshots/app/matchmaker.jpg" alt="Celebration planner reading a Hindi brief" /><br /><sub><b>Planner:</b> a Hindi brief, read by Sarvam AI, answered in Hindi with <b>Hear it</b></sub></td>
+    <td width="50%"><img src="docs/screenshots/app/world.jpg" alt="World map open on Kerala" /><br /><sub><b>World:</b> India down to every state; here, Kerala and Onam</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/app/matchmaker.jpg" alt="Matchmaker" /><br /><sub><b>Matchmaker:</b> six questions with a live plan preview</sub></td>
-    <td><img src="docs/screenshots/app/gift-circle.jpg" alt="Gift Circle" /><br /><sub><b>Gift Circle:</b> multilingual group gifting powered by Sarvam AI</sub></td>
+    <td><img src="docs/screenshots/app/festival.jpg" alt="Diwali festival page" /><br /><sub><b>Festival guide:</b> meaning, traditions and a sourced next date</sub></td>
+    <td><img src="docs/screenshots/app/shop.jpg" alt="Shop with brand logos" /><br /><sub><b>Shop:</b> brand logos, live products and Search Amazon links</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/app/discover.jpg" alt="Discover festivals" /><br /><sub><b>Discover:</b> 175 festivals with search and filters</sub></td>
-    <td><img src="docs/screenshots/app/taste.jpg" alt="Festival food" /><br /><sub><b>Taste:</b> festival dishes with diet and allergen notes</sub></td>
+    <td><img src="docs/screenshots/app/discover.jpg" alt="Discover festivals" /><br /><sub><b>Discover:</b> 175 festivals, Quick look side panel, filters by month and region</sub></td>
+    <td><img src="docs/screenshots/app/gift-circle.jpg" alt="Gift Circle" /><br /><sub><b>Gift Circle:</b> multilingual group gifting by voice or text</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/app/journeys.jpg" alt="Journeys map" /><br /><sub><b>Journeys:</b> an interactive map of festival destinations</sub></td>
-    <td align="center"><img src="docs/screenshots/app/mobile.jpg" width="45%" alt="Mobile view" /><br /><sub><b>Mobile:</b> fully responsive</sub></td>
+    <td><img src="docs/screenshots/app/taste.jpg" alt="Festival food" /><br /><sub><b>Taste:</b> vegetarian festival dishes with real photos</sub></td>
+    <td align="center"><img src="docs/screenshots/app/mobile.jpg" width="46%" alt="Mobile view" /><br /><sub><b>Mobile:</b> designed for phones first, with bottom sheets</sub></td>
   </tr>
 </table>
 
-## Sponsor integrations, verified live
+## Try it in 60 seconds (for judges)
 
-| | Integration | Verified |
+1. Open **[festiva-eta.vercel.app/matchmaker](https://festiva-eta.vercel.app/matchmaker)** and tap the **हिन्दी** or **ಕನ್ನಡ** example.
+2. Watch the banner: **"Read by Sarvam AI · heard Hindi"**, a reply in Devanagari, and the plan below it. Press **Hear it**.
+3. Change the budget and watch every line re-balance. It always adds up.
+4. Press **/** anywhere and search "karna": Karnataka opens on the map.
+5. Open **[/shop](https://festiva-eta.vercel.app/shop#live)**: live Fabindia, GIVA, Nicobar and Godiva products with real prices.
+6. In Flagsmith, switch off `gift_circle_enabled`: about 15 seconds later Gift Circle disappears from the menu, and its API answers 403.
+
+## How all three sponsors are used
+
+Every one is load-bearing: switch any of them off and a real feature changes, honestly and visibly.
+
+### Sarvam AI: the multilingual voice of FESTIVA
+
+| Capability | Model | Where |
 |---|---|---|
-| **Sarvam AI** | FESTIVA Intelligence and the natural-language planner brief (`sarvam-105b`, JSON schema, any supported Indian language), speech-to-text (`saaras:v4`), translation (`sarvam-translate:v1`), structured preference extraction. Every AI-derived field carries an HMAC-signed provenance receipt, verified on the server. | Live |
-| **Flagsmith** | Official server SDK with local evaluation. Ten flags enforced in both UI and API, validated remote config, and a multivariate onboarding experiment. No redeploy needed for any change. | Live |
-| **NudgeBee** | Five alert rules over real telemetry, delivered to NudgeBee's Event Webhook. Runbooks are approval-gated, reversible and audited. Runs on a self-hosted Community install (Helm on k3s). | Live |
+| Understand a celebration brief in any of 22 Indian languages and extract structured answers with a strict JSON schema | `sarvam-105b` | Planner |
+| Reply in the person's own language and script | `sarvam-105b` | Planner |
+| **Read the reply aloud** in 11 languages | `bulbul:v3` | Planner, Ask FESTIVA |
+| Speech to text with automatic language detection | `saaras:v4` | Gift Circle voice wishes |
+| Translate wishes between Indian languages and English | `sarvam-translate:v1` | Gift Circle |
+| Grounded answers about festivals | `sarvam-105b` | Ask FESTIVA |
 
+The detected language is always shown back ("heard Hindi") and transcripts are reviewed before they are saved, because a confident guess is not proof. Every AI-derived field carries a signed provenance receipt checked on the server.
 
-## Engineering
+### Flagsmith: real feature control, enforced on the server
 
-- **Architecture:** Next.js 16 App Router with Cache Components and partial prerendering (675 static pages). Pure domain logic sits in `src/domain`, curated data in `src/data`, and integrations are isolated in `src/lib/integrations`.
-- **Correctness:** budget arithmetic in integer minor units; no model ever computes a total. Zod 4 validates every input and environment variable.
-- **Security:** strict CSP and security headers, server-only secrets, spoof-resistant rate limiting, signed admin sessions, and Row Level Security on all 30 Supabase tables.
-- **Resilience:** every external service has an honest fallback, so the app runs fully with zero configuration.
-- **Frontend:** React 19, Tailwind CSS 4, a WebGL globe (Three.js and GLSL) with 2D fallback, view transitions, and accessibility tested with axe-core.
+Ten flags gate real behaviour in the UI **and** the API (a switched-off feature answers 403, it does not just hide a button), plus validated remote config and a multivariate onboarding experiment. Evaluated live with the official server SDK in local-evaluation mode, so a change applies in about 15 seconds with no redeploy.
 
-## Quick start
+### NudgeBee: safe, approval-gated operations
 
-```bash
-npm ci
-npm run dev            # http://localhost:3000
+Five alert rules run on FESTIVA's real telemetry (API latency, error rate, voice failures, storage health, AI processing) and fire to NudgeBee's Event Webhook. Each alert proposes a runbook, such as **Pause voice capture**, that a human must approve with a reason; every runbook is reversible and written to an audit trail. A NudgeBee workflow can *propose* a runbook but can never run one. Verified live against a self-hosted NudgeBee Community install.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  U([Visitor]) --> APP[Next.js 16 App Router<br/>React 19 · Tailwind 4]
+  APP --> DOM[src/domain<br/>pure planner, budget, search]
+  APP --> DATA[(src/data<br/>175 festivals · sourced)]
+  APP -->|brief, speech, translation, TTS| SARVAM[Sarvam AI]
+  APP -->|flags, server-enforced| FLAG[Flagsmith]
+  APP -->|alerts, runbook proposals| NB[NudgeBee]
+  APP -->|accounts, private plans, RLS| SB[(Supabase)]
+  APP -->|public product feeds, hourly| STORES[Brand stores]
 ```
 
+- **One rule above all:** no model ever computes a total. Budgets use integer minor units in `src/domain/budget.ts`.
+- **Honest by design:** no invented prices, ratings, dates or partnerships. Movable dates cite their source; product prices come only from the brand's own store.
+- **Runs with zero configuration:** every integration has a truthful fallback, so the app works fully with no keys at all.
+- **Security:** strict CSP, server-only secrets, rate limiting, signed admin sessions, Row Level Security on every Supabase table.
+- **Accessible:** keyboard menus and search, focus-trapped dialogs and bottom sheets, reduced-motion support, axe-core checks.
 
+## Run it locally
+
+```bash
+git clone https://github.com/ShambhaviCode/Festiva.git
+cd Festiva
+npm ci
+npm run dev          # http://localhost:3000, works with no keys
+```
+
+Add any of these to `.env.local` to switch on the real services (see `.env.example`):
+
+| Variable | Turns on |
+|---|---|
+| `SARVAM_API_KEY` | Multilingual briefs, spoken replies, voice wishes, translation |
+| `FLAGSMITH_ENVIRONMENT_KEY` | Live feature flags and the onboarding experiment |
+| `NUDGEBEE_EVENT_WEBHOOK_URL`, `NUDGEBEE_EVENT_WEBHOOK_TOKEN` | Alerts to NudgeBee |
+| `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Sign-in and private cloud plans (run `supabase/migrations` first) |
+| `AMAZON_ASSOCIATE_TAG` | Affiliate tag on Search Amazon links |
 
 ## Quality
 
 ```bash
-npm run lint && npm run typecheck   # ESLint, strict TypeScript
-npm test                            # 455 unit tests
-npm run db:verify                   # migrations and RLS on embedded Postgres
+npm run lint && npm run typecheck   # ESLint and strict TypeScript
+npm test                            # 582 unit tests
+npm run db:verify                   # migrations and Row Level Security on embedded Postgres
 npm run test:e2e                    # Playwright end-to-end and accessibility
 ```
 
 ## Documentation
 
-[Architecture](docs/ARCHITECTURE.md) · [Deployment](docs/DEPLOYMENT.md) · [Sponsors](docs/SPONSORS.md) · [Testing](docs/TESTING.md) · [Demo script](docs/DEMO_3_MINUTES.md) · [Known limitations](docs/KNOWN_LIMITATIONS.md)
+[Architecture](docs/ARCHITECTURE.md) · [Sponsors](docs/SPONSORS.md) · [Sponsor evidence](docs/SPONSOR_EVIDENCE.md) · [Deployment](docs/DEPLOYMENT.md) · [Testing](docs/TESTING.md) · [Demo script](docs/DEMO_3_MINUTES.md) · [Known limitations](docs/KNOWN_LIMITATIONS.md) · [Third-party credits](docs/THIRD_PARTY.md)
 
-
+Photographs are from Wikimedia Commons under free licences, credited on each page. Brand logos identify the brands only; FESTIVA has no partnership with any of them.
 
 ---
 
 <div align="center">
 
-Built by **Shambhavi * · [GitHub](https://github.com/ShambhaviCode) · MIT License
+Built with care by **Shambhavi M K** · [GitHub](https://github.com/ShambhaviCode) · MIT License
 
 </div>

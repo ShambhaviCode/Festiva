@@ -62,6 +62,10 @@ Festival season is the busiest time of the year, and planning it is still a mess
     <td><img src="docs/screenshots/app/gift-circle.jpg" alt="Gift Circle" /><br /><sub><b>Gift Circle:</b> multilingual group gifting by voice or text</sub></td>
   </tr>
   <tr>
+    <td><img src="docs/screenshots/app/account.jpg" alt="Account and sign-in with Supabase" /><br /><sub><b>Account:</b> Supabase sign-in by password or one-time email link; plans sync privately</sub></td>
+    <td><img src="docs/screenshots/app/journeys.jpg" alt="Journeys" /><br /><sub><b>Journeys:</b> 128 places where festivals come alive</sub></td>
+  </tr>
+  <tr>
     <td><img src="docs/screenshots/app/taste.jpg" alt="Festival food" /><br /><sub><b>Taste:</b> vegetarian festival dishes with real photos</sub></td>
     <td align="center"><img src="docs/screenshots/app/mobile.jpg" width="46%" alt="Mobile view" /><br /><sub><b>Mobile:</b> designed for phones first, with bottom sheets</sub></td>
   </tr>

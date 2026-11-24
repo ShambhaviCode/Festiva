@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { matchmakerInputSchema, type MatchmakerInput } from "@/domain/matchmaker/schema";
+import { ListenButton } from "@/components/ListenButton";
 
 export interface BriefResult {
   input: MatchmakerInput;
@@ -9,6 +10,9 @@ export interface BriefResult {
   model: string | null;
   language: string | null;
   english: string | null;
+  /** A short reply in the person's own language, and its language tag, when Sarvam read the brief. */
+  reply?: string | null;
+  replyLanguage?: string | null;
   understood: string[];
   fields: string[];
   notice: string;
@@ -92,7 +96,13 @@ export function BriefBanner({ result, onDismiss }: { result: BriefResult; onDism
             {result.source === "sarvam" ? `Read by Sarvam AI${result.model ? ` (${result.model})` : ""}` : "Read by FESTIVA's rules"}
             {result.language ? ` · heard ${result.language}` : ""}
           </p>
-          {result.english && <p className="mt-1 text-ink">&ldquo;{result.english}&rdquo;</p>}
+          {result.reply && result.replyLanguage && (
+            <div className="mt-3 rounded-2xl bg-ivory p-4 ring-1 ring-jade/30">
+              <p lang={result.replyLanguage} className="text-lg font-medium text-plum-deep">{result.reply}</p>
+              <ListenButton text={result.reply} language={result.replyLanguage} label="Hear it" className="mt-3" />
+            </div>
+          )}
+          {result.english && <p className="mt-2 text-ink">&ldquo;{result.english}&rdquo;</p>}
           <p className="note mt-1">{result.notice}</p>
         </div>
         <button type="button" className="note font-semibold underline" onClick={onDismiss}>Hide</button>

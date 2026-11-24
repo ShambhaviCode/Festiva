@@ -7,7 +7,8 @@ import { CURRENCY_CODES, type CurrencyCode } from "@/domain/currency";
 import { cleanPatch, describePatch, mergeBrief, parseBrief, type BriefCatalog, type BriefPatch } from "@/domain/matchmaker/brief";
 import { DEFAULT_INPUT, matchmakerInputSchema } from "@/domain/matchmaker/schema";
 import { json, readJson } from "@/lib/http";
-import { getSarvam, SarvamError } from "@/lib/integrations/sarvam";
+import { canSpeak, getSarvam, SarvamError } from "@/lib/integrations/sarvam";
+import { fromSarvamCode } from "@/domain/languages";
 import { getControls } from "@/lib/ops/controls";
 import { recordProcessing } from "@/lib/ops/metrics";
 import { clientKey, rateLimit } from "@/lib/rate-limit";
@@ -61,6 +62,8 @@ export async function POST(request: Request) {
   let ai: BriefPatch | null = null;
   let language: string | null = null;
   let english: string | null = null;
+  let reply: string | null = null;
+  let replyLanguage: string | null = null;
   let notice: string;
 
   if (sarvam && !paused) {
@@ -69,6 +72,11 @@ export async function POST(request: Request) {
       ai = cleanPatch(raw, new Set(cat.occasions.map((o) => o.id)));
       language = raw.language || null;
       english = raw.english || null;
+      const tag = fromSarvamCode(raw.languageCode || null);
+      if (raw.reply && tag && canSpeak(tag)) {
+        reply = raw.reply;
+        replyLanguage = tag;
+      }
       recordProcessing({ job: "matchmaker_brief", ok: true, code: "sarvam" });
       notice = "Understood by Sarvam AI. FESTIVA built the plan and did the budget arithmetic.";
     } catch (error) {
@@ -96,6 +104,9 @@ export async function POST(request: Request) {
     model: ai ? sarvam?.models.chat ?? null : null,
     language,
     english,
+    // A short reply in the person's own language, which the page can read aloud with Sarvam text-to-speech.
+    reply,
+    replyLanguage,
     understood: describePatch(patch, (id) => cat.occasions.find((o) => o.id === id)?.names[0]),
     fields: Object.keys(patch),
     notice: found === 0 ? "Nothing in this could be matched to the planner's questions. Try naming the festival, the people and a budget." : notice,

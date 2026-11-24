@@ -1,6 +1,7 @@
 import { getProvider } from "@/lib/ai/provider";
 import { serverEnv } from "@/lib/env.server";
 import { json, readJson } from "@/lib/http";
+import { getSarvam } from "@/lib/integrations/sarvam";
 import { answerQuestion, questionSchema } from "@/lib/intelligence-service";
 import { clientKey, rateLimit } from "@/lib/rate-limit";
 
@@ -10,5 +11,6 @@ export async function POST(request: Request) {
   const body = await readJson(request, questionSchema, 8_000);
   if ("response" in body) return body.response;
   const reply = await answerQuestion(body.data, getProvider(), new Date(), serverEnv().AI_TIMEOUT_MS);
-  return json(reply);
+  // voice: whether this server can read the answer aloud with Sarvam text-to-speech.
+  return json({ ...reply, voice: Boolean(getSarvam()) });
 }

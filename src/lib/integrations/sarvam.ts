@@ -13,6 +13,7 @@ import { recordAttempt } from "./status";
  *   POST /speech-to-text         multipart; model saaras:v4 (default) or saaras:v3; ≤ 30 s of audio
  *   POST /translate              JSON; model sarvam-translate:v1; formal mode; ≤ 2,000 characters
  *   POST /v1/chat/completions    JSON; model sarvam-105b; response_format json_schema
+ *   POST /text-to-speech         JSON; model bulbul:v3, speaker "priya" (a v3 voice, valid in all 11 languages); MP3 out
  * Authentication: the `api-subscription-key` header, sent from the server only.
  *
  * Audio is forwarded to Sarvam and then dropped; it is never written to disk
@@ -62,6 +63,18 @@ export function sarvamConfig(env: ServerEnv = serverEnv()): SarvamConfig | null 
     timeoutMs: env.SARVAM_TIMEOUT_MS ?? 20000,
   };
 }
+
+/** Text to speech: the languages Sarvam can speak, one model, and a voice that belongs to that model. */
+export const TTS_CODES = new Set(["bn-IN", "en-IN", "gu-IN", "hi-IN", "kn-IN", "ml-IN", "mr-IN", "od-IN", "pa-IN", "ta-IN", "te-IN"]);
+export const TTS_MODEL = "bulbul:v3";
+const TTS_SPEAKER = "priya";
+export const SPOKEN_REPLY_MAX = 500;
+/** Whether FESTIVA can speak a reply in this language. */
+export function canSpeak(languageTag: string): boolean {
+  const code = toSarvamCode(languageTag);
+  return Boolean(code && TTS_CODES.has(code));
+}
+const ttsResponse = z.object({ request_id: z.string().nullable().optional(), audios: z.array(z.string().min(1)).min(1) });
 
 const sttResponse = z.object({
   request_id: z.string().nullable().optional(),
@@ -133,7 +146,7 @@ export class SarvamProvider {
     return { stt: this.config.sttModel, translate: this.config.translateModel, chat: this.config.chatModel };
   }
 
-  private async call<T>(capability: "speech_to_text" | "translate" | "chat", model: string, path: string, init: RequestInit, schema: z.ZodType<T>, outerSignal?: AbortSignal): Promise<{ data: T; ms: number }> {
+  private async call<T>(capability: "speech_to_text" | "translate" | "chat" | "text_to_speech", model: string, path: string, init: RequestInit, schema: z.ZodType<T>, outerSignal?: AbortSignal): Promise<{ data: T; ms: number }> {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), this.config.timeoutMs);
     if (outerSignal) {
@@ -200,6 +213,31 @@ export class SarvamProvider {
       requestId: data.request_id ?? null,
       model: this.config.sttModel,
     };
+  }
+
+  /**
+   * Speak a short reply in the person's language (Sarvam bulbul:v3). The voice is fixed to one that belongs to
+   * this model, because a speaker from another model is rejected. Returns MP3 bytes.
+   */
+  async speak(text: string, languageTag: string): Promise<{ audio: Uint8Array; requestId: string | null; model: string }> {
+    const code = toSarvamCode(languageTag);
+    if (!code || !TTS_CODES.has(code)) throw new SarvamError("unsupported_language", MESSAGES.unsupported_language);
+    const clean = sanitiseUserText(text, SPOKEN_REPLY_MAX);
+    if (!clean) throw new SarvamError("bad_request", MESSAGES.bad_request);
+    const { data } = await this.call(
+      "text_to_speech",
+      TTS_MODEL,
+      "/text-to-speech",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ text: clean, language_code: code, model: TTS_MODEL, speaker: TTS_SPEAKER, output_audio_codec: "mp3", pace: 1.05 }),
+      },
+      ttsResponse,
+    );
+    const audio = Buffer.from(data.audios[0], "base64");
+    if (audio.length < 64) throw new SarvamError("invalid_response", MESSAGES.invalid_response);
+    return { audio: new Uint8Array(audio), requestId: data.request_id ?? null, model: TTS_MODEL };
   }
 
   async translate(text: string, fromTag: string, toTag: string): Promise<Translation> {
@@ -293,12 +331,12 @@ export class SarvamProvider {
    * Only stated facts are returned ("", 0 or [] otherwise); the caller validates every field and
    * FESTIVA's engine builds the plan and does all budget arithmetic.
    */
-  async readCelebrationBrief(text: string, occasionIds: string[]): Promise<Record<string, unknown> & { language: string; english: string }> {
+  async readCelebrationBrief(text: string, occasionIds: string[]): Promise<Record<string, unknown> & { language: string; english: string; languageCode: string; reply: string }> {
     const strList = (items: readonly string[]) => ({ type: "array", items: { type: "string", enum: [...items] }, maxItems: items.length });
     const jsonSchema = {
       type: "object",
       additionalProperties: false,
-      required: ["occasion", "attendees", "audience", "budget", "currency", "city", "countryCode", "duration", "style", "dietary", "interests", "language", "english"],
+      required: ["occasion", "attendees", "audience", "budget", "currency", "city", "countryCode", "duration", "style", "dietary", "interests", "language", "english", "languageCode", "reply"],
       properties: {
         occasion: { type: "string", enum: ["", ...occasionIds] },
         attendees: { type: "integer", minimum: 0, maximum: 5000 },
@@ -313,6 +351,8 @@ export class SarvamProvider {
         interests: strList(["food", "music", "crafts", "games", "storytelling", "fashion", "gifting", "reflection", "outdoors", "travel"]),
         language: { type: "string", maxLength: 40 },
         english: { type: "string", maxLength: 300 },
+        languageCode: { type: "string", enum: ["", ...TTS_CODES] },
+        reply: { type: "string", maxLength: 400 },
       },
     };
     const system = [
@@ -322,11 +362,19 @@ export class SarvamProvider {
       "budget is the number they wrote, converted from words to digits but not otherwise changed; currency is its ISO code (₹ or rupees is INR).",
       "city is the place they named, spelled in English (Delhi, Mysuru, Bengaluru). countryCode is the ISO 3166 two-letter code of that place, if any. duration: two days or a weekend is 'weekend'.",
       "language is the name of the language the text is written in. english is a one-sentence English restatement of the request.",
+      "languageCode is the code of that language from the allowed list (hi-IN for Hindi, kn-IN for Kannada, en-IN for English), or empty if it is not in the list.",
+      "reply is one or two short, warm sentences spoken back to the person, in the same language and the same writing system they wrote in, saying what you understood and that their plan is ready below. Do not add any fact, price or promise they did not state.",
       UNTRUSTED_RULE,
     ].join(" ");
-    const schema = z.object({ language: z.string(), english: z.string() }).passthrough();
-    const result = await this.chatJson(system, wrapUntrusted("question", sanitiseUserText(text, 600)), "celebration_brief", jsonSchema, schema, 500);
-    return { ...result, language: stripUrls(result.language).slice(0, 40), english: stripUrls(result.english).slice(0, 300) };
+    const schema = z.object({ language: z.string(), english: z.string(), languageCode: z.string().optional(), reply: z.string().optional() }).passthrough();
+    const result = await this.chatJson(system, wrapUntrusted("question", sanitiseUserText(text, 600)), "celebration_brief", jsonSchema, schema, 700);
+    return {
+      ...result,
+      language: stripUrls(result.language).slice(0, 40),
+      english: stripUrls(result.english).slice(0, 300),
+      languageCode: TTS_CODES.has(result.languageCode ?? "") ? result.languageCode! : "",
+      reply: sanitiseUserText(stripUrls(result.reply ?? ""), 400),
+    };
   }
 
   /** Propose structured wishlist fields from an approved preference (English text). The person reviews them before saving. */

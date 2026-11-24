@@ -58,6 +58,28 @@ function fakeFetch(handler: (url: string, init: RequestInit) => Response | Promi
 }
 
 describe("Sarvam provider (with a fake fetch; no network)", () => {
+  test("speaks a reply with /text-to-speech: bulbul:v3, a voice that belongs to that model, MP3 out", async () => {
+    const mp3 = Buffer.alloc(200, 0xff).toString("base64");
+    const { fn, calls } = fakeFetch(() => Response.json({ request_id: "tts-1", audios: [mp3] }));
+    const result = await new SarvamProvider(CONFIG, fn).speak("आपकी दिवाली की योजना तैयार है।", "hi-IN");
+    expect(calls[0].url).toBe("https://api.sarvam.ai/text-to-speech");
+    expect((calls[0].init.headers as Record<string, string>)["api-subscription-key"]).toBe("test-key");
+    expect(JSON.parse(String(calls[0].init.body))).toMatchObject({ text: "आपकी दिवाली की योजना तैयार है।", language_code: "hi-IN", model: "bulbul:v3", speaker: "priya", output_audio_codec: "mp3" });
+    expect(result).toMatchObject({ requestId: "tts-1", model: "bulbul:v3" });
+    expect(result.audio.length).toBe(200);
+    const odia = fakeFetch(() => Response.json({ audios: [mp3] }));
+    await new SarvamProvider(CONFIG, odia.fn).speak("ନମସ୍କାର", "or-IN");
+    expect(JSON.parse(String(odia.calls[0].init.body)).language_code).toBe("od-IN");
+  });
+
+  test("refuses to speak languages Sarvam cannot voice, and rejects empty audio", async () => {
+    const { fn } = fakeFetch(() => Response.json({ audios: ["AA=="] }));
+    await expect(new SarvamProvider(CONFIG, fn).speak("hola", "es-ES")).rejects.toMatchObject({ code: "unsupported_language" });
+    await expect(new SarvamProvider(CONFIG, fn).speak("ہیلو", "ur-IN")).rejects.toMatchObject({ code: "unsupported_language" });
+    await expect(new SarvamProvider(CONFIG, fn).speak("hello", "en-IN")).rejects.toMatchObject({ code: "invalid_response" });
+  });
+
+
   test("is absent when SARVAM_API_KEY is missing", () => {
     expect(getSarvam(parseServerEnv({}))).toBeNull();
     expect(getSarvam(parseServerEnv({ SARVAM_API_KEY: "k" }))?.models).toEqual({ stt: "saaras:v4", translate: "sarvam-translate:v1", chat: "sarvam-105b" });

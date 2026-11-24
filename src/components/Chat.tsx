@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import type { IntelligenceReply } from "@/lib/intelligence-service";
+import { ListenButton } from "@/components/ListenButton";
 
-type Message = { role: "user"; text: string } | { role: "assistant"; reply: IntelligenceReply } | { role: "error"; text: string };
+type Message = { role: "user"; text: string } | { role: "assistant"; reply: IntelligenceReply & { voice?: boolean } } | { role: "error"; text: string };
 
 const STARTERS = ["When is Diwali?", "What do people eat at Hanukkah?", "What should I wear to Onam?", "Where can I experience Día de Muertos?", "Tell me about Nowruz traditions", "Gift ideas for Eid al-Fitr"];
 
@@ -65,6 +66,7 @@ export function Chat({ aiEnabled }: { aiEnabled: boolean }) {
               <article key={index} className="max-w-[92%]" data-testid="chat-answer" data-mode={message.reply.mode}>
                 <p className="text-sm font-semibold text-saffron-deep">{MODE_LABEL[message.reply.mode]}</p>
                 <p className="mt-1.5">{message.reply.answer}</p>
+                {message.reply.voice && <ListenButton text={message.reply.answer} language="en-IN" label="Listen to the answer" className="mt-3" />}
                 {message.reply.notice && <p className="note mt-2">{message.reply.notice}</p>}
                 {message.reply.facts.length > 0 && (
                   <>

@@ -20,7 +20,7 @@
 ![Tests](https://img.shields.io/badge/unit_tests-582_passing-19c39a?style=flat-square)
 ![License MIT](https://img.shields.io/badge/license-MIT-555?style=flat-square)
 
-<sub>Built for <b>Festive Hacks</b> by WeMakeDevs × WeAreDevelopers · 25 November 2026 · Bengaluru</sub>
+
 
 <br />
 
